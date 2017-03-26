@@ -1,5 +1,4 @@
 /**
- * Alipay.com Inc.
  * Copyright (c) 2004-2011 All Rights Reserved.
  */
 package com.myteay.common.util.comm;
@@ -52,13 +51,10 @@ public class ToStringUtil {
         StringBuffer buffer = new StringBuffer("Map={");
         if (!CollectionUtils.isEmpty(map)) {
             for (String key : map.keySet()) {
-                buffer
-                    .append("[")
-                    .append(key)
-                    .append("=>")
-                    .append(
-                        ToStringBuilder.reflectionToString(map.get(key),
-                            ToStringStyle.SHORT_PREFIX_STYLE)).append("]");
+                buffer.append("[")
+                    .append(key).append("=>").append(ToStringBuilder
+                        .reflectionToString(map.get(key), ToStringStyle.SHORT_PREFIX_STYLE))
+                    .append("]");
             }
             buffer.append("}");
         }

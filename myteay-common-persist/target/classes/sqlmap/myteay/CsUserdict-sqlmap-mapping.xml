@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="GB2312" ?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+
+<!-- ==========================================================  -->
+<!-- Configuration for ibatis sqlmap mapping.                    -->
+<!-- ==========================================================  -->
+
+<!-- ============================================================================= -->
+<!-- This file is a DAL (Data Access Layer)                                        -->
+<!-- code generation utility specially developed for <tt>myteay</tt> project.      -->
+<!--                                                                               -->
+<!-- PLEASE DO NOT MODIFY THIS FILE MANUALLY, or else your modification may be     -->
+<!-- OVERWRITTEN by someone else. To modify the file,                              -->
+<!-- Modify those files according to your needs, then run                          -->
+<!--                                                                               -->
+<!-- @author Wei Xiaomin                                                           -->
+<!-- ============================================================================= -->
+
+<sqlMap namespace="myteay.customers">
+    <!-- ============================================= -->
+    <!-- RESULT MAPS                                   -->
+    <!-- ============================================= -->
+
+    <!-- result maps for database table core_channel_strategy_info -->
+    <resultMap id="RM-SYSDICT-INFO" class="com.myteay.common.dal.dataobject.UserSysDictInfoDO">
+        <result property="dicKey" column="dic_key" javaType="java.lang.String" jdbcType="varchar"/>
+        <result property="dicValue" column="dic_value" javaType="java.lang.String" jdbcType="varchar"/>
+        <result property="gmtCreated" column="gmt_created" javaType="java.util.Date" jdbcType="datetime"/>
+        <result property="gmtModified" column="gmt_modified" javaType="java.util.Date" jdbcType="datetime"/>
+    </resultMap>
+
+
+    <!-- ============================================= -->
+
+    <select id="MS-SYSDICT-INFO-GET-BY-ALL" resultMap="RM-SYSDICT-INFO">
+	    <![CDATA[
+	        select dic_key,dic_value,gmt_created,gmt_modified from customers.mt_user_dict
+	    ]]>
+    </select>
+
+    <select id="MS-SYSDICT-INFO-GET-BY-ID" resultMap="RM-SYSDICT-INFO">
+	    <![CDATA[
+	        select dic_key,dic_value,gmt_created,gmt_modified from customers.mt_user_dict where (dic_key = #value#)
+	    ]]>
+    </select>
+
+</sqlMap>

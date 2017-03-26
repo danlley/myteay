@@ -1,5 +1,4 @@
 /*
- * Taobao.com Inc.
  * Copyright (c) 2000-2004 All Rights Reserved.
  */
 package com.myteay.common.util.page;

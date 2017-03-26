@@ -1,5 +1,4 @@
 /**
- * Alipay.com Inc.
  * Copyright (c) 2004-2011 All Rights Reserved.
  */
 package com.myteay.common.util.comm;

@@ -1,5 +1,4 @@
 /**
- * Alipay.com Inc.
  * Copyright (c) 2004-2010 All Rights Reserved.
  */
 package com.myteay.common.util.event;
@@ -22,7 +21,7 @@ public class EventListenerExecutor implements Runnable {
     private EventListener<?>   eventListener;
 
     /** 事件模型 */
-    private MtEvent<?>  event;
+    private MtEvent<?>         event;
 
     /**
      * 构造方法

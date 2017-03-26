@@ -1,5 +1,4 @@
 /**
- * Alipay.com Inc.
  * Copyright (c) 2005-2009 All Rights Reserved.
  */
 package com.myteay.common.util.comm;
@@ -149,8 +148,8 @@ public class DateUtil {
      * @return
      * @throws ParseException
      */
-    public static Date parseDateNoTimeWithDelimit(String sDate, String delimit)
-                                                                               throws ParseException {
+    public static Date parseDateNoTimeWithDelimit(String sDate,
+                                                  String delimit) throws ParseException {
         sDate = sDate.replaceAll(delimit, "");
 
         DateFormat dateFormat = new SimpleDateFormat(shortFormat);
@@ -599,7 +598,8 @@ public class DateUtil {
         Calendar failDate = new GregorianCalendar();
 
         failDate.setTime(two);
-        return (int) ((sysDate.getTimeInMillis() - failDate.getTimeInMillis()) / (24 * 60 * 60 * 1000));
+        return (int) ((sysDate.getTimeInMillis() - failDate.getTimeInMillis())
+                      / (24 * 60 * 60 * 1000));
     }
 
     /**

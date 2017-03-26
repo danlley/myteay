@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+ResourceAllowed: true
+Bundle-ManifestVersion: 2
+Bundle-Name: Myteay biz service quartz
+Bundle-SymbolicName: com.myteay.biz.service.quartz;singleton:=true
+Bundle-Version: 1.0.0
+Bundle-Vendor: MyTeay
+Spring-Parent: com.myteay.core.service

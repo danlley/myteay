@@ -1,5 +1,4 @@
 /**
- * Alipay.com Inc.
  * Copyright (c) 2004-2015 All Rights Reserved.
  */
 package com.myteay.common.utils;
@@ -29,7 +28,7 @@ public class UIDGener {
 
     /** 会员籍贯省份信息缓存 */
     public static final Map<String, String> PROVINCE_LOCAL_CACHE  = Collections
-                                                                      .synchronizedMap(new HashMap<String, String>());
+        .synchronizedMap(new HashMap<String, String>());
 
     /** 省份默认代码 */
     public static final String              DEFAULT_PRIVINCE_CODE = "000000";
