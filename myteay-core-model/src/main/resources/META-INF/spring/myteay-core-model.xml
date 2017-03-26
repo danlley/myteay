@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="GBK"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:webflow="http://www.springframework.org/schema/webflow-config"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd
+         http://www.springframework.org/schema/webflow-config http://www.springframework.org/schema/webflow-config/spring-webflow-config-2.4.xsd"
+	default-autowire="byName">
+	<!-- 用户信息仓储层 -->
+	<bean id="mtUsersInfoRepository" class="com.myteay.core.model.repository.MtUsersInfoRepositoryImpl"></bean>
+	
+	<!-- 店铺信息仓储层 -->
+	<bean id="mtShopInfoRepository" class="com.myteay.core.model.dinner.repository.MtShopInfoRepositoryImpl"></bean>
+	
+	<!-- 商品信息单品管理仓储层 -->
+	<bean id="mtGoodsInfoRepository" class="com.myteay.core.model.dinner.repository.MtGoodsInfoRepositoryImpl"></bean>
+	
+	<!-- 套餐信息单品管理仓储层 -->
+	<bean id="mtGoodsPkgInfoRepository" class="com.myteay.core.model.dinner.repository.MtGoodsPkgInfoRepositoryImpl"></bean>
+	
+	<!-- 用户字典仓储层 -->
+	<bean id="mtUserSysDictInfoRepository" class="com.myteay.core.model.repository.MtUserSysDictInfoRepositoryImpl"></bean>
+	
+	<!-- 用户字典流水仓储层 -->
+	<bean id="mtUsersQrWfRepository" class="com.myteay.core.model.repository.MtUsersQrWfRepositoryImpl"></bean>
+</beans>

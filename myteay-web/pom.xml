@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="GBK"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.myteay</groupId>
+    <artifactId>myteay-parent</artifactId>
+    <version>1.0-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>myteay-web</artifactId>
+  <packaging>war</packaging>
+
+  <name>myteay-web Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+	<dependency>
+        <groupId>org.apache.geronimo.specs</groupId>
+        <artifactId>geronimo-servlet_2.4_spec</artifactId>
+        <version>1.1.1</version>
+        <scope>provided</scope>
+    </dependency>
+    <dependency>
+		<groupId>jmock</groupId>
+		<artifactId>jmock</artifactId>
+		<version>1.2.0</version>
+	</dependency>
+	<!-- local dependency start -->
+    <dependency>
+		<groupId>com.myteay</groupId>
+		<artifactId>myteay-core-service</artifactId>
+		<version>1.0-SNAPSHOT</version>
+	</dependency>
+    <dependency>
+		<groupId>com.myteay</groupId>
+		<artifactId>myteay-biz-service-impl</artifactId>
+		<version>${project.version}</version>
+	</dependency>
+	<!-- local dependency end -->
+  </dependencies>
+  <build>
+    <finalName>myteay-web</finalName>
+    <plugins>
+		<plugin>
+			<groupId>org.mortbay.jetty</groupId>
+			<artifactId>maven-jetty-plugin</artifactId>
+			<version>6.1.26</version>
+			<configuration>
+				<scanIntervalSeconds>3</scanIntervalSeconds>
+				<connectors>
+					<connector implementation="org.mortbay.jetty.nio.SelectChannelConnector">
+						<port>80</port>
+					</connector>
+				</connectors>
+				<scanTargetPatterns>
+					<scanTargetPattern>
+						<directory>src/main/webapp/WEB-INF</directory>
+						<excludes>
+							<exclude>**/*.jsp</exclude>
+						</excludes>
+						<includes>
+							<include>**/*.properties</include>
+							<include>**/*.xml</include>
+						</includes>
+					</scanTargetPattern>
+				</scanTargetPatterns>
+			</configuration>
+		</plugin>
+    </plugins>
+  </build>
+</project>

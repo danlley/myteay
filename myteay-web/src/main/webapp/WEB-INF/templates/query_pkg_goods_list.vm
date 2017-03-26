@@ -1,0 +1,65 @@
+<html>
+<body>
+<center><h2>查询所有套餐信息</h2>
+<script type="text/javascript">
+</script>
+
+<hr>
+<a href="/myteay-web/adm/add_single_goods_pkg">新增</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="/myteay-web/manage_list.jsp">返回</a>
+
+	<table border="0" >
+		<tr>
+			<td bgcolor="#660033" align="center" valign="middle"><font color="#ffffff">套餐流水号</font></td>
+			<td bgcolor="#660033" align="center" valign="middle"><font color="#ffffff">套餐名称</font></td>
+			<td bgcolor="#660033" align="center" valign="middle"><font color="#ffffff">套餐中商品ID集合，“|”分割</font></td>
+			<td bgcolor="#660033" align="center" valign="middle"><font color="#ffffff">手机售价</font></td>
+			<td bgcolor="#660033" align="center" valign="middle"><font color="#ffffff">门市价</font></td>
+			<td bgcolor="#660033" align="center" valign="middle"><font color="#ffffff">图片地址</font></td>
+			<td bgcolor="#660033" align="center" valign="middle"><font color="#ffffff">大图片地址</font></td>
+			<td bgcolor="#660033" align="center" valign="middle"><font color="#ffffff">门店ID</font></td>
+			<td bgcolor="#660033" align="center" valign="middle"><font color="#ffffff">操作</font></td>
+		</tr>
+			#if(${goods_pkg_list})
+				#foreach($info in $goods_pkg_list)
+					<tr>
+						<td bgcolor="#ff9933" align="center" valign="middle">$!{info.getId()}</td>
+						<td bgcolor="#ff9933" align="center" valign="middle">$!{info.getPkgName()}</td>
+						<td bgcolor="#ff9933" align="center" valign="middle">$!{info.getGoodsId()}</td>
+						<td bgcolor="#ff9933" align="center" valign="middle">$!{info.getPriceMobile()}</td>
+						<td bgcolor="#ff9933" align="center" valign="middle">$!{info.getPrice()}</td>
+						<td bgcolor="#ff9933" align="center" valign="middle"><img src="$!{info.getImgParentPath()}$!{info.getPicAddr()}"/></td>
+						<td bgcolor="#ff9933" align="center" valign="middle"><img src="$!{info.getImgParentPath()}$!{info.getPicBigAddr()}"/></td>
+						<td bgcolor="#ff9933" align="center" valign="middle">$!{info.getShopId()}</td>
+						<td bgcolor="#ff9933" align="center" valign="middle">
+							<a href="/myteay-web/adm/view_single_goods_pkg?method=view_detail&id=$!{info.getId()}" target="_blank">详情</a>
+							<a href="/myteay-web/adm/view_single_goods_pkg?method=modify&id=$!{info.getId()}" target="_blank">修改</a>
+							<a href="/myteay-web/adm/del_goods_pkg_by_id?id=$!{info.getId()}" onclick="confirm('确认删除？套餐名称：$!{info.getPkgName()}');">删除</a>
+						</td>
+					</tr>
+				#end
+			#else
+				<tr>
+					<td bgcolor="#ff9933" align="center" valign="middle">&nbsp;</td>
+					<td bgcolor="#ff9933" align="center" valign="middle">&nbsp;</td>
+					<td bgcolor="#ff9933" align="center" valign="middle">&nbsp;</td>
+					<td bgcolor="#ff9933" align="center" valign="middle">&nbsp;</td>
+					<td bgcolor="#ff9933" align="center" valign="middle">&nbsp;</td>
+					<td bgcolor="#ff9933" align="center" valign="middle">&nbsp;</td>
+					<td bgcolor="#ff9933" align="center" valign="middle">&nbsp;</td>
+					<td bgcolor="#ff9933" align="center" valign="middle">&nbsp;</td>
+					<td bgcolor="#ff9933" align="center" valign="middle">&nbsp;</td>
+				</tr>
+			#end
+	</table>
+
+	<a href="/myteay-web/manage_list.jsp">返回</a>
+</center></body>
+</html>
+
+
+
+
+
+
