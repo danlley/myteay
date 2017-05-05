@@ -96,12 +96,7 @@
 						  </div>
 					    </form>
 						<div>
-						   		<span><%
-								com.myteay.customers.springtest.TestSpring spring = new com.myteay.customers.springtest.TestSpring();
-								com.myteay.customers.springtest.MessageService service = spring.mockMessageService();
-								String result = service.getMessage();
-								out.print(result);
-								%></span>
+						   		<span></span>
 						  </div>
 
 				    </div>

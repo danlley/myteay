@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+ResourceAllowed: true
+Bundle-ManifestVersion: 2
+Bundle-Name: Myteay web
+Bundle-SymbolicName: com.myteay.web;singleton:=true
+Bundle-Version: 1.0.0
+Bundle-Vendor: MyTeay
+Spring-Parent: com.myteay.core.service,
+ com.myteay.biz.service.impl
