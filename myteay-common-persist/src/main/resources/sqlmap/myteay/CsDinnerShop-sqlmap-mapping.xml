@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="GB2312" ?>
-<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <!-- ==========================================================  -->
 <!-- Configuration for ibatis sqlmap mapping.                    -->
@@ -16,30 +16,14 @@
 <!-- @author Wei Xiaomin                                                           -->
 <!-- ============================================================================= -->
 
-<sqlMap namespace="myteay.dinner">
-    <!-- ============================================= -->
-    <!-- RESULT MAPS                                   -->
-    <!-- ============================================= -->
-
-    <!-- result maps for database table core_channel_strategy_info -->
-    <resultMap id="RM-SHOP-INFO" class="com.myteay.common.dal.dinner.dataobject.ShopInfoDO">
-        <result property="shopId" column="shop_id" javaType="java.lang.String" jdbcType="bigint"/>
-        <result property="shopName" column="shop_name" javaType="java.lang.String" jdbcType="varchar"/>
-        <result property="shopAddr" column="shop_addr" javaType="java.lang.String" jdbcType="varchar"/>
-        <result property="shopTel" column="shop_tel" javaType="java.lang.String" jdbcType="varchar"/>
-        <result property="cityCode" column="city_code" javaType="java.lang.String" jdbcType="varchar"/>
-        <result property="gmtCreated" column="gmt_created" javaType="java.util.Date" jdbcType="datetime"/>
-        <result property="gmtModified" column="gmt_modified" javaType="java.util.Date" jdbcType="datetime"/>
-    </resultMap>
-
-
+<mapper namespace="myteay.dinner">
     <!-- ============================================= -->
     <!-- mapped statements for IbatisShopInfoDAO -->
     <!-- ============================================= -->
-    <select id="MS-MT-SHOP-INFO-ALL" resultMap="RM-SHOP-INFO">
+    <select id="MS-MT-SHOP-INFO-ALL" resultType="com.myteay.common.dal.dinner.dataobject.ShopInfoDO">
 	    <![CDATA[
 	        select shop_id,shop_name,shop_addr,shop_tel,city_code,gmt_created,gmt_modified from dinner.shop
 	    ]]>
     </select>
 
-</sqlMap>
+</mapper>

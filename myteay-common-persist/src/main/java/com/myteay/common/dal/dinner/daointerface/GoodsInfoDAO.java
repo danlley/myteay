@@ -7,6 +7,7 @@ package com.myteay.common.dal.dinner.daointerface;
 import java.util.List;
 
 import com.myteay.common.dal.dinner.dataobject.GoodsInfoDO;
+import com.myteay.common.dal.utils.MtDBKey;
 
 /**
  * 单品信息管理DAO
@@ -14,7 +15,7 @@ import com.myteay.common.dal.dinner.dataobject.GoodsInfoDO;
  * @author Administrator
  * @version $Id: GoodsInfoDAO.java, v 0.1 2016年3月5日 上午12:39:22 Administrator Exp $
  */
-public interface GoodsInfoDAO {
+public interface GoodsInfoDAO extends MtDBKey {
 
     /**
      * 通过ID删除指定单品信息

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="GB2312" ?>
-<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <!-- ==========================================================  -->
 <!-- Configuration for ibatis sqlmap mapping.                    -->
@@ -16,51 +16,34 @@
 <!-- @author Wei Xiaomin                                                           -->
 <!-- ============================================================================= -->
 
-<sqlMap namespace="myteay.dinner">
-    <!-- ============================================= -->
-    <!-- RESULT MAPS                                   -->
-    <!-- ============================================= -->
-
-    <!-- result maps for database table core_channel_strategy_info -->
-    <resultMap id="RM-GOODS-INFO" class="com.myteay.common.dal.dinner.dataobject.GoodsInfoDO">
-        <result property="id" column="id" javaType="java.lang.String" jdbcType="bigint"/>
-        <result property="shopId" column="shop_id" javaType="java.lang.String" jdbcType="varchar"/>
-        <result property="picAddr" column="pic_addr" javaType="java.lang.String" jdbcType="varchar"/>
-        <result property="goodsTitle" column="goods_title" javaType="java.lang.String" jdbcType="varchar"/>
-        <result property="price" column="price" javaType="java.lang.String" jdbcType="varchar"/>
-        <result property="summary" column="summary" javaType="java.lang.String" jdbcType="varchar"/>
-        <result property="gmtCreated" column="gmt_created" javaType="java.util.Date" jdbcType="datetime"/>
-        <result property="gmtModified" column="gmt_modified" javaType="java.util.Date" jdbcType="datetime"/>
-    </resultMap>
-
-
+<mapper namespace="myteay.dinner">
     <!-- ============================================= -->
     <!-- mapped statements for IbatisShopInfoDAO -->
     <!-- ============================================= -->
-    <select id="MS-MT-GOODS-INFO-ALL" resultMap="RM-GOODS-INFO">
+    <select id="MS-MT-GOODS-INFO-ALL" resultType="com.myteay.common.dal.dinner.dataobject.GoodsInfoDO">
 	    <![CDATA[
 	        select id,shop_id,pic_addr,goods_title,price,summary,gmt_created,gmt_modified from dinner.goods
 	    ]]>
     </select>
     
-    <select id="MS-MT-GOODS-INFO-FIND-BY-ID" resultMap="RM-GOODS-INFO">
+    <select id="MS-MT-GOODS-INFO-FIND-BY-ID" resultType="com.myteay.common.dal.dinner.dataobject.GoodsInfoDO">
 	    <![CDATA[
 	        select id,shop_id,pic_addr,goods_title,price,summary,gmt_created,gmt_modified from dinner.goods
-	        where id=#id#;
+	        where id=#{id};
 	    ]]>
     </select>
     
-    <insert id="MS-GOODS-INFO-INSERT">
+    <insert id="MS-GOODS-INFO-INSERT" parameterType="com.myteay.common.dal.dinner.dataobject.GoodsInfoDO">
 		insert into dinner.goods (shop_id,pic_addr,goods_title,price,summary,gmt_created,gmt_modified)
-			values (#shopId#,#picAddr#,#goodsTitle#,#price#,#summary#,now(),now());
-			  <selectKey resultClass="java.lang.String" keyProperty="id">  
+			values (#{shopId},#{picAddr},#{goodsTitle},#{price},#{summary},now(),now());
+			  <selectKey resultType="java.lang.String" keyProperty="id">  
 			    SELECT LAST_INSERT_ID()  
 			  </selectKey>
     </insert>
 
 	<delete id="MS-MT-GOODS-INFO-DELETE-BY-ID">
     <![CDATA[
-        delete from dinner.goods where (id = #value#)
+        delete from dinner.goods where (id = #{value})
     ]]>
     </delete>
-</sqlMap>
+</mapper>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="GB2312" ?>
-<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <!-- ==========================================================  -->
 <!-- Configuration for ibatis sqlmap mapping.                    -->
@@ -16,32 +16,21 @@
 <!-- @author Wei Xiaomin                                                           -->
 <!-- ============================================================================= -->
 
-<sqlMap namespace="myteay.customers">
+<mapper namespace="myteay.customers">
     <!-- ============================================= -->
     <!-- RESULT MAPS                                   -->
     <!-- ============================================= -->
 
-    <!-- result maps for database table core_channel_strategy_info -->
-    <resultMap id="RM-SYSDICT-INFO" class="com.myteay.common.dal.dataobject.UserSysDictInfoDO">
-        <result property="dicKey" column="dic_key" javaType="java.lang.String" jdbcType="varchar"/>
-        <result property="dicValue" column="dic_value" javaType="java.lang.String" jdbcType="varchar"/>
-        <result property="gmtCreated" column="gmt_created" javaType="java.util.Date" jdbcType="datetime"/>
-        <result property="gmtModified" column="gmt_modified" javaType="java.util.Date" jdbcType="datetime"/>
-    </resultMap>
-
-
-    <!-- ============================================= -->
-
-    <select id="MS-SYSDICT-INFO-GET-BY-ALL" resultMap="RM-SYSDICT-INFO">
+    <select id="MS-SYSDICT-INFO-GET-BY-ALL" resultType="com.myteay.common.dal.dataobject.UserSysDictInfoDO">
 	    <![CDATA[
 	        select dic_key,dic_value,gmt_created,gmt_modified from customers.mt_user_dict
 	    ]]>
     </select>
 
-    <select id="MS-SYSDICT-INFO-GET-BY-ID" resultMap="RM-SYSDICT-INFO">
+    <select id="MS-SYSDICT-INFO-GET-BY-ID" resultType="com.myteay.common.dal.dataobject.UserSysDictInfoDO">
 	    <![CDATA[
-	        select dic_key,dic_value,gmt_created,gmt_modified from customers.mt_user_dict where (dic_key = #value#)
+	        select dic_key,dic_value,gmt_created,gmt_modified from customers.mt_user_dict where (dic_key = #{value})
 	    ]]>
     </select>
 
-</sqlMap>
+</mapper>

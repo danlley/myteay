@@ -8,8 +8,8 @@ import java.util.List;
 
 import com.myteay.common.dal.daointerface.UsersQrCodeWfInfoDAO;
 import com.myteay.common.dal.dataobject.UsersQrCodeWfInfoDO;
+import com.myteay.common.dal.utils.MtSqlSessionDaoSupport;
 import com.myteay.common.util.comm.StringUtils;
-import com.myteay.common.utils.orm.ibatis.support.MtSqlMapClientDaoSupport;
 
 /**
  * 二维码生成流水操作DAO
@@ -17,9 +17,8 @@ import com.myteay.common.utils.orm.ibatis.support.MtSqlMapClientDaoSupport;
  * @author Administrator
  * @version $Id: IbatisUsersQrCodeWfInfoDAO.java, v 0.1 2016年9月7日 上午1:30:37 Administrator Exp $
  */
-@SuppressWarnings({ "deprecation", "unchecked" })
-public class IbatisUsersQrCodeWfInfoDAO extends MtSqlMapClientDaoSupport implements
-                                                                        UsersQrCodeWfInfoDAO {
+public class IbatisUsersQrCodeWfInfoDAO extends MtSqlSessionDaoSupport
+                                        implements UsersQrCodeWfInfoDAO {
 
     /** 
      * @see com.myteay.common.dal.daointerface.UsersQrCodeWfInfoDAO#insert(com.myteay.common.dal.dataobject.UsersQrCodeWfInfoDO)
@@ -30,7 +29,7 @@ public class IbatisUsersQrCodeWfInfoDAO extends MtSqlMapClientDaoSupport impleme
             throw new IllegalArgumentException("Can't insert a null data object into db.");
         }
 
-        getSqlMapClientTemplate().insert("MS-USER-QR-WF-INFO-INSERT", usersQrCodeWfInfoDO);
+        this.getSqlSession(customer).insert("MS-USER-QR-WF-INFO-INSERT", usersQrCodeWfInfoDO);
 
         return usersQrCodeWfInfoDO.getId();
     }
@@ -40,7 +39,7 @@ public class IbatisUsersQrCodeWfInfoDAO extends MtSqlMapClientDaoSupport impleme
      */
     @Override
     public List<UsersQrCodeWfInfoDO> getByLimit() {
-        return getSqlMapClientTemplate().queryForList("MS-MT-USER-QR-WFINFO-GET-BY-LIMIT");
+        return this.getSqlSession(customer).selectList("MS-MT-USER-QR-WFINFO-GET-BY-LIMIT");
     }
 
     /** 
@@ -53,8 +52,8 @@ public class IbatisUsersQrCodeWfInfoDAO extends MtSqlMapClientDaoSupport impleme
             throw new IllegalArgumentException("userId is empty.");
         }
 
-        return (UsersQrCodeWfInfoDO) getSqlMapClientTemplate().queryForObject(
-            "MS-MT-USER-QR-WFINFO-GET-BY-ID", userId);
+        return (UsersQrCodeWfInfoDO) this.getSqlSession(customer)
+            .selectOne("MS-MT-USER-QR-WFINFO-GET-BY-ID", userId);
     }
 
     /** 
@@ -67,8 +66,8 @@ public class IbatisUsersQrCodeWfInfoDAO extends MtSqlMapClientDaoSupport impleme
             throw new IllegalArgumentException("userId is empty.");
         }
 
-        return (UsersQrCodeWfInfoDO) getSqlMapClientTemplate().queryForObject(
-            "MS-MT-USER-QR-WFINFO-GET-BY-ID-FOR-UPDATE", userId);
+        return (UsersQrCodeWfInfoDO) this.getSqlSession(customer)
+            .selectOne("MS-MT-USER-QR-WFINFO-GET-BY-ID-FOR-UPDATE", userId);
     }
 
     /** 
@@ -81,7 +80,7 @@ public class IbatisUsersQrCodeWfInfoDAO extends MtSqlMapClientDaoSupport impleme
             throw new IllegalArgumentException("userId is empty.");
         }
 
-        getSqlMapClientTemplate().update("MS-MT-USER-QR-WFINFO-UPDATE-BY-USERID", userId);
+        this.getSqlSession(customer).update("MS-MT-USER-QR-WFINFO-UPDATE-BY-USERID", userId);
     }
 
     /** 
@@ -94,7 +93,7 @@ public class IbatisUsersQrCodeWfInfoDAO extends MtSqlMapClientDaoSupport impleme
             throw new IllegalArgumentException("userId is empty.");
         }
 
-        return getSqlMapClientTemplate().delete("MP-SEC-CARD-LOG-DELETE", userId);
+        return this.getSqlSession(customer).delete("MP-SEC-CARD-LOG-DELETE", userId);
     }
 
 }

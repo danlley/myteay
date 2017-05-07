@@ -8,7 +8,7 @@ import java.util.List;
 
 import com.myteay.common.dal.daointerface.UserSysDictInfoDAO;
 import com.myteay.common.dal.dataobject.UserSysDictInfoDO;
-import com.myteay.common.utils.orm.ibatis.support.MtSqlMapClientDaoSupport;
+import com.myteay.common.dal.utils.MtSqlSessionDaoSupport;
 
 /**
  * 用户字典操作DAO
@@ -16,15 +16,14 @@ import com.myteay.common.utils.orm.ibatis.support.MtSqlMapClientDaoSupport;
  * @author Administrator
  * @version $Id: IbatisUserSysDictInfoDAO.java, v 0.1 2016年9月7日 上午12:34:35 Administrator Exp $
  */
-public class IbatisUserSysDictInfoDAO extends MtSqlMapClientDaoSupport implements
-                                                                      UserSysDictInfoDAO {
+public class IbatisUserSysDictInfoDAO extends MtSqlSessionDaoSupport implements UserSysDictInfoDAO {
 
     /** 
      * @see com.myteay.common.dal.daointerface.UserSysDictInfoDAO#findAll()
      */
     @Override
     public List<UserSysDictInfoDO> findAll() {
-        return getSqlMapClientTemplate().queryForList("MS-SYSDICT-INFO-GET-BY-ALL");
+        return this.getSqlSession(customer).selectList("MS-SYSDICT-INFO-GET-BY-ALL");
     }
 
     /** 
@@ -32,8 +31,7 @@ public class IbatisUserSysDictInfoDAO extends MtSqlMapClientDaoSupport implement
      */
     @Override
     public UserSysDictInfoDO getByKey(String key) {
-        return (UserSysDictInfoDO) getSqlMapClientTemplate().queryForObject(
-            "MS-SYSDICT-INFO-GET-BY-ID", key);
+        return (UserSysDictInfoDO) this.getSqlSession(customer).selectOne("MS-SYSDICT-INFO-GET-BY-ID", key);
     }
 
 }

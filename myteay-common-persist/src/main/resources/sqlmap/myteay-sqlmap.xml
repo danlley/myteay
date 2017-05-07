@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="GB2312"?>
-<!DOCTYPE sqlMapConfig PUBLIC "-//iBATIS.com//DTD SQL Map Config 2.0//EN" "http://www.ibatis.com/dtd/sql-map-config-2.dtd">
-<sqlMapConfig>
-    <settings cacheModelsEnabled="true" enhancementEnabled="false" lazyLoadingEnabled="false" maxRequests="3000" maxSessions="3000" maxTransactions="3000" useStatementNamespaces="false"/>
-	<sqlMap resource="sqlmap/myteay/CsUsers-sqlmap-mapping.xml"/>
-	<sqlMap resource="sqlmap/myteay/CsUserSecurity-sqlmap-mapping.xml"/>
-	<sqlMap resource="sqlmap/myteay/CsUserdict-sqlmap-mapping.xml"/>
-	<sqlMap resource="sqlmap/myteay/CsUsersQrWf-sqlmap-mapping.xml"/>
-</sqlMapConfig>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<mappers>
+		<mapper resource="sqlmap/myteay/CsUsers-sqlmap-mapping.xml"/>
+		<mapper resource="sqlmap/myteay/CsUserSecurity-sqlmap-mapping.xml"/>
+		<mapper resource="sqlmap/myteay/CsUserdict-sqlmap-mapping.xml"/>
+		<mapper resource="sqlmap/myteay/CsUsersQrWf-sqlmap-mapping.xml"/>
+	</mappers>
+</configuration>

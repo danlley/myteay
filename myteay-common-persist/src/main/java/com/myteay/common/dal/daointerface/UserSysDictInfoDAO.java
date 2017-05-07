@@ -7,6 +7,7 @@ package com.myteay.common.dal.daointerface;
 import java.util.List;
 
 import com.myteay.common.dal.dataobject.UserSysDictInfoDO;
+import com.myteay.common.dal.utils.MtDBKey;
 
 /**
  * 用户字典操作DAO
@@ -14,7 +15,7 @@ import com.myteay.common.dal.dataobject.UserSysDictInfoDO;
  * @author Administrator
  * @version $Id: UserSysDictInfoDAO.java, v 0.1 2016年9月7日 上午12:30:52 Administrator Exp $
  */
-public interface UserSysDictInfoDAO {
+public interface UserSysDictInfoDAO extends MtDBKey {
 
     /**
      * 获取所有用户字典

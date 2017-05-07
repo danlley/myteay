@@ -7,6 +7,7 @@ package com.myteay.common.dal.daointerface;
 import java.util.List;
 
 import com.myteay.common.dal.dataobject.UsersQrCodeWfInfoDO;
+import com.myteay.common.dal.utils.MtDBKey;
 
 /**
  * 二维码生成流水操作DAO
@@ -14,7 +15,7 @@ import com.myteay.common.dal.dataobject.UsersQrCodeWfInfoDO;
  * @author Administrator
  * @version $Id: UsersQrCodeWfInfoDAO.java, v 0.1 2016年9月7日 上午1:24:25 Administrator Exp $
  */
-public interface UsersQrCodeWfInfoDAO {
+public interface UsersQrCodeWfInfoDAO extends MtDBKey {
 
     /**
      * 二维码生成流水落地

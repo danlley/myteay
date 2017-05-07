@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="GB2312" ?>
-<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <!-- ==========================================================  -->
 <!-- Configuration for ibatis sqlmap mapping.                    -->
@@ -16,42 +16,31 @@
 <!-- @author Wei Xiaomin                                                           -->
 <!-- ============================================================================= -->
 
-<sqlMap namespace="myteay.customers">
+<mapper namespace="myteay.customers">
     <!-- ============================================= -->
     <!-- RESULT MAPS                                   -->
     <!-- ============================================= -->
-
-    <!-- result maps for database table core_channel_strategy_info -->
-    <resultMap id="RM-USERS-QR-WF-INFO" class="com.myteay.common.dal.dataobject.UsersQrCodeWfInfoDO">
-        <result property="id" column="id" javaType="java.lang.String" jdbcType="bigint"/>
-        <result property="userId" column="userid" javaType="java.lang.String" jdbcType="varchar"/>
-        <result property="gmtCreated" column="gmt_created" javaType="java.util.Date" jdbcType="datetime"/>
-        <result property="gmtModified" column="gmt_modified" javaType="java.util.Date" jdbcType="datetime"/>
-    </resultMap>
-
-
-    <!-- ============================================= -->
-    <insert id="MS-USER-QR-WF-INFO-INSERT">
+    <insert id="MS-USER-QR-WF-INFO-INSERT" parameterType="com.myteay.common.dal.dataobject.UsersQrCodeWfInfoDO">
 		insert into customers.mt_user_qrcode_wf (userid,gmt_created,gmt_modified) 
-			values (#userId#,now(),now());
-			  <selectKey resultClass="java.lang.String" keyProperty="id">  
+			values (#{userId},now(),now());
+			  <selectKey resultType="java.lang.String" keyProperty="id">  
 			    SELECT LAST_INSERT_ID()  
 			  </selectKey>
     </insert>
     
-    <select id="MS-MT-USER-QR-WFINFO-GET-BY-ID" resultMap="RM-USERS-QR-WF-INFO">
+    <select id="MS-MT-USER-QR-WFINFO-GET-BY-ID" resultType="com.myteay.common.dal.dataobject.UsersQrCodeWfInfoDO">
 	    <![CDATA[
-	        select id,userid,gmt_created,gmt_modified from customers.mt_user_qrcode_wf where (userid = #value#)
+	        select id,userid,gmt_created,gmt_modified from customers.mt_user_qrcode_wf where (userid = #{value})
 	    ]]>
     </select>
     
-    <select id="MS-MT-USER-QR-WFINFO-GET-BY-ID-FOR-UPDATE" resultMap="RM-USERS-QR-WF-INFO">
+    <select id="MS-MT-USER-QR-WFINFO-GET-BY-ID-FOR-UPDATE" resultType="com.myteay.common.dal.dataobject.UsersQrCodeWfInfoDO">
 	    <![CDATA[
-	        select id,userid,gmt_created,gmt_modified from customers.mt_user_qrcode_wf where (userid = #value#) for update
+	        select id,userid,gmt_created,gmt_modified from customers.mt_user_qrcode_wf where (userid = #{value}) for update
 	    ]]>
     </select>
 
-    <select id="MS-MT-USER-QR-WFINFO-GET-BY-LIMIT" resultMap="RM-USERS-QR-WF-INFO">
+    <select id="MS-MT-USER-QR-WFINFO-GET-BY-LIMIT" resultType="com.myteay.common.dal.dataobject.UsersQrCodeWfInfoDO">
 	    <![CDATA[
 	        select id,userid,gmt_created,gmt_modified from customers.mt_user_qrcode_wf order by gmt_modified asc limit 0,100;
 	    ]]>
@@ -62,12 +51,12 @@
 			set
 				gmt_modified = DATE_ADD(NOW(),INTERVAL 60 SECOND)
 			where
-				(userid = #value#)
+				(userid = #{value})
     </update>
     
     <delete id="MS-MT-QRCODE-DELETE">
     <![CDATA[
-        delete from customers.mt_user_qrcode_wf where (userid = #value#)
+        delete from customers.mt_user_qrcode_wf where (userid = #{value})
     ]]>
     </delete>
-</sqlMap>
+</mapper>

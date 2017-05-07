@@ -9,14 +9,14 @@
          http://www.springframework.org/schema/webflow-config http://www.springframework.org/schema/webflow-config/spring-webflow-config-2.4.xsd"
 	default-autowire="byName">
 	<!-- 用户基本信息操作DAO -->
-	<bean id="mtUserDAO" class="com.myteay.common.dal.ibatis.IbatisUsersInfoDAO" parent="baseSqlMapClientDAO"/>
+	<bean id="mtUserDAO" class="com.myteay.common.dal.ibatis.IbatisUsersInfoDAO"/>
 	
 	<!-- 用户高阶信息操作DAO -->
-	<bean id="mtUserSecurityDAO" class="com.myteay.common.dal.ibatis.IbatisUsersSecurityInfoDAO" parent="baseSqlMapClientDAO"/>
+	<bean id="mtUserSecurityDAO" class="com.myteay.common.dal.ibatis.IbatisUsersSecurityInfoDAO"/>
 	
 	<!-- 用户字典操作DAO -->
-	<bean id="mtUserSysDictInfoDAO" class="com.myteay.common.dal.ibatis.IbatisUserSysDictInfoDAO" parent="baseSqlMapClientDAO"/>
+	<bean id="mtUserSysDictInfoDAO" class="com.myteay.common.dal.ibatis.IbatisUserSysDictInfoDAO"/>
 	
 	<!-- 用户字典操作流水DAO -->
-	<bean id="mtUsersQrCodeWfInfoDAO" class="com.myteay.common.dal.ibatis.IbatisUsersQrCodeWfInfoDAO" parent="baseSqlMapClientDAO"/>
+	<bean id="mtUsersQrCodeWfInfoDAO" class="com.myteay.common.dal.ibatis.IbatisUsersQrCodeWfInfoDAO"/>
 </beans>

@@ -5,6 +5,7 @@
 package com.myteay.common.dal.daointerface;
 
 import com.myteay.common.dal.dataobject.UsersInfoDO;
+import com.myteay.common.dal.utils.MtDBKey;
 
 /**
  * 用户基本信息操作DAO
@@ -12,7 +13,7 @@ import com.myteay.common.dal.dataobject.UsersInfoDO;
  * @author Administrator
  * @version $Id: UsersInfoDAO.java, v 0.1 2015年11月15日 下午4:37:30 Administrator Exp $
  */
-public interface UsersInfoDAO {
+public interface UsersInfoDAO extends MtDBKey {
     /**
      * 插入用户基本信息
      * 

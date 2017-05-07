@@ -9,11 +9,11 @@
          http://www.springframework.org/schema/webflow-config http://www.springframework.org/schema/webflow-config/spring-webflow-config-2.4.xsd"
 	default-autowire="byName">
 	<!-- 店铺信息操作DAO -->
-	<bean id="shopInfoDAO" class="com.myteay.common.dal.dinner.ibatis.IbatisShopInfoDAO" parent="baseDinnerSqlMapClientDAO"/>
+	<bean id="shopInfoDAO" class="com.myteay.common.dal.dinner.ibatis.IbatisShopInfoDAO"/>
 	
 	<!-- 商品信息操作DAO -->
-	<bean id="goodsInfoDAO" class="com.myteay.common.dal.dinner.ibatis.IbatisGoodsInfoDAO" parent="baseDinnerSqlMapClientDAO"/>
+	<bean id="goodsInfoDAO" class="com.myteay.common.dal.dinner.ibatis.IbatisGoodsInfoDAO"/>
 	
 	<!-- 套餐信息操作DAO -->
-	<bean id="goodsPkgInfoDAO" class="com.myteay.common.dal.dinner.ibatis.IbatisGoodsPkgInfoDAO" parent="baseDinnerSqlMapClientDAO"/>
+	<bean id="goodsPkgInfoDAO" class="com.myteay.common.dal.dinner.ibatis.IbatisGoodsPkgInfoDAO"/>
 </beans>

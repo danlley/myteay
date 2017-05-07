@@ -7,6 +7,7 @@ package com.myteay.common.dal.dinner.daointerface;
 import java.util.List;
 
 import com.myteay.common.dal.dinner.dataobject.ShopInfoDO;
+import com.myteay.common.dal.utils.MtDBKey;
 
 /**
  * 店铺信息操作DAO
@@ -14,7 +15,7 @@ import com.myteay.common.dal.dinner.dataobject.ShopInfoDO;
  * @author Administrator
  * @version $Id: ShopInfoDAO.java, v 0.1 2016年3月4日 下午5:44:53 Administrator Exp $
  */
-public interface ShopInfoDAO {
+public interface ShopInfoDAO extends MtDBKey {
 
     /**
      * 查询所有店铺信息列表

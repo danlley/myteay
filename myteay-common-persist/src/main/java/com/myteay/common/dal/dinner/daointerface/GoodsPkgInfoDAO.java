@@ -7,6 +7,7 @@ package com.myteay.common.dal.dinner.daointerface;
 import java.util.List;
 
 import com.myteay.common.dal.dinner.dataobject.GoodsPkgInfoDO;
+import com.myteay.common.dal.utils.MtDBKey;
 
 /**
  * 套餐信息操作DAO
@@ -14,7 +15,7 @@ import com.myteay.common.dal.dinner.dataobject.GoodsPkgInfoDO;
  * @author Administrator
  * @version $Id: GoodsPkgInfoDAO.java, v 0.1 2016年3月5日 上午9:28:01 Administrator Exp $
  */
-public interface GoodsPkgInfoDAO {
+public interface GoodsPkgInfoDAO extends MtDBKey {
 
     /**
      * 删除指定的套餐数据信息

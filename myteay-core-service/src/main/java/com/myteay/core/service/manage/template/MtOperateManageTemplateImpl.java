@@ -27,7 +27,7 @@ public class MtOperateManageTemplateImpl implements MtOperateManageTemplate {
     public static final Logger  logger = Logger.getLogger(MtOperateManageTemplateImpl.class);
 
     /** 会员数据库事务模板 */
-    private TransactionTemplate myteayTransactionTemplate;
+    private TransactionTemplate myteayCustomerTransactionTemplate;
 
     /** 
      * @see com.myteay.core.service.manage.template.MtOperateManageTemplate#execute(com.myteay.common.service.facade.enums.MtProcessManageTypeEnum, java.lang.Object, com.myteay.core.service.manage.template.MtManageCallback)
@@ -46,7 +46,7 @@ public class MtOperateManageTemplateImpl implements MtOperateManageTemplate {
                 MtOperateExResultEnum.CAMP_ILLEGAL_ARGUMENTS);
         }
 
-        return myteayTransactionTemplate
+        return myteayCustomerTransactionTemplate
             .execute(new TransactionCallback<MtOperateResult<String>>() {
                 /** 
                  * @see org.springframework.transaction.support.TransactionCallback#doInTransaction(org.springframework.transaction.TransactionStatus)
@@ -153,7 +153,7 @@ public class MtOperateManageTemplateImpl implements MtOperateManageTemplate {
      * @throws MtBizProcessException    业务处理异常
      */
     private void validateMtProcessManageType(MtProcessManageTypeEnum manageType, Object obj)
-                                                                                            throws MtBizProcessException {
+                                                                                             throws MtBizProcessException {
         if (manageType == null) {
             logger.warn("业务校验处理异常 obj=" + obj);
 
@@ -261,11 +261,11 @@ public class MtOperateManageTemplateImpl implements MtOperateManageTemplate {
     }
 
     /**
-     * Setter method for property <tt>myteayTransactionTemplate</tt>.
+     * Setter method for property <tt>myteayCustomerTransactionTemplate</tt>.
      * 
-     * @param myteayTransactionTemplate value to be assigned to property myteayTransactionTemplate
+     * @param myteayCustomerTransactionTemplate value to be assigned to property myteayCustomerTransactionTemplate
      */
-    public void setMyteayTransactionTemplate(TransactionTemplate myteayTransactionTemplate) {
-        this.myteayTransactionTemplate = myteayTransactionTemplate;
+    public void setMyteayCustomerTransactionTemplate(TransactionTemplate myteayCustomerTransactionTemplate) {
+        this.myteayCustomerTransactionTemplate = myteayCustomerTransactionTemplate;
     }
 }

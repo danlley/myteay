@@ -42,7 +42,7 @@ public class MtUsersInfoRepositoryImpl implements MtUsersInfoRepository {
     private UsersSecurityInfoDAO mtUserSecurityDAO;
 
     /** share库事务模板 */
-    private TransactionTemplate  myteayTransactionTemplate;
+    private TransactionTemplate  myteayCustomerTransactionTemplate;
 
     /** 
      * @see com.myteay.core.model.repository.MtUsersInfoRepository#getUserInfoModelById(java.lang.String)
@@ -80,10 +80,10 @@ public class MtUsersInfoRepositoryImpl implements MtUsersInfoRepository {
      */
     @Override
     public MtOperateResult<String> saveUserInfoModel(final MtUserModel mtUserModel)
-                                                                                   throws MtException {
+                                                                                    throws MtException {
 
         final MtOperateResult<String> result = new MtOperateResult<String>();
-        return myteayTransactionTemplate
+        return myteayCustomerTransactionTemplate
             .execute(new TransactionCallback<MtOperateResult<String>>() {
                 /** 
                  * @see org.springframework.transaction.support.TransactionCallback#doInTransaction(org.springframework.transaction.TransactionStatus)
@@ -100,12 +100,14 @@ public class MtUsersInfoRepositoryImpl implements MtUsersInfoRepository {
                         status.setRollbackOnly();
                         result.setOperateExResult(MtOperateExResultEnum.CAMP_ILLEGAL_ARGUMENTS);
                         result.setOperateResult(MtOperateResultEnum.CAMP_OPERATE_FAILED);
+                        status.setRollbackOnly();
                         return result;
                     } catch (Throwable e) {
                         logger.warn("保存用户信息发生系统异常 mtUserModel=" + mtUserModel, e);
                         status.setRollbackOnly();
                         result.setOperateExResult(MtOperateExResultEnum.CAMP_ILLEGAL_ARGUMENTS);
                         result.setOperateResult(MtOperateResultEnum.CAMP_OPERATE_FAILED);
+                        status.setRollbackOnly();
                         return result;
                     }
                     result.setOperateExResult(MtOperateExResultEnum.CAMP_OPERATE_SUCCESS);
@@ -170,7 +172,7 @@ public class MtUsersInfoRepositoryImpl implements MtUsersInfoRepository {
      */
     @Override
     public MtOperateResult<MtUserModel> updateUserQrcode(MtUserRegQRCodeMessage mtUserRegQRCodeMessage)
-                                                                                                       throws MtBizProcessException {
+                                                                                                        throws MtBizProcessException {
 
         if (mtUserRegQRCodeMessage == null
             || StringUtils.isBlank(mtUserRegQRCodeMessage.getContent())
@@ -213,12 +215,12 @@ public class MtUsersInfoRepositoryImpl implements MtUsersInfoRepository {
     }
 
     /**
-     * Setter method for property <tt>myteayTransactionTemplate</tt>.
+     * Setter method for property <tt>myteayCustomerTransactionTemplate</tt>.
      * 
-     * @param myteayTransactionTemplate value to be assigned to property myteayTransactionTemplate
+     * @param myteayCustomerTransactionTemplate value to be assigned to property myteayCustomerTransactionTemplate
      */
-    public void setMyteayTransactionTemplate(TransactionTemplate myteayTransactionTemplate) {
-        this.myteayTransactionTemplate = myteayTransactionTemplate;
+    public void setMyteayCustomerTransactionTemplate(TransactionTemplate myteayCustomerTransactionTemplate) {
+        this.myteayCustomerTransactionTemplate = myteayCustomerTransactionTemplate;
     }
 
 }
