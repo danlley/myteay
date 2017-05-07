@@ -5,6 +5,7 @@
 package com.myteay.common.dal.utils;
 
 /**
+ * 各个DAO类继承此类，以便能够得到指定的数据库
  * 
  * @author danlley(danlley@126.com)
  * @version $Id: MtDBKey.java, v 0.1 2017年5月7日 上午2:08:07 danlley(danlley@126.com) Exp $

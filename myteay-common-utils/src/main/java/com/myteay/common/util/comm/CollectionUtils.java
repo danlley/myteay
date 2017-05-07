@@ -202,7 +202,7 @@ public abstract class CollectionUtils {
      * @throws IllegalArgumentException if more than one value of the given type found
      */
     public static Object findValueOfType(Collection<?> collection, Class<?> type)
-                                                                                 throws IllegalArgumentException {
+                                                                                  throws IllegalArgumentException {
         if (isEmpty(collection)) {
             return null;
         }
@@ -231,7 +231,7 @@ public abstract class CollectionUtils {
      * @throws IllegalArgumentException if more than one value of the given type found
      */
     public static Object findValueOfType(Collection<?> collection, Class<?>[] types)
-                                                                                    throws IllegalArgumentException {
+                                                                                     throws IllegalArgumentException {
         if (isEmpty(collection) || ObjectUtils.isEmpty(types)) {
             return null;
         }

@@ -45,37 +45,36 @@ default-autowire="byName">
         </property>
     </bean>
 	<!-- ============================================================================ -->
-	<!-- ===================  SqlMapClient和SqlMapClientDAO配置   ===================== -->
+	<!-- ===================       SqlSessionFactoryBean配置           ===================== -->
 	<!-- ============================================================================ -->
-    <!-- sqlSessionFactory -->
     <bean id="dinnerSqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="myteayDinnerDataSource"></property>
         <property name="configLocation" value="classpath:/sqlmap/myteaydinner-sqlmap.xml" />
     </bean>
 
-    <!-- 使用声明式事务 -->
-    <tx:annotation-driven transaction-manager="dinnerTxManager" />
-
-	<!-- ============================================================================ -->
-	<!-- ================== TransactionTemplate和TransactionManager配置 ============== -->
-	<!-- ============================================================================ -->
-    <!-- sqlSessionFactory -->
     <bean id="customerSqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="myteayDataSource"></property>
         <property name="configLocation" value="classpath:/sqlmap/myteay-sqlmap.xml" />
     </bean>
 
+
+	<!-- ============================================================================ -->
+	<!-- ================== TransactionTemplate和TransactionManager配置 ============== -->
+	<!-- ============================================================================ -->
     <!-- transactionManager -->
     <bean id="dinnerTxManager"
         class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <property name="dataSource" ref="myteayDinnerDataSource"></property>
     </bean>
+    <tx:annotation-driven transaction-manager="dinnerTxManager" />
 
     <!-- transactionManager -->
     <bean id="customerTxManager"
         class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <property name="dataSource" ref="myteayDataSource"></property>
     </bean>
+    <tx:annotation-driven transaction-manager="customerTxManager" />
+    
 	<bean id="myteayDinnerTransactionTemplate" class="org.springframework.transaction.support.TransactionTemplate">
 		<property name="transactionManager">
 			<ref bean="dinnerTxManager"/>
@@ -86,8 +85,6 @@ default-autowire="byName">
 			<ref bean="customerTxManager"/>
 		</property>
 	</bean>
-    <!-- 使用声明式事务 -->
-    <tx:annotation-driven transaction-manager="customerTxManager" />
     <bean id="switcher" class="com.myteay.common.dal.utils.SqlSessionSwitcher">
     	<property name="switcherBeans">
     		<map>
