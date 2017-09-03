@@ -27,23 +27,86 @@ public class MtUserBaseModel implements Serializable {
     /** 用户ID */
     private String            userId;
 
+    /** 用户密码 */
+    private String            mtPassword;
+
+    /** 身份证 */
+    private String            mtIdCard;
+
+    /** 手机号 */
+    private String            mtMobile;
+
+    /**
+     * Getter method for property <tt>mtPassword</tt>.
+     * 
+     * @return property value of mtPassword
+     */
+    public String getMtPassword() {
+        return mtPassword;
+    }
+
+    /**
+     * Setter method for property <tt>mtPassword</tt>.
+     * 
+     * @param mtPassword value to be assigned to property mtPassword
+     */
+    public void setMtPassword(String mtPassword) {
+        this.mtPassword = mtPassword;
+    }
+
+    /**
+     * Getter method for property <tt>mtIdCard</tt>.
+     * 
+     * @return property value of mtIdCard
+     */
+    public String getMtIdCard() {
+        return mtIdCard;
+    }
+
+    /**
+     * Setter method for property <tt>mtIdCard</tt>.
+     * 
+     * @param mtIdCard value to be assigned to property mtIdCard
+     */
+    public void setMtIdCard(String mtIdCard) {
+        this.mtIdCard = mtIdCard;
+    }
+
+    /**
+     * Getter method for property <tt>mtMobile</tt>.
+     * 
+     * @return property value of mtMobile
+     */
+    public String getMtMobile() {
+        return mtMobile;
+    }
+
+    /**
+     * Setter method for property <tt>mtMobile</tt>.
+     * 
+     * @param mtMobile value to be assigned to property mtMobile
+     */
+    public void setMtMobile(String mtMobile) {
+        this.mtMobile = mtMobile;
+    }
+
     /** 用户姓名 */
-    private String            userName;
+    private String         userName;
 
     /** 用户昵称 */
-    private String            nickName;
+    private String         nickName;
 
     /** 二维码信息 */
-    private String            qrCode;
+    private String         qrCode;
 
     /** 激活标识 */
-    private MtUserFlagEnum    checkedFlag;
+    private MtUserFlagEnum checkedFlag;
 
     /** 注册时间 */
-    private Date              gmtCreate;
+    private Date           gmtCreate;
 
     /** 最后登录时间 */
-    private Date              gmtModified;
+    private Date           gmtModified;
 
     /**
      * Getter method for property <tt>qrCode</tt>.

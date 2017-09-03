@@ -9,10 +9,7 @@ import org.apache.log4j.Logger;
 import com.myteay.common.dal.dataobject.UsersInfoDO;
 import com.myteay.common.dal.dataobject.UsersSecurityInfoDO;
 import com.myteay.common.service.facade.enums.MtUserFlagEnum;
-import com.myteay.common.service.facade.model.MtAuthenticFlagEnum;
-import com.myteay.common.service.facade.model.MtUserAdvBaseInfo;
-import com.myteay.common.service.facade.model.MtUserBaseInfo;
-import com.myteay.common.service.facade.model.MtUserMessage;
+import com.myteay.common.service.facade.mobile.info.MtRegisterInfo;
 import com.myteay.common.util.comm.MyTeayException;
 import com.myteay.common.util.comm.RandomNumStrUtils;
 import com.myteay.common.util.comm.StringUtils;
@@ -74,17 +71,15 @@ public class MtUserModelConverter {
      * @param message   用户注册交互信息
      * @return          用户注册模型
      */
-    public static MtUserModel genUserRegModelFromMessage(MtUserMessage message) {
-        if (message == null || message.getUserAdvInfo() == null
-            || message.getUserBaseInfo() == null) {
-            logger.warn("MtUserMessage is null, user registery flow is failed!");
+    public static MtUserModel genUserRegModelFromMessage(MtRegisterInfo registerInfo) {
+        if (registerInfo == null) {
+            logger.warn("MtRegisterInfo is null, user registery flow is failed!");
             return null;
         }
 
-        String userPwd = message.getUserAdvInfo().getUserPwd();
-        String userNick = message.getUserBaseInfo().getNickName();
-        if (StringUtils.isBlank(userPwd) || StringUtils.isBlank(userNick)) {
-            logger.warn("用户注册信息中用户名和密码为必须信息，当前注册信息无效！ message=" + message);
+        String userPwd = registerInfo.getMtPassword();
+        if (StringUtils.isBlank(userPwd) || StringUtils.isBlank(registerInfo.getMtMobile())) {
+            logger.warn("用户注册信息中用户名和密码为必须信息，当前注册信息无效！ registerInfo=" + registerInfo);
             return null;
         }
 
@@ -92,7 +87,7 @@ public class MtUserModelConverter {
         try {
             userId = UIDGener.genUserId(DEF_REG_FROM, RandomNumStrUtils.getNum());
         } catch (MyTeayException e) {
-            logger.warn("注册失败，无法生成userid。message=" + message, e);
+            logger.warn("注册失败，无法生成userid。registerInfo=" + registerInfo, e);
             return null;
         }
 
@@ -103,80 +98,21 @@ public class MtUserModelConverter {
 
         MtUserModel model = new MtUserModel();
 
-        //user advanced info
-        model.getMtUserAdvBaseModel().setEmailFlag(MtAuthenticFlagEnum.CS_UNSUBMIT_FLAG);
-        model.getMtUserAdvBaseModel().setPhoneFlag(MtAuthenticFlagEnum.CS_UNSUBMIT_FLAG);
-        if (StringUtils.isBlank(model.getMtUserAdvBaseModel().getRegFrom())) {
-            model.getMtUserAdvBaseModel().setRegFrom(DEF_REG_FROM);
-        }
+        model.getMtUserAdvBaseModel().setRegFrom(DEF_REG_FROM);
         model.getMtUserAdvBaseModel().setUserId(userId);
-        model.getMtUserAdvBaseModel().setUserPwd(userPwd);
 
         //user base info
         model.getMtUserBaseModel().setCheckedFlag(MtUserFlagEnum.CS_UN_CHECK_ED);
-        model.getMtUserBaseModel().setNickName(userNick);
+        model.getMtUserBaseModel().setNickName(registerInfo.getMtNickName());
         model.getMtUserBaseModel().setUserId(userId);
+        model.getMtUserBaseModel().setMtIdCard(registerInfo.getMtIdCard());
+        model.getMtUserBaseModel().setMtMobile(registerInfo.getMtMobile());
+        model.getMtUserBaseModel().setMtPassword(userPwd);
+        model.getMtUserBaseModel().setQrCode(userId);
 
         //user extends info
 
         return model;
-    }
-
-    /**
-     * 将指定的用户模型转换为用户交互信息
-     * 
-     * @param model 用户模型
-     * @return      用户交互信息
-     */
-    public static MtUserMessage convertModel2Msg(MtUserModel model) {
-
-        if (model == null) {
-            logger.warn("user model is null!");
-            return null;
-        }
-
-        MtUserAdvBaseModel userAdvModel = model.getMtUserAdvBaseModel();
-        MtUserBaseModel userBaseModel = model.getMtUserBaseModel();
-        //MtUserExtModel userExtModel = model.getMtUserExtModel();
-
-        if (userBaseModel == null) {
-            logger.warn("用户模型转换用户交互信息时，关键信息不可用。model=" + model);
-            return null;
-        }
-
-        MtUserMessage message = new MtUserMessage();
-
-        MtUserBaseInfo baseInfo = message.getUserBaseInfo();
-        //user base info
-        baseInfo.setCheckedFlag(userBaseModel.getCheckedFlag());
-        baseInfo.setGmtCreate(userBaseModel.getGmtCreate());
-        baseInfo.setGmtModified(userBaseModel.getGmtModified());
-        baseInfo.setId(userBaseModel.getId());
-        baseInfo.setNickName(userBaseModel.getNickName());
-        baseInfo.setQrCode(userBaseModel.getQrCode());
-        baseInfo.setUserId(userBaseModel.getUserId());
-        baseInfo.setUserName(userBaseModel.getUserName());
-
-        MtUserAdvBaseInfo advInfo = message.getUserAdvInfo();
-        //user advanced info
-
-        //TODO
-        if (userAdvModel != null) {
-            advInfo.setEmailFlag(userAdvModel.getEmailFlag());
-            advInfo.setGmtCreated(userAdvModel.getGmtCreated());
-            advInfo.setGmtModified(userAdvModel.getGmtModified());
-            advInfo.setPhoneFlag(userAdvModel.getPhoneFlag());
-            advInfo.setSecurityEmail(userAdvModel.getSecurityEmail());
-            advInfo.setSecurityPhone(userAdvModel.getSecurityPhone());
-            advInfo.setUserId(userAdvModel.getUserId());
-            advInfo.setUserPwd(userAdvModel.getUserPwd());
-            advInfo.setRegFrom(userAdvModel.getRegFrom());
-        }
-
-        //MtUserExtInfo extInfo = message.getUserExtInfo();
-        //user extends info
-
-        return message;
     }
 
     /**
@@ -234,6 +170,10 @@ public class MtUserModelConverter {
         usersInfoDO.setQrCode(mtUserModel.getMtUserBaseModel().getQrCode());
         usersInfoDO.setUserId(mtUserModel.getMtUserBaseModel().getUserId());
         usersInfoDO.setUserName(mtUserModel.getMtUserBaseModel().getUserName());
+
+        usersInfoDO.setMtIdCard(mtUserModel.getMtUserBaseModel().getMtIdCard());
+        usersInfoDO.setMtMobile(mtUserModel.getMtUserBaseModel().getMtMobile());
+        usersInfoDO.setMtPassword(mtUserModel.getMtUserBaseModel().getMtPassword());
 
         return usersInfoDO;
     }

@@ -82,7 +82,7 @@ public class UIDGener {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmssSSS");
         String curr = sdf.format(date);
 
-        return UID_FRONT + NATION_CODE + privinceCode + curr + randomString;
+        return privinceCode + curr + randomString;
     }
 
 }

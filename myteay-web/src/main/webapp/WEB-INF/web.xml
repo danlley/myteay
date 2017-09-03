@@ -44,6 +44,23 @@
 			<servlet-name>velocity</servlet-name>
 			<servlet-class>com.myteay.web.servlet.mvc.MtVelocityViewServlet</servlet-class>
 	</servlet>
+	<!-- hessian servlet configuration -->
+    <servlet>
+        <servlet-name>ServiceServlet</servlet-name>
+        <servlet-class>com.caucho.hessian.server.HessianServlet</servlet-class>
+        <init-param>
+            <param-name>home-api</param-name>
+            <param-value>com.myteay.common.service.facade.MtUserMobileService</param-value>
+        </init-param>
+        <init-param>
+            <param-name>home-class</param-name>
+            <param-value>com.myteay.biz.service.impl.MtUserMobileServiceImpl</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServiceServlet</servlet-name>
+        <url-pattern>/mtUserMobileService</url-pattern>
+    </servlet-mapping>
 	<!-- char-set configuration -->
     <filter>
         <filter-name>characterEncodingFilter</filter-name>

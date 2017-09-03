@@ -50,4 +50,37 @@
 			</bean>
 		</property>
 	</bean>
+	
+	<!-- 用户联系人列表信息监听器 -->
+	<bean id="mtUserContactListListener" class="com.myteay.core.service.cache.listeners.MtUserContactListListener">
+		<property name="descriptor">
+			<bean class="com.myteay.common.util.event.ListenerDescriptor">
+				<property name="topic" value="MT_USR_CONTACT_LIST"></property>
+				<property name="async" value="true"></property>
+				<property name="taskExecutor" ref="myteayHigherTaskExecutor"></property>
+			</bean>
+		</property>
+	</bean>
+	
+	<!-- 用户注册扩展信息监听器 -->
+	<bean id="mtUserRegExtEventListener" class="com.myteay.core.service.cache.listeners.MtUserRegExtEventListener">
+		<property name="descriptor">
+			<bean class="com.myteay.common.util.event.ListenerDescriptor">
+				<property name="topic" value="MT_USR_REG_EXT_EVENT"></property>
+				<property name="async" value="true"></property>
+				<property name="taskExecutor" ref="myteayHigherTaskExecutor"></property>
+			</bean>
+		</property>
+	</bean>
+	
+	<!-- 用户注册时所用手机的信息监听器 -->
+	<bean id="mtUserMobileBaseInfoListener" class="com.myteay.core.service.cache.listeners.MtUserMobileBaseInfoListener">
+		<property name="descriptor">
+			<bean class="com.myteay.common.util.event.ListenerDescriptor">
+				<property name="topic" value="MT_USR_REG_MOBILE_INFO_EVENT"></property>
+				<property name="async" value="true"></property>
+				<property name="taskExecutor" ref="myteayHigherTaskExecutor"></property>
+			</bean>
+		</property>
+	</bean>
 </beans>

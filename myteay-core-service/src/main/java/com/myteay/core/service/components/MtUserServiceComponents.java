@@ -5,6 +5,7 @@
 package com.myteay.core.service.components;
 
 import com.myteay.common.service.facade.exceptions.MtBizException;
+import com.myteay.common.service.facade.mobile.info.MtRegisterInfo;
 import com.myteay.common.service.facade.model.MtOperateResult;
 import com.myteay.common.service.facade.model.MtUserMessage;
 
@@ -19,11 +20,11 @@ public interface MtUserServiceComponents {
     /**
      * 注册新用户
      * 
-     * @param message           用户交互信息
-     * @return                  系统处理结果
-     * @throws MtBizException   系统异常
+     * @param registerInfo           用户交互信息
+     * @return                       系统处理结果
+     * @throws MtBizException        系统异常
      */
-    public MtOperateResult<String> userRegistery(MtUserMessage message) throws MtBizException;
+    public MtOperateResult<String> userRegistery(MtRegisterInfo registerInfo) throws MtBizException;
 
     /**
      * 根据userId查询单个用户信息

@@ -55,6 +55,16 @@
 		<appender-ref ref="DAL-APPENDER" />
 		<appender-ref ref="MT-ERROR-APPENDER" />
 	</logger>
+	<logger name="org.apache.ibatis" additivity="false">
+		<level value="DEBUG" />
+		<appender-ref ref="DAL-APPENDER" />
+		<appender-ref ref="MT-ERROR-APPENDER" />
+	</logger>
+	<logger name="org.mybatis" additivity="false">
+		<level value="DEBUG" />
+		<appender-ref ref="DAL-APPENDER" />
+		<appender-ref ref="MT-ERROR-APPENDER" />
+	</logger>
 
 	<logger name="java.sql" additivity="false">
 		<level value="DEBUG" />

@@ -6,5 +6,7 @@
 		<mapper resource="sqlmap/myteay/CsUserSecurity-sqlmap-mapping.xml"/>
 		<mapper resource="sqlmap/myteay/CsUserdict-sqlmap-mapping.xml"/>
 		<mapper resource="sqlmap/myteay/CsUsersQrWf-sqlmap-mapping.xml"/>
+		<mapper resource="sqlmap/myteay/CsUsersContactList-sqlmap-mapping.xml"/>
+		<mapper resource="sqlmap/myteay/CsUsersMobileBaseInfo-sqlmap-mapping.xml"/>
 	</mappers>
 </configuration>

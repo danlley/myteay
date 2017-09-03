@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.myteay.common.service.facade.enums.MtOperateExResultEnum;
 import com.myteay.common.service.facade.enums.MtOperateResultEnum;
 import com.myteay.common.service.facade.exceptions.MtBizException;
+import com.myteay.common.service.facade.mobile.info.MtRegisterInfo;
 import com.myteay.common.service.facade.model.MtOperateResult;
 import com.myteay.common.service.facade.model.MtUserMessage;
 import com.myteay.common.utils.exception.MtException;
@@ -35,18 +36,17 @@ public class MtUserServiceComponentsImpl implements MtUserServiceComponents {
     private MtUsersInfoRepository mtUsersInfoRepository;
 
     /** 
-     * @see com.myteay.core.service.components.MtUserServiceComponents#userRegistery(com.myteay.common.service.facade.model.MtUserMessage)
+     * @see com.myteay.core.service.components.MtUserServiceComponents#userRegistery(com.myteay.common.service.facade.mobile.info.MtRegisterInfo)
      */
     @Override
-    public MtOperateResult<String> userRegistery(MtUserMessage message) throws MtBizException {
-        if (message == null || message.getUserAdvInfo() == null
-            || message.getUserBaseInfo() == null) {
+    public MtOperateResult<String> userRegistery(MtRegisterInfo registerInfo) throws MtBizException {
+        if (registerInfo == null) {
             logger.warn("MtUserMessage is null, user registery flow is failed!");
             return null;
         }
 
         //模型转换及校验
-        MtUserModel model = MtUserModelConverter.genUserRegModelFromMessage(message);
+        MtUserModel model = MtUserModelConverter.genUserRegModelFromMessage(registerInfo);
         MtUserModelValidator.validateUserRegModel(model);
 
         MtOperateResult<String> resultInner = null;
@@ -88,12 +88,12 @@ public class MtUserServiceComponentsImpl implements MtUserServiceComponents {
 
         MtOperateResult<MtUserMessage> result = new MtOperateResult<MtUserMessage>();
         //convert model
-        MtUserMessage message = MtUserModelConverter.convertModel2Msg(resultInner.getResult());
+        //MtUserMessage message = MtUserModelConverter.convertModel2Msg(resultInner.getResult());
 
         //validate message
-        MtUserModelValidator.validateUserMessage(message);
-
-        result.setResult(message);
+        //        MtUserModelValidator.validateUserMessage(message);
+        //
+        //        result.setResult(message);
         result.setOperateExResult(MtOperateExResultEnum.CAMP_OPERATE_SUCCESS);
         result.setOperateResult(MtOperateResultEnum.CAMP_OPERATE_SUCCESS);
         return result;

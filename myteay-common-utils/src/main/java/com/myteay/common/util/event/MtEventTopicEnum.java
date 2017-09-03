@@ -14,11 +14,20 @@ import com.myteay.common.util.comm.StringUtils;
  */
 public enum MtEventTopicEnum {
 
-    /** 套餐缓存刷新事件 */
-    MT_CACHE_GOODS_PKG_FRESH("MT_CACHE_GOODS_PKG_FRESH", "套餐缓存刷新事件"),
+                              /** 套餐缓存刷新事件 */
+                              MT_CACHE_GOODS_PKG_FRESH("MT_CACHE_GOODS_PKG_FRESH", "套餐缓存刷新事件"),
 
-    /** 用户二维码注册生成事件 */
-    MT_USR_QR_CODE_REGISTERY("MT_USR_QR_CODE_REGISTERY", "用户二维码注册生成事件"),
+                              /** 用户二维码注册生成事件 */
+                              MT_USR_QR_CODE_REGISTERY("MT_USR_QR_CODE_REGISTERY", "用户二维码注册生成事件"),
+
+                              /** 用户联系人列表 */
+                              MT_USR_CONTACT_LIST("MT_USR_CONTACT_LIST", "用户联系人列表"),
+
+                              /** 用户注册扩展信息异步事件 */
+                              MT_USR_REG_EXT_EVENT("MT_USR_REG_EXT_EVENT", "用户注册扩展信息异步事件"),
+
+                              /** 用户注册手机信息异步事件 */
+                              MT_USR_REG_MOBILE_INFO_EVENT("MT_USR_REG_MOBILE_INFO_EVENT", "用户注册手机信息异步事件"),
 
     ;
     /** value */

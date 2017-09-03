@@ -21,26 +21,19 @@
     <!-- mapped statements for IbatisUsersInfoDAO -->
     <!-- ============================================= -->
     <!-- mapped statement for IbatisUsersInfoDAO.insert -->
-    <insert id="MS-USER-INFO-INSERT" parameterType="com.myteay.common.dal.dataobject.UsersInfoDO">
-		insert into customers.users (userid,mt_password,mt_idcard,mt_mobile,username,nickname,qr_code,checked_flag,gmt_created,gmt_modified) 
-			values (#{userId},#{mtPassword},#{mtIdCard},#{mtMobile},#{userName},#{nickName},#{qrCode},#{checkedFlag},now(),now());
+    <insert id="MS-USER-CONTACT-LIST-INFO-INSERT" parameterType="com.myteay.common.dal.dataobject.UserContactListInfoDO">
+		insert into customers.mt_user_contact_list (userid,parent_mobile,contact_name,contact_mobile,gmt_created,gmt_modified) 
+			values (#{userId},#{parentMobile},#{contactName},#{contactMobile},now(),now());
 			  <selectKey resultType="java.lang.String" keyProperty="id">  
 			    SELECT LAST_INSERT_ID()  
 			  </selectKey>
     </insert>
 
-    <select id="MS-MT-USER-INFO-GET-BY-ID" resultType="com.myteay.common.dal.dataobject.UsersInfoDO">
+    <select id="MS-MT-USER-CONTACT-LIST-INFO-GET-BY-CONDITONGS" parameterType="java.util.Map" resultType="com.myteay.common.dal.dataobject.UserContactListInfoDO">
 	    <![CDATA[
-	        select id,userid,username,nickname,qr_code,checked_flag,gmt_created,gmt_modified from customers.users where (userid = #{value})
+	        select id,userid,parent_mobile,contact_name,contact_mobile,gmt_created,gmt_modified from customers.mt_user_contact_list 
+	        where parent_mobile = #{parentMobile} and contact_mobile = #{contactMobile}
 	    ]]>
     </select>
 
-    <update id="MS-MT-USER-UPDATE-QRCODE-BY-USERID">
-        update customers.users 
-			set
-				qr_code = #{qrCode},
-				gmt_modified = now()
-			where
-				(userid = #{userId})
-    </update>
 </mapper>

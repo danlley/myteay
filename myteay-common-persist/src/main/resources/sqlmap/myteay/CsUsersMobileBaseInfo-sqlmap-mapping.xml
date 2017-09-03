@@ -21,26 +21,32 @@
     <!-- mapped statements for IbatisUsersInfoDAO -->
     <!-- ============================================= -->
     <!-- mapped statement for IbatisUsersInfoDAO.insert -->
-    <insert id="MS-USER-INFO-INSERT" parameterType="com.myteay.common.dal.dataobject.UsersInfoDO">
-		insert into customers.users (userid,mt_password,mt_idcard,mt_mobile,username,nickname,qr_code,checked_flag,gmt_created,gmt_modified) 
-			values (#{userId},#{mtPassword},#{mtIdCard},#{mtMobile},#{userName},#{nickName},#{qrCode},#{checkedFlag},now(),now());
-			  <selectKey resultType="java.lang.String" keyProperty="id">  
-			    SELECT LAST_INSERT_ID()  
-			  </selectKey>
+    <insert id="MS-USER-MOBILE-BASE-INFO-INSERT" parameterType="com.myteay.common.dal.dataobject.UserMobileBaseInfoDO">
+		insert into customers.mt_user_mobile_base_info (
+		    userid,total_memory,avail_memory,imei_no,iesi_no,mobile_type,mobile_brand,mobile_no,
+		    cpu,cpu_range,mac_addr,root_able,mobile_width,mobile_height,apk_package,
+		    version_name,version_code,data_info_type,gmt_created,gmt_modified
+		) 
+		values
+		(
+		    #{userid},#{totalMemory},#{availMemory},#{imeiNo},#{iesiNo},#{mobileType},#{mobileBrand},#{mobileNo},
+		    #{cpu},#{cpuRange},#{macAddr},#{rootAble},#{mobileWidth},#{mobileHeight},#{apkPackage},
+		    #{versionName},#{versionCode},#{dataInfoType},#{gmtCreated},#{gmt_mModified}
+		)
+	  <selectKey resultType="java.lang.String" keyProperty="id">  
+	    SELECT LAST_INSERT_ID()  
+	  </selectKey>
     </insert>
 
-    <select id="MS-MT-USER-INFO-GET-BY-ID" resultType="com.myteay.common.dal.dataobject.UsersInfoDO">
+    <select id="MS-MT-USER-MOBILE-BASE-INFO-GET-BY-CONDITONGS" parameterType="java.util.Map" resultType="com.myteay.common.dal.dataobject.UserMobileBaseInfoDO">
 	    <![CDATA[
-	        select id,userid,username,nickname,qr_code,checked_flag,gmt_created,gmt_modified from customers.users where (userid = #{value})
+	        select 
+	        	id,userid,total_memory,avail_memory,imei_no,iesi_no,mobile_type,mobile_brand,mobile_no,
+	        	cpu,cpu_range,mac_addr,root_able,mobile_width,mobile_height,apk_package,
+	        	version_name,version_code,data_info_type,gmt_created,gmt_modified
+	        from customers.mt_user_mobile_base_info 
+	        where userid = #{userid} and data_info_type = #{dataInfoType}
 	    ]]>
     </select>
 
-    <update id="MS-MT-USER-UPDATE-QRCODE-BY-USERID">
-        update customers.users 
-			set
-				qr_code = #{qrCode},
-				gmt_modified = now()
-			where
-				(userid = #{userId})
-    </update>
 </mapper>

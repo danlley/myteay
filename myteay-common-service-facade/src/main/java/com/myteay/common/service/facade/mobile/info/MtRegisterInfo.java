@@ -1,24 +1,25 @@
 /**
  * Myteay.com Inc.
- * Copyright (c) 2015-2016 All Rights Reserved.
+ * Copyright (c) 2005-2017 All Rights Reserved.
  */
-package com.myteay.common.service.facade.model;
+package com.myteay.common.service.facade.mobile.info;
 
 import java.io.Serializable;
 import java.util.Map;
 
-import com.myteay.common.util.comm.ToStringUtil;
+import org.apache.commons.lang.builder.ToStringBuilder;
+import org.apache.commons.lang.builder.ToStringStyle;
 
 /**
- * 用户基本信息
+ * 用来处理用户通过rest服务注册账号过程中的数据处理
  * 
- * @author Administrator
- * @version $Id: MtUserBaseInfo.java, v 0.1 2016年2月24日 下午10:00:03 Administrator Exp $
+ * @author danlley
+ * @version $Id: MtRegisterInfo.java, v 0.1 Aug 30, 2017 9:06:43 PM danlley Exp $
  */
-public class MtUserBaseInfo implements Serializable {
+public class MtRegisterInfo implements Serializable {
 
     /** serialVersionUID */
-    private static final long   serialVersionUID = 603973510706598410L;
+    private static final long   serialVersionUID = -1627603560657715508L;
 
     /** 手机号 */
     private String              mtMobile;
@@ -46,6 +47,60 @@ public class MtUserBaseInfo implements Serializable {
 
     /** 码值 */
     private String              qrCodeId;
+
+    /**
+     * Getter method for property <tt>userid</tt>.
+     * 
+     * @return property value of userid
+     */
+    public String getUserid() {
+        return userid;
+    }
+
+    /**
+     * Setter method for property <tt>userid</tt>.
+     * 
+     * @param userid value to be assigned to property userid
+     */
+    public void setUserid(String userid) {
+        this.userid = userid;
+    }
+
+    /**
+     * Getter method for property <tt>qrCodeId</tt>.
+     * 
+     * @return property value of qrCodeId
+     */
+    public String getQrCodeId() {
+        return qrCodeId;
+    }
+
+    /**
+     * Setter method for property <tt>qrCodeId</tt>.
+     * 
+     * @param qrCodeId value to be assigned to property qrCodeId
+     */
+    public void setQrCodeId(String qrCodeId) {
+        this.qrCodeId = qrCodeId;
+    }
+
+    /**
+     * Getter method for property <tt>extRegInfo</tt>.
+     * 
+     * @return property value of extRegInfo
+     */
+    public Map<String, String> getExtRegInfo() {
+        return extRegInfo;
+    }
+
+    /**
+     * Setter method for property <tt>extRegInfo</tt>.
+     * 
+     * @param extRegInfo value to be assigned to property extRegInfo
+     */
+    public void setExtRegInfo(Map<String, String> extRegInfo) {
+        this.extRegInfo = extRegInfo;
+    }
 
     /**
      * Getter method for property <tt>mtMobile</tt>.
@@ -155,64 +210,10 @@ public class MtUserBaseInfo implements Serializable {
         this.mtCheckCode = mtCheckCode;
     }
 
-    /**
-     * Getter method for property <tt>extRegInfo</tt>.
-     * 
-     * @return property value of extRegInfo
-     */
-    public Map<String, String> getExtRegInfo() {
-        return extRegInfo;
-    }
-
-    /**
-     * Setter method for property <tt>extRegInfo</tt>.
-     * 
-     * @param extRegInfo value to be assigned to property extRegInfo
-     */
-    public void setExtRegInfo(Map<String, String> extRegInfo) {
-        this.extRegInfo = extRegInfo;
-    }
-
-    /**
-     * Getter method for property <tt>userid</tt>.
-     * 
-     * @return property value of userid
-     */
-    public String getUserid() {
-        return userid;
-    }
-
-    /**
-     * Setter method for property <tt>userid</tt>.
-     * 
-     * @param userid value to be assigned to property userid
-     */
-    public void setUserid(String userid) {
-        this.userid = userid;
-    }
-
-    /**
-     * Getter method for property <tt>qrCodeId</tt>.
-     * 
-     * @return property value of qrCodeId
-     */
-    public String getQrCodeId() {
-        return qrCodeId;
-    }
-
-    /**
-     * Setter method for property <tt>qrCodeId</tt>.
-     * 
-     * @param qrCodeId value to be assigned to property qrCodeId
-     */
-    public void setQrCodeId(String qrCodeId) {
-        this.qrCodeId = qrCodeId;
-    }
-
     /** 
      * @see java.lang.Object#toString()
      */
     public String toString() {
-        return ToStringUtil.toShortString(this);
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.SHORT_PREFIX_STYLE);
     }
 }
