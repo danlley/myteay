@@ -1,2 +1,2 @@
 # myteay
-demo study java and spring or such as ibatis etc.
+1.demo study java and spring or such as ibatis etc.
