@@ -61,6 +61,15 @@
         <servlet-name>ServiceServlet</servlet-name>
         <url-pattern>/mtUserMobileService</url-pattern>
     </servlet-mapping>
+	<!-- hessian servlet configuration -->
+    <servlet>
+        <servlet-name>MtLoginServlet</servlet-name>
+        <servlet-class>com.myteay.biz.service.servlet.MtUserLoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MtLoginServlet</servlet-name>
+        <url-pattern>/mtLogined</url-pattern>
+    </servlet-mapping>
 	<!-- char-set configuration -->
     <filter>
         <filter-name>characterEncodingFilter</filter-name>

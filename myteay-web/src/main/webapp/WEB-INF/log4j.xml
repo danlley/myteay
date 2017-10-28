@@ -46,7 +46,25 @@
 			<param name="ConversionPattern" value="%d - %-5p - %m%n" />
 		</layout>
 	</appender>
+	<!-- [公共Appender] 控制台STDOUT -->
+	<appender name="STDOUT-APPENDER" class="org.apache.log4j.ConsoleAppender">
+		<param name="encoding" value="GBK" />
+		<param name="target" value="System.out" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%-5p %c{2} - %m%n" />
+		</layout>
 
+	</appender>
+
+	<!-- [公共Appender] 控制台STDERR -->
+	<appender name="STDERR-APPENDER" class="org.apache.log4j.ConsoleAppender">
+		<param name="encoding" value="GBK" />
+		<param name="target" value="System.err" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%-5p %c{2} - %m%n" />
+		</layout>
+
+	</appender>
 	<!-- ===================================================================== -->
 	<!-- Loggers                                                               -->
 	<!-- ===================================================================== -->
@@ -54,60 +72,80 @@
 		<level value="DEBUG" />
 		<appender-ref ref="DAL-APPENDER" />
 		<appender-ref ref="MT-ERROR-APPENDER" />
+		<appender-ref ref="STDOUT-APPENDER" />
 	</logger>
 	<logger name="org.apache.ibatis" additivity="false">
 		<level value="DEBUG" />
 		<appender-ref ref="DAL-APPENDER" />
 		<appender-ref ref="MT-ERROR-APPENDER" />
+		<appender-ref ref="STDOUT-APPENDER" />
 	</logger>
 	<logger name="org.mybatis" additivity="false">
 		<level value="DEBUG" />
 		<appender-ref ref="DAL-APPENDER" />
 		<appender-ref ref="MT-ERROR-APPENDER" />
+		<appender-ref ref="STDOUT-APPENDER" />
 	</logger>
-
+	<logger name="STDOUT" additivity="false">
+		<level value="INFO" />
+		<appender-ref ref="STDOUT-APPENDER" />
+	</logger>
+	<logger name="STDERR" additivity="false">
+		<level value="INFO" />
+		<appender-ref ref="STDERR-APPENDER" />
+		<appender-ref ref="STDOUT-APPENDER" />
+	</logger>
 	<logger name="java.sql" additivity="false">
 		<level value="DEBUG" />
 		<appender-ref ref="DAL-APPENDER" />
 		<appender-ref ref="MT-ERROR-APPENDER" />
+		<appender-ref ref="STDOUT-APPENDER" />
 	</logger>
 
 	<logger name="com.myteay" additivity="false">
 		<level value="INFO" />
 		<appender-ref ref="MT-DEFAULT-APPENDER" />
 		<appender-ref ref="MT-ERROR-APPENDER" />
+		<appender-ref ref="STDOUT-APPENDER" />
 	</logger>
 
 	<logger name="com.myteay.common.util" additivity="false">
 		<level value="INFO" />
 		<appender-ref ref="MT-DEFAULT-APPENDER" />
 		<appender-ref ref="MT-ERROR-APPENDER" />
+		<appender-ref ref="STDOUT-APPENDER" />
 	</logger>
 
 	<logger name="org.springframework" additivity="false">
 		<level value="INFO" />
 		<appender-ref ref="MT-DEFAULT-APPENDER" />
 		<appender-ref ref="MT-ERROR-APPENDER" />
+		<appender-ref ref="STDOUT-APPENDER" />
 	</logger>
 	<logger name="org.apache" additivity="false">
 		<level value="INFO" />
 		<appender-ref ref="MT-DEFAULT-APPENDER" />
 		<appender-ref ref="MT-ERROR-APPENDER" />
+		<appender-ref ref="STDOUT-APPENDER" />
 	</logger>
 	<logger name="java.io" additivity="false">
 		<level value="INFO" />
 		<appender-ref ref="MT-DEFAULT-APPENDER" />
 		<appender-ref ref="MT-ERROR-APPENDER" />
+		<appender-ref ref="STDOUT-APPENDER" />
 	</logger>
 	<logger name="java.nio" additivity="false">
 		<level value="INFO" />
 		<appender-ref ref="MT-DEFAULT-APPENDER" />
 		<appender-ref ref="MT-ERROR-APPENDER" />
+		<appender-ref ref="STDOUT-APPENDER" />
 	</logger>
 	<root>
 		<level value="INFO" />
 		<appender-ref ref="DEFAULT-APPENDER" />
 		<appender-ref ref="DAL-APPENDER" />
 		<appender-ref ref="MT-ERROR-APPENDER" />
+		<appender-ref ref="STDOUT-APPENDER" />
+		<appender-ref ref="STDERR-APPENDER" />
 	</root>
 </log4j:configuration>

@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.myteay.common.service.facade.enums.MtOperateResultEnum;
 import com.myteay.common.service.facade.exceptions.MtBizException;
+import com.myteay.common.service.facade.mobile.info.MtLoginInfo;
 import com.myteay.common.service.facade.mobile.info.MtRegisterInfo;
 import com.myteay.common.service.facade.model.MtOperateResult;
 import com.myteay.common.service.facade.model.MtUserRegQRCodeMessage;
@@ -47,6 +48,22 @@ public class MtUserMobileServiceController {
     /** 套餐信息管理组件 */
     @Autowired
     private EventPulishService<String> eventPulishService;
+
+    @RequestMapping(value = "/login", method = { RequestMethod.POST })
+    public MtServiceResult<MtLoginInfo> login(@RequestBody MtLoginInfo mtLoginInfo,
+                                              HttpServletRequest request,
+                                              HttpServletResponse response) {
+
+        if (logger.isInfoEnabled()) {
+            logger.info("开始收到会员登录请求 mtLoginInfo=" + mtLoginInfo);
+        }
+
+        MtServiceResult<MtLoginInfo> serviceResult = new MtServiceResult<MtLoginInfo>();
+        serviceResult.setOperateResult(MtOperateResultEnum.CAMP_OPERATE_SUCCESS.getValue());
+        serviceResult.setResult(mtLoginInfo);
+
+        return serviceResult;
+    }
 
     /**
      * 会员注册
