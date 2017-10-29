@@ -29,17 +29,7 @@
 			<groupId>commons-dbcp</groupId>
 			<artifactId>commons-dbcp</artifactId>
 			<version>1.2.1</version>
-		</dependency>
-        <dependency>  
-            <groupId>org.mysql</groupId>  
-            <artifactId>mysql-connector-java-commercial</artifactId>  
-            <version>5.1.33</version>  
-        </dependency>  
-        <dependency>  
-            <groupId>commons-dbcp</groupId>  
-            <artifactId>commons-dbcp</artifactId>  
-            <version>1.2.1</version>  
-        </dependency>  
+		</dependency>  
         <dependency>  
             <groupId>org.mybatis</groupId>  
             <artifactId>mybatis</artifactId>  
@@ -197,11 +187,6 @@
 			<version>2.3.4.726</version>
 		</dependency>
 		<dependency>
-			<groupId>commons-logging</groupId>
-			<artifactId>commons-logging-api</artifactId>
-			<version>1.2</version>
-		</dependency>
-		<dependency>
 			<groupId>commons-beanutils</groupId>
 			<artifactId>commons-beanutils</artifactId>
 			<version>1.7.0</version>
@@ -329,7 +314,18 @@
             <groupId>log4j</groupId>  
             <artifactId>log4j</artifactId>  
             <version>1.2.16</version>  
-        </dependency>  
+        </dependency>
+		<!-- https://mvnrepository.com/artifact/commons-logging/commons-logging -->
+		<dependency>
+		    <groupId>commons-logging</groupId>
+		    <artifactId>commons-logging</artifactId>
+		    <version>1.2</version>
+		</dependency>
+		<!-- <dependency>
+		    <groupId>commons-logging</groupId>
+		    <artifactId>commons-logging-api</artifactId>
+		    <version>1.2</version>
+		</dependency> -->
         <dependency>
             <groupId>com.myteay</groupId>
             <artifactId>myteay-common-event</artifactId>

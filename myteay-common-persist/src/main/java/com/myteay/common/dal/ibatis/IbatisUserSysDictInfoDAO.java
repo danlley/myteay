@@ -8,7 +8,7 @@ import java.util.List;
 
 import com.myteay.common.dal.daointerface.UserSysDictInfoDAO;
 import com.myteay.common.dal.dataobject.UserSysDictInfoDO;
-import com.myteay.common.dal.utils.MtSqlSessionDaoSupport;
+import com.myteay.common.mybatis.support.tools.MtSqlSessionDaoSupport;
 
 /**
  * ÓÃ»§×Öµä²Ù×÷DAO

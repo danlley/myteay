@@ -2,7 +2,7 @@
  * Danlley Wei (mailto://danlley@126.com)
  * Copyright (c) 2005-2017 All Rights Reserved.
  */
-package com.myteay.common.dal.utils;
+package com.myteay.common.util.constants;
 
 /**
  * 各个DAO类继承此类，以便能够得到指定的数据库

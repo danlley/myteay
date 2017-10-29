@@ -8,7 +8,7 @@ import java.util.List;
 
 import com.myteay.common.dal.dinner.daointerface.ShopInfoDAO;
 import com.myteay.common.dal.dinner.dataobject.ShopInfoDO;
-import com.myteay.common.dal.utils.MtSqlSessionDaoSupport;
+import com.myteay.common.mybatis.support.tools.MtSqlSessionDaoSupport;
 
 /**
  * µêÆÌÐÅÏ¢²Ù×÷DAO

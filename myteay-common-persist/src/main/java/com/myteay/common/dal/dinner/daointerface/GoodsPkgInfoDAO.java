@@ -7,7 +7,7 @@ package com.myteay.common.dal.dinner.daointerface;
 import java.util.List;
 
 import com.myteay.common.dal.dinner.dataobject.GoodsPkgInfoDO;
-import com.myteay.common.dal.utils.MtDBKey;
+import com.myteay.common.util.constants.MtDBKey;
 
 /**
  * Ì×²ÍÐÅÏ¢²Ù×÷DAO

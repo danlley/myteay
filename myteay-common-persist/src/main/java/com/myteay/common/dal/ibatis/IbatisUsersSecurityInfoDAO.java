@@ -6,7 +6,7 @@ package com.myteay.common.dal.ibatis;
 
 import com.myteay.common.dal.daointerface.UsersSecurityInfoDAO;
 import com.myteay.common.dal.dataobject.UsersSecurityInfoDO;
-import com.myteay.common.dal.utils.MtSqlSessionDaoSupport;
+import com.myteay.common.mybatis.support.tools.MtSqlSessionDaoSupport;
 
 /**
  * 用户基本信息操作DAO

@@ -17,7 +17,7 @@ import com.myteay.common.async.event.MtEvent;
 import com.myteay.common.async.event.MtEventException;
 import com.myteay.common.service.facade.mobile.info.MtRegisterInfo;
 import com.myteay.common.service.facade.model.MtUserRegQRCodeMessage;
-import com.myteay.common.util.event.MtEventTopicEnum;
+import com.myteay.common.util.enums.MtEventTopicEnum;
 import com.myteay.core.model.user.MtUserContactModel;
 import com.myteay.core.model.user.MtUserMobileBaseInfoModel;
 import com.myteay.core.model.user.MtUserRegExtModel;

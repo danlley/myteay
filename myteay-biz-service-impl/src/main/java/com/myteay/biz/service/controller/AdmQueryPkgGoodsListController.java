@@ -30,7 +30,7 @@ import com.myteay.common.service.facade.enums.MtOperateResultEnum;
 import com.myteay.common.service.facade.exceptions.MtBizException;
 import com.myteay.common.service.facade.model.MtOperateResult;
 import com.myteay.common.service.facade.model.dinner.MtGoodsPkgInfoMessage;
-import com.myteay.common.util.event.MtEventTopicEnum;
+import com.myteay.common.util.enums.MtEventTopicEnum;
 import com.myteay.common.util.exception.MtException;
 import com.myteay.core.model.dinner.MtGoodsPkgModel;
 import com.myteay.core.model.user.convt.MtGoodsPkgModelConvertor;

@@ -25,7 +25,7 @@ import com.myteay.common.service.facade.mobile.info.MtRegisterInfo;
 import com.myteay.common.service.facade.model.MtOperateResult;
 import com.myteay.common.service.facade.model.MtUserRegQRCodeMessage;
 import com.myteay.common.service.facade.results.MtServiceResult;
-import com.myteay.common.util.event.MtEventTopicEnum;
+import com.myteay.common.util.enums.MtEventTopicEnum;
 import com.myteay.core.model.user.MtUserRegExtModel;
 import com.myteay.core.model.user.convt.MtUserRegConvertor;
 import com.myteay.core.service.components.MtUserServiceComponents;

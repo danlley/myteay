@@ -5,7 +5,7 @@
 package com.myteay.common.dal.daointerface;
 
 import com.myteay.common.dal.dataobject.UsersSecurityInfoDO;
-import com.myteay.common.dal.utils.MtDBKey;
+import com.myteay.common.util.constants.MtDBKey;
 
 /**
  * 用户认证信息操作DAO

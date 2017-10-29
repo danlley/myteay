@@ -5,7 +5,7 @@
 package com.myteay.common.dal.daointerface;
 
 import com.myteay.common.dal.dataobject.UserContactListInfoDO;
-import com.myteay.common.dal.utils.MtDBKey;
+import com.myteay.common.util.constants.MtDBKey;
 
 /**
  * 联系人操作DAO

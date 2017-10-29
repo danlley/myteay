@@ -85,7 +85,7 @@ default-autowire="byName">
 			<ref bean="customerTxManager"/>
 		</property>
 	</bean>
-    <bean id="switcher" class="com.myteay.common.dal.utils.SqlSessionSwitcher">
+    <bean id="switcher" class="com.myteay.common.mybatis.support.tools.SqlSessionSwitcher">
     	<property name="switcherBeans">
     		<map>
     			<entry key="dinnerSqlSessionFactory" value-ref="dinnerSqlSessionFactory"></entry>
@@ -95,7 +95,7 @@ default-autowire="byName">
     </bean>
     
     <!-- 单个DAO方法的执行长度阈值暂定为80毫秒，超过之后会在日志中记录 -->
-	<bean id="daoPerformanceMonitorInterceptor" class="com.iwallet.biz.common.aop.PerformanceMonitorInterceptor">
+<!-- 	<bean id="daoPerformanceMonitorInterceptor" class="com.iwallet.biz.common.aop.PerformanceMonitorInterceptor">
 		<property name="threshold"><value>3</value></property>
 	</bean>
 	<bean id="dalMonitorInterceptor" class="com.myteay.common.dal.utils.DalMonitorInterceptor"/>
@@ -109,5 +109,5 @@ default-autowire="byName">
 		<property name="beanNames">
 			<value>*DAO</value>
 		</property>
-	</bean>
+	</bean> -->
 </beans>

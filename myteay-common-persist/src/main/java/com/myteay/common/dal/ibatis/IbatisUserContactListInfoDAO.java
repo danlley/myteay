@@ -11,7 +11,7 @@ import org.apache.log4j.Logger;
 
 import com.myteay.common.dal.daointerface.UserContactListInfoDAO;
 import com.myteay.common.dal.dataobject.UserContactListInfoDO;
-import com.myteay.common.dal.utils.MtSqlSessionDaoSupport;
+import com.myteay.common.mybatis.support.tools.MtSqlSessionDaoSupport;
 
 /**
  * 联系人操作DAO

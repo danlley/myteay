@@ -9,7 +9,7 @@ import java.util.Map;
 
 import com.myteay.common.dal.daointerface.UserMobileBaseInfoDAO;
 import com.myteay.common.dal.dataobject.UserMobileBaseInfoDO;
-import com.myteay.common.dal.utils.MtSqlSessionDaoSupport;
+import com.myteay.common.mybatis.support.tools.MtSqlSessionDaoSupport;
 
 /**
  * 用户手机基本信息操作DAO

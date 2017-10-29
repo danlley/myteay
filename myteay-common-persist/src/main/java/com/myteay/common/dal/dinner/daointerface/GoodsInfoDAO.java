@@ -7,7 +7,7 @@ package com.myteay.common.dal.dinner.daointerface;
 import java.util.List;
 
 import com.myteay.common.dal.dinner.dataobject.GoodsInfoDO;
-import com.myteay.common.dal.utils.MtDBKey;
+import com.myteay.common.util.constants.MtDBKey;
 
 /**
  * 单品信息管理DAO

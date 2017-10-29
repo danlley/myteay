@@ -2,7 +2,7 @@
  * Myteay.com Inc.
  * Copyright (c) 2015-2016 All Rights Reserved.
  */
-package com.myteay.common.util.event;
+package com.myteay.common.util.enums;
 
 import org.apache.commons.lang.StringUtils;
 

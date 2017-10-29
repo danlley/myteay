@@ -10,7 +10,7 @@ import org.apache.commons.lang.StringUtils;
 
 import com.myteay.common.dal.dinner.daointerface.GoodsPkgInfoDAO;
 import com.myteay.common.dal.dinner.dataobject.GoodsPkgInfoDO;
-import com.myteay.common.dal.utils.MtSqlSessionDaoSupport;
+import com.myteay.common.mybatis.support.tools.MtSqlSessionDaoSupport;
 
 /**
  * Ì×²ÍÐÅÏ¢²Ù×÷DAO

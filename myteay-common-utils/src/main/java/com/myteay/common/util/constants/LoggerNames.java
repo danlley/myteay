@@ -2,7 +2,7 @@
  * Myteay.com Inc.
  * Copyright (c) 2015-2016 All Rights Reserved.
  */
-package com.myteay.common.util.comm;
+package com.myteay.common.util.constants;
 
 /**
  * 定义日志访问位置

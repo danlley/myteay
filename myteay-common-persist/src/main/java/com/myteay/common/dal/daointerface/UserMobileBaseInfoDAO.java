@@ -5,7 +5,7 @@
 package com.myteay.common.dal.daointerface;
 
 import com.myteay.common.dal.dataobject.UserMobileBaseInfoDO;
-import com.myteay.common.dal.utils.MtDBKey;
+import com.myteay.common.util.constants.MtDBKey;
 
 /**
  * 用户手机基本信息操作DAO

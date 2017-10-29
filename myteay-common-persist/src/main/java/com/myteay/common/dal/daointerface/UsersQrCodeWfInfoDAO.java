@@ -7,7 +7,7 @@ package com.myteay.common.dal.daointerface;
 import java.util.List;
 
 import com.myteay.common.dal.dataobject.UsersQrCodeWfInfoDO;
-import com.myteay.common.dal.utils.MtDBKey;
+import com.myteay.common.util.constants.MtDBKey;
 
 /**
  * 二维码生成流水操作DAO

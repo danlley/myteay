@@ -12,7 +12,7 @@ import com.myteay.common.async.event.MtEvent;
 import com.myteay.common.service.facade.enums.MtOperateExResultEnum;
 import com.myteay.common.service.facade.enums.MtProcessManageTypeEnum;
 import com.myteay.common.service.facade.model.MtUserRegQRCodeMessage;
-import com.myteay.common.util.comm.LoggerNames;
+import com.myteay.common.util.constants.LoggerNames;
 import com.myteay.common.util.log.Logger;
 import com.myteay.common.util.log.LoggerFactory;
 import com.myteay.common.util.qrcode.QRCodeUtil;

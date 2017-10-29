@@ -10,7 +10,7 @@ import org.apache.commons.lang.StringUtils;
 
 import com.myteay.common.dal.daointerface.UsersQrCodeWfInfoDAO;
 import com.myteay.common.dal.dataobject.UsersQrCodeWfInfoDO;
-import com.myteay.common.dal.utils.MtSqlSessionDaoSupport;
+import com.myteay.common.mybatis.support.tools.MtSqlSessionDaoSupport;
 
 /**
  * 二维码生成流水操作DAO
