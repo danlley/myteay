@@ -16,7 +16,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.myteay.common.utils.exception.MtException;
+import com.myteay.common.util.exception.MtException;
 import com.myteay.core.service.components.MtGoodsInfoComponents;
 
 /**
@@ -39,7 +39,7 @@ public class AdmDelGoodsInfoController {
     @RequestMapping(method = RequestMethod.GET)
     public String queryGoodsList(HttpSession session, HttpServletResponse response,
                                  HttpServletRequest request, String id) throws IOException,
-                                                                       MtException {
+                                                                        MtException {
 
         if (logger.isInfoEnabled()) {
             logger.warn("开始删除单品信息 id=" + id);

@@ -4,7 +4,7 @@
  */
 package com.myteay.common.util.event;
 
-import com.myteay.common.util.comm.StringUtils;
+import org.apache.commons.lang.StringUtils;
 
 /**
  * 消息事件主题

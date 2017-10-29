@@ -8,13 +8,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.log4j.Logger;
+import org.springframework.util.CollectionUtils;
 
 import com.myteay.common.dal.dinner.daointerface.ShopInfoDAO;
 import com.myteay.common.dal.dinner.dataobject.ShopInfoDO;
 import com.myteay.common.service.facade.enums.MtOperateExResultEnum;
 import com.myteay.common.service.facade.enums.MtOperateResultEnum;
 import com.myteay.common.service.facade.model.MtOperateResult;
-import com.myteay.common.util.comm.CollectionUtils;
 import com.myteay.core.model.dinner.MtShopModel;
 import com.myteay.core.model.user.convt.MtShopModelConvertor;
 

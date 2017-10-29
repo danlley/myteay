@@ -15,9 +15,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.myteay.common.service.facade.enums.MtUserFlagEnum;
-import com.myteay.common.util.comm.RandomNumStrUtils;
-import com.myteay.common.utils.UIDGener;
-import com.myteay.common.utils.exception.MtException;
+import com.myteay.common.util.exception.MtException;
+import com.myteay.common.util.generators.MtUidGeneratorException;
+import com.myteay.common.util.generators.UIDGener;
+import com.myteay.common.util.tools.RandomNumStrUtils;
 import com.myteay.core.model.repository.MtUsersInfoRepository;
 import com.myteay.core.model.user.MtUserBaseModel;
 import com.myteay.core.model.user.MtUserModel;
@@ -39,7 +40,7 @@ public class UserController {
 
     @RequestMapping("/index")
     public String index(HttpSession session, HttpServletResponse response) throws IOException,
-                                                                           MtException {
+                                                                           MtUidGeneratorException {
 
         if (logger.isInfoEnabled()) {
             logger.info("开始用户注册。。。");

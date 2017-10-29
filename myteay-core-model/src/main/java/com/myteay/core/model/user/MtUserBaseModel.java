@@ -8,7 +8,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 import com.myteay.common.service.facade.enums.MtUserFlagEnum;
-import com.myteay.common.util.comm.ToStringUtil;
+import com.myteay.common.util.tools.ToStringUtil;
 
 /**
  * 用户基础信息模型

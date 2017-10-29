@@ -8,7 +8,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.myteay.common.util.comm.ToStringUtil;
+import com.myteay.common.util.tools.ToStringUtil;
 
 /**
  * 联系人模型

@@ -9,10 +9,10 @@
          http://www.springframework.org/schema/webflow-config http://www.springframework.org/schema/webflow-config/spring-webflow-config-2.4.xsd"
 	default-autowire="byName">
 	<!-- 事件描述文件缓存 -->
-	<bean id="listenerDescriptorCache" class="com.myteay.common.util.event.ListenerDescriptorCache"></bean>
+	<bean id="listenerDescriptorCache" class="com.myteay.common.async.event.ListenerDescriptorCache"></bean>
 	
 	<!-- 事件执行引擎 -->
-	<bean id="eventPulishService" class="com.myteay.common.util.event.EventPulishServiceImpl"></bean>
+	<bean id="eventPublishService" class="com.myteay.common.async.event.EventPublishServiceImpl"></bean>
 	
 	<!-- 异步执行线程池(普通线程池——最低级线程池) -->
 	<bean id="myteayCommonTaskExecutor"

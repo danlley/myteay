@@ -7,7 +7,7 @@ package com.myteay.core.model.dinner;
 import java.io.Serializable;
 import java.util.Date;
 
-import com.myteay.common.util.comm.ToStringUtil;
+import com.myteay.common.util.tools.ToStringUtil;
 
 /**
  * µêÆÌÄ£ÐÍ

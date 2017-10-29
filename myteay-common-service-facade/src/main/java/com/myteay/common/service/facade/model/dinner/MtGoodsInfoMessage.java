@@ -7,7 +7,7 @@ package com.myteay.common.service.facade.model.dinner;
 import java.io.Serializable;
 import java.util.Date;
 
-import com.myteay.common.util.comm.ToStringUtil;
+import com.myteay.common.util.tools.ToStringUtil;
 
 /**
  * 商品信息交互单据

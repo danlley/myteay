@@ -4,7 +4,7 @@
  */
 package com.myteay.common.service.facade.enums;
 
-import com.myteay.common.util.comm.StringUtils;
+import org.apache.commons.lang.StringUtils;
 
 /**
  * 操作结果返回码
@@ -14,11 +14,11 @@ import com.myteay.common.util.comm.StringUtils;
  */
 public enum MtOperateResultEnum {
 
-    CAMP_OPERATE_SUCCESS("CAMP_OPERATE_SUCCESS", "操作成功"),
+                                 CAMP_OPERATE_SUCCESS("CAMP_OPERATE_SUCCESS", "操作成功"),
 
-    CAMP_OPERATE_FAILED("CAMP_OPERATE_FAILED", "操作失败"),
+                                 CAMP_OPERATE_FAILED("CAMP_OPERATE_FAILED", "操作失败"),
 
-    CAMP_OPERATE_UNKONW("CAMP_OPERATE_UNKONW", "操作结果未知"),
+                                 CAMP_OPERATE_UNKONW("CAMP_OPERATE_UNKONW", "操作结果未知"),
 
     ;
 

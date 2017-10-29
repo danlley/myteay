@@ -13,7 +13,7 @@ import com.myteay.common.service.facade.exceptions.MtBizException;
 import com.myteay.common.service.facade.mobile.info.MtRegisterInfo;
 import com.myteay.common.service.facade.model.MtOperateResult;
 import com.myteay.common.service.facade.model.MtUserMessage;
-import com.myteay.common.utils.exception.MtException;
+import com.myteay.common.util.exception.MtException;
 import com.myteay.core.model.repository.MtUsersInfoRepository;
 import com.myteay.core.model.user.MtUserModel;
 import com.myteay.core.model.user.convt.MtUserModelConverter;

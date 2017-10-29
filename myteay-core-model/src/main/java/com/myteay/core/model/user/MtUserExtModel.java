@@ -6,7 +6,7 @@ package com.myteay.core.model.user;
 
 import java.io.Serializable;
 
-import com.myteay.common.util.comm.ToStringUtil;
+import com.myteay.common.util.tools.ToStringUtil;
 
 /**
  * 会员扩展模型

@@ -4,7 +4,7 @@
  */
 package com.myteay.common.service.facade.enums;
 
-import com.myteay.common.util.comm.StringUtils;
+import org.apache.commons.lang.StringUtils;
 
 /**
  * 流程处理管理操作类型枚举
@@ -14,23 +14,23 @@ import com.myteay.common.util.comm.StringUtils;
  */
 public enum MtProcessManageTypeEnum {
 
-    /** 辅助流程执行标记 */
-    CS_AUXILIARY_PROCESS("CS_AUXILIARY_PROCESS", "辅助流程执行"),
+                                     /** 辅助流程执行标记 */
+                                     CS_AUXILIARY_PROCESS("CS_AUXILIARY_PROCESS", "辅助流程执行"),
 
-    /** 主流程执行标记 */
-    CS_MAIN_PROCESS("CS_MAIN_PROCESS", "主流程执行"),
+                                     /** 主流程执行标记 */
+                                     CS_MAIN_PROCESS("CS_MAIN_PROCESS", "主流程执行"),
 
-    /** 流程结束后的扫尾工作标记 */
-    CS_AFTER_PROCESS("CS_AFTER_PROCESS", "流程结束后的扫尾工作"),
+                                     /** 流程结束后的扫尾工作标记 */
+                                     CS_AFTER_PROCESS("CS_AFTER_PROCESS", "流程结束后的扫尾工作"),
 
-    /** 流程开始前的准备工作标记 */
-    CS_BEFORE_PROCESS("CS_BEFORE_PROCESS", "流程开始前的准备工作"),
+                                     /** 流程开始前的准备工作标记 */
+                                     CS_BEFORE_PROCESS("CS_BEFORE_PROCESS", "流程开始前的准备工作"),
 
-    /** 验证流程数据标记 */
-    CS_VALIDATE_PROCESS("CS_VALIDATE_PROCESS", "验证流程数据"),
+                                     /** 验证流程数据标记 */
+                                     CS_VALIDATE_PROCESS("CS_VALIDATE_PROCESS", "验证流程数据"),
 
-    /**结束标记 */
-    CS_END("CS_END", "结束标记"),
+                                     /**结束标记 */
+                                     CS_END("CS_END", "结束标记"),
 
     ;
     /** value */

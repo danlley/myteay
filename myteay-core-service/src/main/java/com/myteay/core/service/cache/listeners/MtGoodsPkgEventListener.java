@@ -4,9 +4,9 @@
  */
 package com.myteay.core.service.cache.listeners;
 
+import com.myteay.common.async.event.EventListener;
+import com.myteay.common.async.event.MtEvent;
 import com.myteay.common.service.facade.exceptions.MtBizException;
-import com.myteay.common.util.event.EventListener;
-import com.myteay.common.util.event.MtEvent;
 import com.myteay.core.service.cache.components.MtGoodsPkgCacheComponents;
 
 /**

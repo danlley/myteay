@@ -4,7 +4,7 @@
  */
 package com.myteay.core.model.user.enums;
 
-import com.myteay.common.util.comm.StringUtils;
+import org.apache.commons.lang.StringUtils;
 
 /**
  * 用户手机基本信息来源类型枚举

@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.myteay.common.utils.exception.MtException;
+import com.myteay.common.util.exception.MtException;
 
 /**
  * 用户注册基础类

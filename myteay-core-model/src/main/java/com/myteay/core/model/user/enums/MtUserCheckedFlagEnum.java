@@ -4,7 +4,7 @@
  */
 package com.myteay.core.model.user.enums;
 
-import com.myteay.common.util.comm.StringUtils;
+import org.apache.commons.lang.StringUtils;
 
 /**
  * 会员状态枚举
@@ -14,14 +14,14 @@ import com.myteay.common.util.comm.StringUtils;
  */
 public enum MtUserCheckedFlagEnum {
 
-    /** 会员已注册，没有高级认证信息 */
-    CS_UN_CHECK_ED("CS_UN_CHECK_ED", "会员已注册，没有高级认证信息"),
+                                   /** 会员已注册，没有高级认证信息 */
+                                   CS_UN_CHECK_ED("CS_UN_CHECK_ED", "会员已注册，没有高级认证信息"),
 
-    /** 认证用户 */
-    CS_CHECKED_USER("CS_CHECKED_USER", "认证用户"),
+                                   /** 认证用户 */
+                                   CS_CHECKED_USER("CS_CHECKED_USER", "认证用户"),
 
-    /** 未知用户 */
-    CS_UNKNOW_USER("CS_UNKNOW_USER", "未知用户"),
+                                   /** 未知用户 */
+                                   CS_UNKNOW_USER("CS_UNKNOW_USER", "未知用户"),
 
     ;
     /** value */

@@ -11,9 +11,9 @@ import java.util.Map;
 import org.apache.log4j.Logger;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
+import org.springframework.util.CollectionUtils;
 
 import com.myteay.common.service.facade.enums.MtSysKeyEnum;
-import com.myteay.common.util.comm.CollectionUtils;
 import com.myteay.core.model.repository.MtUserSysDictInfoRepository;
 import com.myteay.core.service.cache.components.MtSysKeysCacheComponents;
 
@@ -24,15 +24,15 @@ import com.myteay.core.service.cache.components.MtSysKeysCacheComponents;
  * @version $Id: MtSysKeysCacheComponentsImpl.java, v 0.1 2016年9月7日 上午12:20:25 Administrator Exp $
  */
 public class MtSysKeysCacheComponentsImpl implements MtSysKeysCacheComponents,
-                                         ApplicationListener<ContextRefreshedEvent> {
+                                          ApplicationListener<ContextRefreshedEvent> {
 
     /** 日志 */
     public static final Logger               logger        = Logger
-                                                               .getLogger(MtSysKeysCacheComponentsImpl.class);
+        .getLogger(MtSysKeysCacheComponentsImpl.class);
 
     /** 系统字典的缓存信息 */
     private static final Map<String, String> SYS_KEY_CACHE = Collections
-                                                               .synchronizedMap(new HashMap<String, String>());
+        .synchronizedMap(new HashMap<String, String>());
 
     /** 用户字典仓储 */
     private MtUserSysDictInfoRepository      mtUserSysDictInfoRepository;

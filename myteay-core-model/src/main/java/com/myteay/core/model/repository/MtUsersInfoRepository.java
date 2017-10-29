@@ -6,8 +6,8 @@ package com.myteay.core.model.repository;
 
 import com.myteay.common.service.facade.model.MtOperateResult;
 import com.myteay.common.service.facade.model.MtUserRegQRCodeMessage;
+import com.myteay.common.util.exception.MtException;
 import com.myteay.common.utils.exception.MtBizProcessException;
-import com.myteay.common.utils.exception.MtException;
 import com.myteay.core.model.user.MtUserModel;
 
 /**
@@ -41,6 +41,6 @@ public interface MtUsersInfoRepository {
      * @throws MtBizProcessException
      */
     public MtOperateResult<MtUserModel> updateUserQrcode(MtUserRegQRCodeMessage mtUserRegQRCodeMessage)
-                                                                                                       throws MtBizProcessException;
+                                                                                                        throws MtBizProcessException;
 
 }

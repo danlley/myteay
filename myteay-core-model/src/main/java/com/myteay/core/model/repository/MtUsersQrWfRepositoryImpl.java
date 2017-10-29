@@ -4,6 +4,7 @@
  */
 package com.myteay.core.model.repository;
 
+import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 
 import com.myteay.common.dal.daointerface.UsersQrCodeWfInfoDAO;
@@ -11,7 +12,6 @@ import com.myteay.common.dal.dataobject.UsersQrCodeWfInfoDO;
 import com.myteay.common.service.facade.enums.MtOperateExResultEnum;
 import com.myteay.common.service.facade.enums.MtOperateResultEnum;
 import com.myteay.common.service.facade.model.MtOperateResult;
-import com.myteay.common.util.comm.StringUtils;
 import com.myteay.common.utils.exception.MtBizProcessException;
 
 /**

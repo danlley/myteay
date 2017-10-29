@@ -4,18 +4,18 @@
  */
 package com.myteay.core.service.cache.listeners;
 
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.myteay.common.async.event.EventListener;
+import com.myteay.common.async.event.MtEvent;
 import com.myteay.common.service.facade.enums.MtOperateExResultEnum;
 import com.myteay.common.service.facade.enums.MtProcessManageTypeEnum;
 import com.myteay.common.service.facade.model.MtUserRegQRCodeMessage;
-import com.myteay.common.util.comm.Logger;
-import com.myteay.common.util.comm.LoggerFactory;
 import com.myteay.common.util.comm.LoggerNames;
-import com.myteay.common.util.comm.StringUtils;
-import com.myteay.common.util.event.EventListener;
-import com.myteay.common.util.event.MtEvent;
-import com.myteay.common.util.zxing.utils.QRCodeUtil;
+import com.myteay.common.util.log.Logger;
+import com.myteay.common.util.log.LoggerFactory;
+import com.myteay.common.util.qrcode.QRCodeUtil;
 import com.myteay.common.utils.exception.MtBizProcessException;
 import com.myteay.core.model.repository.MtUsersInfoRepository;
 import com.myteay.core.model.repository.MtUsersQrWfRepository;
@@ -32,7 +32,7 @@ public class MtUserQRCodeEventListener extends EventListener<Object> {
 
     /** 日志 */
     private static final Logger     loggerDigester = LoggerFactory
-                                                       .getLogger(LoggerNames.MT_USR_REG_APPENDER);
+        .getLogger(LoggerNames.MT_USR_REG_APPENDER);
 
     /** 用户二维码生成操作流水 */
     @Autowired

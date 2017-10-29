@@ -4,16 +4,16 @@
  */
 package com.myteay.core.model.user.convt;
 
+import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 
 import com.myteay.common.dal.dataobject.UsersInfoDO;
 import com.myteay.common.dal.dataobject.UsersSecurityInfoDO;
 import com.myteay.common.service.facade.enums.MtUserFlagEnum;
 import com.myteay.common.service.facade.mobile.info.MtRegisterInfo;
-import com.myteay.common.util.comm.MyTeayException;
-import com.myteay.common.util.comm.RandomNumStrUtils;
-import com.myteay.common.util.comm.StringUtils;
-import com.myteay.common.utils.UIDGener;
+import com.myteay.common.util.generators.MtUidGeneratorException;
+import com.myteay.common.util.generators.UIDGener;
+import com.myteay.common.util.tools.RandomNumStrUtils;
 import com.myteay.core.model.user.MtUserAdvBaseModel;
 import com.myteay.core.model.user.MtUserBaseModel;
 import com.myteay.core.model.user.MtUserModel;
@@ -86,7 +86,7 @@ public class MtUserModelConverter {
         String userId = null;
         try {
             userId = UIDGener.genUserId(DEF_REG_FROM, RandomNumStrUtils.getNum());
-        } catch (MyTeayException e) {
+        } catch (MtUidGeneratorException e) {
             logger.warn("注册失败，无法生成userid。registerInfo=" + registerInfo, e);
             return null;
         }

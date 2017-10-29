@@ -7,6 +7,7 @@ package com.myteay.biz.service.impl;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -14,6 +15,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.myteay.common.async.event.EventPublishService;
+import com.myteay.common.async.event.MtEvent;
+import com.myteay.common.async.event.MtEventException;
 import com.myteay.common.service.facade.enums.MtOperateResultEnum;
 import com.myteay.common.service.facade.exceptions.MtBizException;
 import com.myteay.common.service.facade.mobile.info.MtLoginInfo;
@@ -21,11 +25,7 @@ import com.myteay.common.service.facade.mobile.info.MtRegisterInfo;
 import com.myteay.common.service.facade.model.MtOperateResult;
 import com.myteay.common.service.facade.model.MtUserRegQRCodeMessage;
 import com.myteay.common.service.facade.results.MtServiceResult;
-import com.myteay.common.util.comm.StringUtils;
-import com.myteay.common.util.event.EventPulishService;
-import com.myteay.common.util.event.MtEvent;
 import com.myteay.common.util.event.MtEventTopicEnum;
-import com.myteay.common.utils.exception.MtException;
 import com.myteay.core.model.user.MtUserRegExtModel;
 import com.myteay.core.model.user.convt.MtUserRegConvertor;
 import com.myteay.core.service.components.MtUserServiceComponents;
@@ -39,15 +39,15 @@ import com.myteay.core.service.components.MtUserServiceComponents;
 public class MtUserMobileServiceController {
 
     /** 日志 */
-    public static final Logger         logger = Logger.getLogger(MtUserMobileServiceController.class);
+    public static final Logger          logger = Logger.getLogger(MtUserMobileServiceController.class);
 
     /** 用户服务组件 */
     @Autowired
-    private MtUserServiceComponents    mtUserServiceComponents;
+    private MtUserServiceComponents     mtUserServiceComponents;
 
     /** 套餐信息管理组件 */
     @Autowired
-    private EventPulishService<String> eventPulishService;
+    private EventPublishService<String> eventPublishService;
 
     @RequestMapping(value = "/login", method = { RequestMethod.POST })
     public MtServiceResult<MtLoginInfo> login(@RequestBody MtLoginInfo mtLoginInfo,
@@ -139,10 +139,10 @@ public class MtUserMobileServiceController {
 
         //异步事件处理组件
         try {
-            eventPulishService.publishEvent(new MtEvent<MtUserRegExtModel>(
+            eventPublishService.publishEvent(new MtEvent<MtUserRegExtModel>(
                 MtEventTopicEnum.MT_USR_REG_EXT_EVENT.getValue(), constructAsynchronizedMessage(request,
                     registerInfo)));
-        } catch (MtException e) {
+        } catch (MtEventException e) {
             logger.error("处理用户联系人信息过程中出现异常", e);
         }
 

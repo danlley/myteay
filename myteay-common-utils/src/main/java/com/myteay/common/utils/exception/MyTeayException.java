@@ -1,9 +1,9 @@
 /**
  * Copyright (c) 2004-2015 All Rights Reserved.
  */
-package com.myteay.common.util.comm;
+package com.myteay.common.utils.exception;
 
-import com.myteay.common.utils.exception.MtException;
+import com.myteay.common.util.exception.MtException;
 
 /**
  * 系统异常处理

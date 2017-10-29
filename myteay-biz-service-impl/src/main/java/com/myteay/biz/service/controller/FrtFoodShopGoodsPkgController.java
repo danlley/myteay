@@ -14,9 +14,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -26,9 +28,7 @@ import com.myteay.common.service.facade.enums.MtOperateResultEnum;
 import com.myteay.common.service.facade.exceptions.MtBizException;
 import com.myteay.common.service.facade.model.MtOperateResult;
 import com.myteay.common.service.facade.model.dinner.MtGoodsPkgInfoMessage;
-import com.myteay.common.util.comm.CollectionUtils;
-import com.myteay.common.util.comm.StringUtils;
-import com.myteay.common.utils.exception.MtException;
+import com.myteay.common.util.exception.MtException;
 import com.myteay.core.model.dinner.MtGoodsPkgModel;
 import com.myteay.core.model.user.convt.MtGoodsPkgModelConvertor;
 import com.myteay.core.service.components.MtGoodsPkgInfoComponents;
@@ -64,8 +64,8 @@ public class FrtFoodShopGoodsPkgController {
     @RequestMapping(method = RequestMethod.GET)
     public ModelAndView queryFrtGoodsPkgList(HttpSession session, HttpServletResponse response,
                                              HttpServletRequest request, String goodsPkgName)
-                                                                                             throws IOException,
-                                                                                             MtException {
+                                                                                              throws IOException,
+                                                                                              MtException {
         List<MtGoodsPkgInfoMessage> list = null;
         if (StringUtils.isBlank(goodsPkgName)) {
             list = emptySearch();

@@ -10,7 +10,7 @@ import java.util.Date;
 import org.apache.commons.lang.builder.ToStringBuilder;
 import org.apache.commons.lang.builder.ToStringStyle;
 
-import com.myteay.common.service.facade.model.MtAuthenticFlagEnum;
+import com.myteay.common.service.facade.enums.MtAuthenticFlagEnum;
 
 /**
  * 用户高级信息模型（密码、认证情况等）

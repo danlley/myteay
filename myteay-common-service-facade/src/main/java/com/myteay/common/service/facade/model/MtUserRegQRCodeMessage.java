@@ -7,7 +7,7 @@ package com.myteay.common.service.facade.model;
 import java.io.Serializable;
 
 import com.myteay.common.service.facade.enums.MtProcessManageTypeEnum;
-import com.myteay.common.util.comm.ToStringUtil;
+import com.myteay.common.util.tools.ToStringUtil;
 
 /**
  * 用户二维码注册过程中需要用到的中间消息，用于生成二维码

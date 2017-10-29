@@ -6,18 +6,18 @@ package com.myteay.core.service.cache.listeners;
 
 import java.util.Map;
 
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.util.CollectionUtils;
 
 import com.alibaba.fastjson.JSONObject;
+import com.myteay.common.async.event.EventListener;
+import com.myteay.common.async.event.EventPublishService;
+import com.myteay.common.async.event.MtEvent;
+import com.myteay.common.async.event.MtEventException;
 import com.myteay.common.service.facade.mobile.info.MtRegisterInfo;
 import com.myteay.common.service.facade.model.MtUserRegQRCodeMessage;
-import com.myteay.common.util.comm.CollectionUtils;
-import com.myteay.common.util.comm.StringUtils;
-import com.myteay.common.util.event.EventListener;
-import com.myteay.common.util.event.EventPulishService;
-import com.myteay.common.util.event.MtEvent;
 import com.myteay.common.util.event.MtEventTopicEnum;
-import com.myteay.common.utils.exception.MtException;
 import com.myteay.core.model.user.MtUserContactModel;
 import com.myteay.core.model.user.MtUserMobileBaseInfoModel;
 import com.myteay.core.model.user.MtUserRegExtModel;
@@ -32,7 +32,7 @@ public class MtUserRegExtEventListener extends EventListener<Object> {
 
     /** 套餐信息管理组件 */
     @Autowired
-    private EventPulishService<String> eventPulishService;
+    private EventPublishService<String> eventPublishService;
 
     /** 
      * @see com.myteay.common.util.event.EventListener#handleEvent(com.myteay.common.util.event.MtEvent)
@@ -108,9 +108,9 @@ public class MtUserRegExtEventListener extends EventListener<Object> {
 
         //异步事件处理组件
         try {
-            eventPulishService.publishEvent(new MtEvent<MtUserMobileBaseInfoModel>(
+            eventPublishService.publishEvent(new MtEvent<MtUserMobileBaseInfoModel>(
                 MtEventTopicEnum.MT_USR_REG_MOBILE_INFO_EVENT.getValue(), mtUserMobileBaseInfoModel));
-        } catch (MtException e) {
+        } catch (MtEventException e) {
             logger.error("开始处理用户注册时的手机基本信息模型信息过程中出现异常", e);
         }
     }
@@ -127,9 +127,9 @@ public class MtUserRegExtEventListener extends EventListener<Object> {
 
         //异步事件处理组件
         try {
-            eventPulishService.publishEvent(new MtEvent<MtUserContactModel>(
+            eventPublishService.publishEvent(new MtEvent<MtUserContactModel>(
                 MtEventTopicEnum.MT_USR_CONTACT_LIST.getValue(), contactModel));
-        } catch (MtException e) {
+        } catch (MtEventException e) {
             logger.error("处理用户联系人信息过程中出现异常", e);
         }
     }
@@ -144,9 +144,9 @@ public class MtUserRegExtEventListener extends EventListener<Object> {
 
         //异步事件处理组件
         try {
-            eventPulishService.publishEvent(new MtEvent<MtUserRegQRCodeMessage>(
+            eventPublishService.publishEvent(new MtEvent<MtUserRegQRCodeMessage>(
                 MtEventTopicEnum.MT_USR_QR_CODE_REGISTERY.getValue(), qrcodeModel));
-        } catch (MtException e) {
+        } catch (MtEventException e) {
             logger.error("生成用户二维码过程中出现异常", e);
         }
     }

@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -23,10 +24,9 @@ import com.myteay.common.service.facade.enums.MtOperateExResultEnum;
 import com.myteay.common.service.facade.enums.MtOperateResultEnum;
 import com.myteay.common.service.facade.model.MtOperateResult;
 import com.myteay.common.service.facade.model.dinner.MtGoodsInfoMessage;
-import com.myteay.common.util.comm.StringUtils;
 import com.myteay.common.util.constants.MtConstants;
+import com.myteay.common.util.exception.MtException;
 import com.myteay.common.utils.MtFileUtils;
-import com.myteay.common.utils.exception.MtException;
 import com.myteay.core.service.components.MtGoodsInfoComponents;
 
 /**
@@ -66,8 +66,8 @@ public class AdmAddSingleGoodsController {
                                        String price,
                                        String summary,
                                        @RequestParam(value = "file", required = false) MultipartFile file)
-                                                                                                          throws IOException,
-                                                                                                          MtException {
+                                                                                                           throws IOException,
+                                                                                                           MtException {
         ModelAndView view = new ModelAndView("upload_single_goods");
         if (logger.isInfoEnabled()) {
             logger.info("开始录入单个商品信息shop_id=" + shop_id + " pic_addr=" + pic_addr + " goods_title="
@@ -161,7 +161,7 @@ public class AdmAddSingleGoodsController {
     @RequestMapping(method = RequestMethod.GET)
     public ModelAndView querySingleGoodsForm(HttpSession session, HttpServletResponse response,
                                              HttpServletRequest request) throws IOException,
-                                                                        MtException {
+                                                                         MtException {
 
         if (logger.isInfoEnabled()) {
             logger.info("开始生成录入单个商品信息表单");

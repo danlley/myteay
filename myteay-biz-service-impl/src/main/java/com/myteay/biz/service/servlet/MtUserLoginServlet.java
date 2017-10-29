@@ -12,9 +12,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
-
-import com.myteay.common.util.comm.StringUtils;
 
 /**
  * 用户登录监听，当前回话，同一个用户当日登录次数尝试超过5次，且密码错误，则不允许用户进行再次尝试。

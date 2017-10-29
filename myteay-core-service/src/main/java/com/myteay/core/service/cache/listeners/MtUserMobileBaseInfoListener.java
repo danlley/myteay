@@ -6,8 +6,8 @@ package com.myteay.core.service.cache.listeners;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.myteay.common.util.event.EventListener;
-import com.myteay.common.util.event.MtEvent;
+import com.myteay.common.async.event.EventListener;
+import com.myteay.common.async.event.MtEvent;
 import com.myteay.core.model.repository.MtUserMobileBaseInfoRepository;
 import com.myteay.core.model.user.MtUserMobileBaseInfoModel;
 

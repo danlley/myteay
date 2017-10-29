@@ -6,18 +6,18 @@ package com.myteay.core.model.repository;
 
 import java.util.List;
 
+import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 import org.springframework.transaction.TransactionStatus;
 import org.springframework.transaction.support.TransactionCallback;
 import org.springframework.transaction.support.TransactionTemplate;
+import org.springframework.util.CollectionUtils;
 
 import com.myteay.common.dal.daointerface.UserContactListInfoDAO;
 import com.myteay.common.dal.dataobject.UserContactListInfoDO;
 import com.myteay.common.service.facade.enums.MtOperateExResultEnum;
 import com.myteay.common.service.facade.enums.MtOperateResultEnum;
 import com.myteay.common.service.facade.model.MtOperateResult;
-import com.myteay.common.util.comm.CollectionUtils;
-import com.myteay.common.util.comm.StringUtils;
 import com.myteay.core.model.user.MtUserContactModel;
 import com.myteay.core.model.user.MtUserSingleContactModel;
 

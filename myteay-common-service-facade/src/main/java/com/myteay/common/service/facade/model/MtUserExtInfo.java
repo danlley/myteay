@@ -6,7 +6,7 @@ package com.myteay.common.service.facade.model;
 
 import java.io.Serializable;
 
-import com.myteay.common.util.comm.ToStringUtil;
+import com.myteay.common.util.tools.ToStringUtil;
 
 /**
  * 用户扩展信息

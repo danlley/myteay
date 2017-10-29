@@ -1,20 +1,27 @@
-package com.myteay.common.util.comm;
+/**
+ * Myteay.com Inc.
+ * Copyright (c) 2015-2016 All Rights Reserved.
+ */
+package com.myteay.common.service.facade.enums;
+
+import org.apache.commons.lang.StringUtils;
 
 /**
- * 字符编码枚举类
+ * 用于安全邮箱及安全手机的认证状态标识
  * 
  * @author Administrator
- * @version $Id: CharSetEnum.java, v 0.1 2012-8-25 上午9:31:44 Administrator Exp $
+ * @version $Id: MtAuthenticFlagEnum.java, v 0.1 2016年2月24日 下午10:11:20 Administrator Exp $
  */
-public enum CharSetEnum {
-    /**  */
-    GBK("GBK", "GBK"),
+public enum MtAuthenticFlagEnum {
 
-    /**  */
-    GB2312("gb2312", "gb2312"),
+                                 /** 认证用户 */
+                                 CS_CHECKED_FLAG("CS_CHECKED_FLAG", "已认证"),
 
-    /**  */
-    ISO_8859_1("ISO-8859-1", "ISO-8859-1"),
+                                 /** 未认证 */
+                                 CS_UNCHECKED_FLAG("CS_UNCHECKED_FLAG", "未认证"),
+
+                                 /** 未补全 */
+                                 CS_UNSUBMIT_FLAG("CS_UNSUBMIT_FLAG", "未补全"),
 
     ;
     /** value */
@@ -28,7 +35,7 @@ public enum CharSetEnum {
      * @param code
      * @param description
      */
-    private CharSetEnum(String value, String message) {
+    private MtAuthenticFlagEnum(String value, String message) {
         this.value = value;
         this.message = message;
     }
@@ -52,12 +59,12 @@ public enum CharSetEnum {
      * @param value
      * @return
      */
-    public static CharSetEnum getByCode(String value) {
+    public static MtAuthenticFlagEnum getByCode(String value) {
         if (StringUtils.isBlank(value)) {
             return null;
         }
         value = value.trim();
-        for (CharSetEnum type : values()) {
+        for (MtAuthenticFlagEnum type : values()) {
             if (type.getValue().equals(value))
                 return type;
         }
@@ -71,11 +78,11 @@ public enum CharSetEnum {
      * @param value
      * @return
      */
-    public static CharSetEnum getByValue(String value) {
+    public static MtAuthenticFlagEnum getByValue(String value) {
         if (value == null) {
             return null;
         }
-        for (CharSetEnum result : values()) {
+        for (MtAuthenticFlagEnum result : values()) {
             if (result.getValue().equals(value)) {
                 return result;
             }
@@ -89,11 +96,11 @@ public enum CharSetEnum {
      * @param message
      * @return
      */
-    public static CharSetEnum getByMessage(String message) {
+    public static MtAuthenticFlagEnum getByMessage(String message) {
         if (StringUtils.isBlank(message)) {
             return null;
         }
-        for (CharSetEnum result : values()) {
+        for (MtAuthenticFlagEnum result : values()) {
             if (result.getMessage().equals(message)) {
                 return result;
             }

@@ -4,7 +4,7 @@
  */
 package com.myteay.common.service.facade.enums;
 
-import com.myteay.common.util.comm.StringUtils;
+import org.apache.commons.lang.StringUtils;
 
 /**
  * 返回结果扩展码
@@ -14,22 +14,22 @@ import com.myteay.common.util.comm.StringUtils;
  */
 public enum MtOperateExResultEnum {
 
-    //----------------          基本扩展结果信息信息          ----------------
-    CAMP_OPERATE_SUCCESS("CAMP_OPERATE_SUCCESS", "00010001", "操作成功"),
+                                   //----------------          基本扩展结果信息信息          ----------------
+                                   CAMP_OPERATE_SUCCESS("CAMP_OPERATE_SUCCESS", "00010001", "操作成功"),
 
-    CAMP_SQL_EXE_INVALID("CAMP_SQL_EXE_INVALID", "00010002", "SQL执行异常"),
+                                   CAMP_SQL_EXE_INVALID("CAMP_SQL_EXE_INVALID", "00010002", "SQL执行异常"),
 
-    CAMP_ILLEGAL_ARGUMENTS("CAMP_ILLEGAL_ARGUMENTS", "00010003", "参数异常"),
+                                   CAMP_ILLEGAL_ARGUMENTS("CAMP_ILLEGAL_ARGUMENTS", "00010003", "参数异常"),
 
-    CAMP_PROCESS_UNKNOW_ERR("CAMP_CONFIG_MNG_UNKNOW_ERR", "00028002", "数据执行过程发生异常"),
+                                   CAMP_PROCESS_UNKNOW_ERR("CAMP_CONFIG_MNG_UNKNOW_ERR", "00028002", "数据执行过程发生异常"),
 
-    CAMP_QRCODE_EXE_FAILED("CAMP_QRCODE_EXE_FAILED", "00028003", "用户注册二维码身份信息生成失败"),
+                                   CAMP_QRCODE_EXE_FAILED("CAMP_QRCODE_EXE_FAILED", "00028003", "用户注册二维码身份信息生成失败"),
 
-    CAMP_USERID_ERR("CAMP_USERID_ERR", "00028004", "userid不合法"),
+                                   CAMP_USERID_ERR("CAMP_USERID_ERR", "00028004", "userid不合法"),
 
-    CAMP_QRCODE_FILENAME_FAILED("CAMP_QRCODE_FILENAME_FAILED", "00028005", "二维码信息交互模型中的二维码文件信息不可用"),
+                                   CAMP_QRCODE_FILENAME_FAILED("CAMP_QRCODE_FILENAME_FAILED", "00028005", "二维码信息交互模型中的二维码文件信息不可用"),
 
-    CAMP_USERID_NO_USER("CAMP_USERID_NO_USER", "00028006", "当前用户未找到"),
+                                   CAMP_USERID_NO_USER("CAMP_USERID_NO_USER", "00028006", "当前用户未找到"),
 
     ;
 

@@ -8,12 +8,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
+import org.springframework.util.CollectionUtils;
 
 import com.myteay.common.dal.daointerface.UserSysDictInfoDAO;
 import com.myteay.common.dal.dataobject.UserSysDictInfoDO;
-import com.myteay.common.util.comm.CollectionUtils;
-import com.myteay.common.util.comm.StringUtils;
 
 /**
  * ÓÃ»§×Öµä²Ö´¢

@@ -7,11 +7,10 @@ package com.myteay.common.dal.utils;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
+import org.apache.commons.lang.StringUtils;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.defaults.DefaultSqlSessionFactory;
 import org.springframework.util.CollectionUtils;
-
-import com.myteay.common.util.comm.StringUtils;
 
 /**
  * SqlSessionFactory会话实例管理组件

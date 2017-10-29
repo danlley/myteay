@@ -6,10 +6,11 @@ package com.myteay.common.dal.ibatis;
 
 import java.util.List;
 
+import org.apache.commons.lang.StringUtils;
+
 import com.myteay.common.dal.daointerface.UsersQrCodeWfInfoDAO;
 import com.myteay.common.dal.dataobject.UsersQrCodeWfInfoDO;
 import com.myteay.common.dal.utils.MtSqlSessionDaoSupport;
-import com.myteay.common.util.comm.StringUtils;
 
 /**
  * 二维码生成流水操作DAO

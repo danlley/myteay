@@ -6,10 +6,11 @@ package com.myteay.common.dal.dinner.ibatis;
 
 import java.util.List;
 
+import org.apache.commons.lang.StringUtils;
+
 import com.myteay.common.dal.dinner.daointerface.GoodsPkgInfoDAO;
 import com.myteay.common.dal.dinner.dataobject.GoodsPkgInfoDO;
 import com.myteay.common.dal.utils.MtSqlSessionDaoSupport;
-import com.myteay.common.util.comm.StringUtils;
 
 /**
  * Ì×²ÍÐÅÏ¢²Ù×÷DAO

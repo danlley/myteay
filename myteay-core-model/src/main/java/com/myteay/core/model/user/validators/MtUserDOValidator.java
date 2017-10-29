@@ -6,7 +6,7 @@ package com.myteay.core.model.user.validators;
 
 import com.myteay.common.dal.dataobject.UsersInfoDO;
 import com.myteay.common.dal.dataobject.UsersSecurityInfoDO;
-import com.myteay.common.utils.exception.MtException;
+import com.myteay.common.util.exception.MtException;
 
 /**
  * 用户数据模型校验器
@@ -23,7 +23,7 @@ public class MtUserDOValidator {
      * @throws MtException          系统内部异常
      */
     public static void validateUsersSecurityInfoDO(UsersSecurityInfoDO usersSecurityInfoDO)
-                                                                                           throws MtException {
+                                                                                            throws MtException {
         //TODO
     }
 

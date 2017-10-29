@@ -8,13 +8,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 import org.springframework.util.CollectionUtils;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.myteay.common.service.facade.mobile.info.MtRegisterInfo;
-import com.myteay.common.util.comm.StringUtils;
 import com.myteay.core.model.user.MtUserContactModel;
 import com.myteay.core.model.user.MtUserSingleContactModel;
 

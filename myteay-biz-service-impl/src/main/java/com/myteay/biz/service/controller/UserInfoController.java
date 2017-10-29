@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,8 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.alibaba.fastjson.JSON;
 import com.myteay.common.service.facade.model.MtOperateResult;
 import com.myteay.common.service.facade.model.MtUserMessage;
-import com.myteay.common.util.comm.StringUtils;
-import com.myteay.common.utils.exception.MtException;
+import com.myteay.common.util.exception.MtException;
 import com.myteay.core.service.components.MtUserServiceComponents;
 
 /**

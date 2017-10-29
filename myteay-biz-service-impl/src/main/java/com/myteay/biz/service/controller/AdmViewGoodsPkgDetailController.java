@@ -14,9 +14,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -27,9 +29,7 @@ import com.myteay.common.service.facade.exceptions.MtBizException;
 import com.myteay.common.service.facade.model.MtOperateResult;
 import com.myteay.common.service.facade.model.dinner.MtGoodsInfoMessage;
 import com.myteay.common.service.facade.model.dinner.MtGoodsPkgInfoMessage;
-import com.myteay.common.util.comm.CollectionUtils;
-import com.myteay.common.util.comm.StringUtils;
-import com.myteay.common.utils.exception.MtException;
+import com.myteay.common.util.exception.MtException;
 import com.myteay.core.service.components.MtGoodsInfoComponents;
 import com.myteay.core.service.components.MtGoodsPkgInfoComponents;
 
@@ -45,7 +45,7 @@ public class AdmViewGoodsPkgDetailController {
 
     /** 日志 */
     public static final Logger       logger = Logger
-                                                .getLogger(AdmViewGoodsPkgDetailController.class);
+        .getLogger(AdmViewGoodsPkgDetailController.class);
 
     /** 套餐信息管理组件 */
     @Autowired
@@ -68,7 +68,7 @@ public class AdmViewGoodsPkgDetailController {
     @RequestMapping(method = RequestMethod.GET)
     public ModelAndView queryGoodsList(HttpSession session, HttpServletResponse response,
                                        HttpServletRequest request, String id) throws IOException,
-                                                                             MtException {
+                                                                              MtException {
         ModelAndView view = new ModelAndView("view_single_goods_pkg");
         MtOperateResult<MtGoodsPkgInfoMessage> result = null;
 

@@ -17,20 +17,21 @@ import javax.servlet.http.HttpSession;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.myteay.common.async.event.EventPublishService;
+import com.myteay.common.async.event.MtEvent;
+import com.myteay.common.async.event.MtEventException;
 import com.myteay.common.service.facade.enums.MtOperateExResultEnum;
 import com.myteay.common.service.facade.enums.MtOperateResultEnum;
 import com.myteay.common.service.facade.exceptions.MtBizException;
 import com.myteay.common.service.facade.model.MtOperateResult;
 import com.myteay.common.service.facade.model.dinner.MtGoodsPkgInfoMessage;
-import com.myteay.common.util.comm.CollectionUtils;
-import com.myteay.common.util.event.EventPulishService;
-import com.myteay.common.util.event.MtEvent;
 import com.myteay.common.util.event.MtEventTopicEnum;
-import com.myteay.common.utils.exception.MtException;
+import com.myteay.common.util.exception.MtException;
 import com.myteay.core.model.dinner.MtGoodsPkgModel;
 import com.myteay.core.model.user.convt.MtGoodsPkgModelConvertor;
 import com.myteay.core.service.components.MtGoodsPkgInfoComponents;
@@ -46,16 +47,16 @@ import com.myteay.core.service.components.MtGoodsPkgInfoComponents;
 public class AdmQueryPkgGoodsListController {
 
     /** 日志 */
-    public static final Logger         logger = Logger
-                                                  .getLogger(AdmQueryPkgGoodsListController.class);
+    public static final Logger          logger = Logger
+        .getLogger(AdmQueryPkgGoodsListController.class);
 
     /** 套餐信息管理组件 */
     @Autowired
-    private MtGoodsPkgInfoComponents   mtGoodsPkgInfoComponents;
+    private MtGoodsPkgInfoComponents    mtGoodsPkgInfoComponents;
 
     /** 套餐信息管理组件 */
     @Autowired
-    private EventPulishService<String> eventPulishService;
+    private EventPublishService<String> eventPublishService;
 
     /**
      * 添加单个套餐信息
@@ -69,7 +70,7 @@ public class AdmQueryPkgGoodsListController {
      */
     @RequestMapping(method = RequestMethod.GET)
     public ModelAndView queryGoodsList(HttpSession session, HttpServletResponse response,
-                                       HttpServletRequest request) throws IOException, MtException {
+                                       HttpServletRequest request) throws IOException, MtEventException {
         MtOperateResult<List<MtGoodsPkgModel>> result = null;
         ModelAndView view = new ModelAndView("query_pkg_goods_list");
         try {
@@ -81,7 +82,7 @@ public class AdmQueryPkgGoodsListController {
         }
 
         //TODO 测试异步事件处理组件
-        eventPulishService.publishEvent(new MtEvent<String>(
+        eventPublishService.publishEvent(new MtEvent<String>(
             MtEventTopicEnum.MT_CACHE_GOODS_PKG_FRESH.getValue(), null));
 
         if (result == null || result.getOperateResult() != MtOperateResultEnum.CAMP_OPERATE_SUCCESS

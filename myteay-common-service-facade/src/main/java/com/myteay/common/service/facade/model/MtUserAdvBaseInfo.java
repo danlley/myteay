@@ -7,7 +7,8 @@ package com.myteay.common.service.facade.model;
 import java.io.Serializable;
 import java.util.Date;
 
-import com.myteay.common.util.comm.ToStringUtil;
+import com.myteay.common.service.facade.enums.MtAuthenticFlagEnum;
+import com.myteay.common.util.tools.ToStringUtil;
 
 /**
  * 用户高级基本信息

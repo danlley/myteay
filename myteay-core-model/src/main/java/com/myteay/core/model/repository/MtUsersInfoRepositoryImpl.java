@@ -4,6 +4,7 @@
  */
 package com.myteay.core.model.repository;
 
+import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 import org.springframework.transaction.TransactionStatus;
 import org.springframework.transaction.support.TransactionCallback;
@@ -17,9 +18,8 @@ import com.myteay.common.service.facade.enums.MtOperateExResultEnum;
 import com.myteay.common.service.facade.enums.MtOperateResultEnum;
 import com.myteay.common.service.facade.model.MtOperateResult;
 import com.myteay.common.service.facade.model.MtUserRegQRCodeMessage;
-import com.myteay.common.util.comm.StringUtils;
+import com.myteay.common.util.exception.MtException;
 import com.myteay.common.utils.exception.MtBizProcessException;
-import com.myteay.common.utils.exception.MtException;
 import com.myteay.core.model.user.MtUserModel;
 import com.myteay.core.model.user.convt.MtUserModelConverter;
 import com.myteay.core.model.user.validators.MtUserDOValidator;

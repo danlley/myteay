@@ -17,6 +17,7 @@ import javax.servlet.http.HttpSession;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -26,8 +27,7 @@ import com.myteay.common.service.facade.enums.MtOperateResultEnum;
 import com.myteay.common.service.facade.exceptions.MtBizException;
 import com.myteay.common.service.facade.model.MtOperateResult;
 import com.myteay.common.service.facade.model.dinner.MtShopInfoMessage;
-import com.myteay.common.util.comm.CollectionUtils;
-import com.myteay.common.utils.exception.MtException;
+import com.myteay.common.util.exception.MtException;
 import com.myteay.core.model.dinner.MtShopModel;
 import com.myteay.core.service.components.MtShopInfoComponents;
 
