@@ -2,7 +2,7 @@
  * Myteay.com Inc.
  * Copyright (c) 2005-2017 All Rights Reserved.
  */
-package com.myteay.biz.service.impl;
+package com.myteay.biz.service.mobile.controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
