@@ -95,10 +95,10 @@ default-autowire="byName">
     </bean>
     
     <!-- 单个DAO方法的执行长度阈值暂定为80毫秒，超过之后会在日志中记录 -->
-<!-- 	<bean id="daoPerformanceMonitorInterceptor" class="com.iwallet.biz.common.aop.PerformanceMonitorInterceptor">
-		<property name="threshold"><value>3</value></property>
+ 	<bean id="daoPerformanceMonitorInterceptor" class="com.myteay.common.aop.monitor.logger.PerformanceMonitorInterceptor">
+		<property name="threshold"><value>1</value></property>
 	</bean>
-	<bean id="dalMonitorInterceptor" class="com.myteay.common.dal.utils.DalMonitorInterceptor"/>
+	<bean id="dalMonitorInterceptor" class="com.myteay.common.aop.monitor.logger.DalMonitorInterceptor"/>
 	<bean id="daoAutoProxyCreator" class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
 		<property name="interceptorNames">
 			<list>
@@ -109,5 +109,5 @@ default-autowire="byName">
 		<property name="beanNames">
 			<value>*DAO</value>
 		</property>
-	</bean> -->
+	</bean>
 </beans>
