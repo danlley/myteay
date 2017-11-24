@@ -14,12 +14,6 @@ import org.apache.commons.lang.StringUtils;
  */
 public enum MtSysKeyEnum {
 
-                          /** 二维码生成后的存放路径 */
-                          CS_CURR_QRCODE_PATH("CS_CURR_QRCODE_PATH", "二维码生成后的存放路径"),
-
-                          /** 二维码中心默认图片存放路径 */
-                          CS_QRCODE_DEFIMG_PATH("CS_QRCODE_DEFIMG_PATH", "二维码中心默认图片存放路径"),
-
                           /** 系统工作根路径 */
                           CS_SYS_ROOT_PATH("CS_SYS_ROOT_PATH", "系统工作根路径"),
 

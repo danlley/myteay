@@ -23,14 +23,6 @@ public enum MtOperateExResultEnum {
 
                                    CAMP_PROCESS_UNKNOW_ERR("CAMP_CONFIG_MNG_UNKNOW_ERR", "00028002", "数据执行过程发生异常"),
 
-                                   CAMP_QRCODE_EXE_FAILED("CAMP_QRCODE_EXE_FAILED", "00028003", "用户注册二维码身份信息生成失败"),
-
-                                   CAMP_USERID_ERR("CAMP_USERID_ERR", "00028004", "userid不合法"),
-
-                                   CAMP_QRCODE_FILENAME_FAILED("CAMP_QRCODE_FILENAME_FAILED", "00028005", "二维码信息交互模型中的二维码文件信息不可用"),
-
-                                   CAMP_USERID_NO_USER("CAMP_USERID_NO_USER", "00028006", "当前用户未找到"),
-
     ;
 
     /** 枚举值 */

@@ -2,26 +2,32 @@
  * Myteay.com Inc.
  * Copyright (c) 2015-2016 All Rights Reserved.
  */
-package com.myteay.common.service.facade.enums;
+package com.myteay.common.util.enums;
 
 import org.apache.commons.lang.StringUtils;
 
 /**
- * 用于安全邮箱及安全手机的认证状态标识
+ * 消息事件主题
  * 
  * @author Administrator
- * @version $Id: MtAuthenticFlagEnum.java, v 0.1 2016年2月24日 下午10:11:20 Administrator Exp $
+ * @version $Id: MtEventTopicEnum.java, v 0.1 2016年3月20日 下午9:57:48 Administrator Exp $
  */
-public enum MtAuthenticFlagEnum {
+public enum MtEventTopicEnum {
 
-                                 /** 认证用户 */
-                                 CS_CHECKED_FLAG("CS_CHECKED_FLAG", "已认证"),
+                              /** 套餐缓存刷新事件 */
+                              MT_CACHE_GOODS_PKG_FRESH("MT_CACHE_GOODS_PKG_FRESH", "套餐缓存刷新事件"),
 
-                                 /** 未认证 */
-                                 CS_UNCHECKED_FLAG("CS_UNCHECKED_FLAG", "未认证"),
+                              /** 用户二维码注册生成事件 */
+                              MT_USR_QR_CODE_REGISTERY("MT_USR_QR_CODE_REGISTERY", "用户二维码注册生成事件"),
 
-                                 /** 未补全 */
-                                 CS_UNSUBMIT_FLAG("CS_UNSUBMIT_FLAG", "未补全"),
+                              /** 用户联系人列表 */
+                              MT_USR_CONTACT_LIST("MT_USR_CONTACT_LIST", "用户联系人列表"),
+
+                              /** 用户注册扩展信息异步事件 */
+                              MT_USR_REG_EXT_EVENT("MT_USR_REG_EXT_EVENT", "用户注册扩展信息异步事件"),
+
+                              /** 用户注册手机信息异步事件 */
+                              MT_USR_REG_MOBILE_INFO_EVENT("MT_USR_REG_MOBILE_INFO_EVENT", "用户注册手机信息异步事件"),
 
     ;
     /** value */
@@ -35,7 +41,7 @@ public enum MtAuthenticFlagEnum {
      * @param code
      * @param description
      */
-    private MtAuthenticFlagEnum(String value, String message) {
+    private MtEventTopicEnum(String value, String message) {
         this.value = value;
         this.message = message;
     }
@@ -59,12 +65,12 @@ public enum MtAuthenticFlagEnum {
      * @param value
      * @return
      */
-    public static MtAuthenticFlagEnum getByCode(String value) {
+    public static MtEventTopicEnum getByCode(String value) {
         if (StringUtils.isBlank(value)) {
             return null;
         }
         value = value.trim();
-        for (MtAuthenticFlagEnum type : values()) {
+        for (MtEventTopicEnum type : values()) {
             if (type.getValue().equals(value))
                 return type;
         }
@@ -78,11 +84,11 @@ public enum MtAuthenticFlagEnum {
      * @param value
      * @return
      */
-    public static MtAuthenticFlagEnum getByValue(String value) {
+    public static MtEventTopicEnum getByValue(String value) {
         if (value == null) {
             return null;
         }
-        for (MtAuthenticFlagEnum result : values()) {
+        for (MtEventTopicEnum result : values()) {
             if (result.getValue().equals(value)) {
                 return result;
             }
@@ -96,11 +102,11 @@ public enum MtAuthenticFlagEnum {
      * @param message
      * @return
      */
-    public static MtAuthenticFlagEnum getByMessage(String message) {
+    public static MtEventTopicEnum getByMessage(String message) {
         if (StringUtils.isBlank(message)) {
             return null;
         }
-        for (MtAuthenticFlagEnum result : values()) {
+        for (MtEventTopicEnum result : values()) {
             if (result.getMessage().equals(message)) {
                 return result;
             }
