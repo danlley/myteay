@@ -10,35 +10,35 @@ import java.util.Date;
 import com.myteay.common.util.tools.ToStringUtil;
 
 /**
- * µêÆÌĞÅÏ¢Êı¾İÄ£ĞÍ
+ * åº—é“ºä¿¡æ¯æ•°æ®æ¨¡å‹
  * 
  * @author Administrator
- * @version $Id: ShopInfoDO.java, v 0.1 2016Äê3ÔÂ4ÈÕ ÏÂÎç4:57:55 Administrator Exp $
+ * @version $Id: ShopInfoDO.java, v 0.1 2016å¹´3æœˆ4æ—¥ ä¸‹åˆ4:57:55 Administrator Exp $
  */
 public class ShopInfoDO implements Serializable {
 
     /** serialVersionUID */
     private static final long serialVersionUID = -5797114231795812326L;
 
-    /** µêÆÌ±àºÅ */
+    /** åº—é“ºç¼–å· */
     private String            shopId;
 
-    /** µêÆÌÃû³Æ */
+    /** åº—é“ºåç§° */
     private String            shopName;
 
-    /** µêÆÌµØÖ· */
+    /** åº—é“ºåœ°å€ */
     private String            shopAddr;
 
-    /** µêÆÌµç»° */
+    /** åº—é“ºç”µè¯ */
     private String            shopTel;
 
-    /** ³ÇÊĞÂë */
+    /** åŸå¸‚ç  */
     private String            cityCode;
 
-    /** ´´µêÊ±¼ä */
+    /** åˆ›åº—æ—¶é—´ */
     private Date              gmtCreated;
 
-    /** ×îºóĞŞ¸ÄÊ±¼ä */
+    /** æœ€åä¿®æ”¹æ—¶é—´ */
     private Date              gmtModified;
 
     /**

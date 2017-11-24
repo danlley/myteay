@@ -8,40 +8,40 @@ import com.myteay.common.service.facade.enums.MtProcessManageTypeEnum;
 import com.myteay.common.service.facade.model.MtOperateResult;
 
 /**
- * ²Ù×÷Ö´ĞĞÄ£°å<br><br>
- * 1¡¢ÊÂÎñ´¦ÀíÄ£°å£º
+ * æ“ä½œæ‰§è¡Œæ¨¡æ¿<br><br>
+ * 1ã€äº‹åŠ¡å¤„ç†æ¨¡æ¿ï¼š
  * <ul>
- *      <li>ÎªÈ·±£ÊÂÎñÒ»ÖÂĞÔ£¬ÊÂÎñ´¦ÀíÄ£°åÓ¦¾¡Á¿·ÅÔÚÒµÎñ²Ù×÷µÄÈë¿â½øĞĞ½ÓÈë</li>
+ *      <li>ä¸ºç¡®ä¿äº‹åŠ¡ä¸€è‡´æ€§ï¼Œäº‹åŠ¡å¤„ç†æ¨¡æ¿åº”å°½é‡æ”¾åœ¨ä¸šåŠ¡æ“ä½œçš„å…¥åº“è¿›è¡Œæ¥å…¥</li>
  * </ul>
  * 
- * 2¡¢²»´øÊÂÎñµÄ´¦ÀíÄ£°åÊ¹ÓÃ³¡¾°£º
+ * 2ã€ä¸å¸¦äº‹åŠ¡çš„å¤„ç†æ¨¡æ¿ä½¿ç”¨åœºæ™¯ï¼š
  * <ul>
- *      <li>ÊÂÎñ¿ØÖÆÒÑ¾­ÔÚÉÏ²ãÍêÈ«¿ØÖÆ£¬µ«²Ù×÷ÀàĞÍÒÀÈ»ÓĞÊÂÇ°¡¢ÊÂÖĞ¡¢ÊÂºó£¬ĞèÒª¸ù¾İ²Ù×÷ÀàĞÍÇø±ğ´¦Àí</li>
+ *      <li>äº‹åŠ¡æ§åˆ¶å·²ç»åœ¨ä¸Šå±‚å®Œå…¨æ§åˆ¶ï¼Œä½†æ“ä½œç±»å‹ä¾ç„¶æœ‰äº‹å‰ã€äº‹ä¸­ã€äº‹åï¼Œéœ€è¦æ ¹æ®æ“ä½œç±»å‹åŒºåˆ«å¤„ç†</li>
  * </ul>
  * 
  * @author Administrator
- * @version $Id: MtOperateManageTemplate.java, v 0.1 2016Äê9ÔÂ7ÈÕ ÏÂÎç8:06:31 Administrator Exp $
+ * @version $Id: MtOperateManageTemplate.java, v 0.1 2016å¹´9æœˆ7æ—¥ ä¸‹åˆ8:06:31 Administrator Exp $
  */
 public interface MtOperateManageTemplate {
 
     /**
-     * ²Ù×÷Ö´ĞĞÄ£°å
+     * æ“ä½œæ‰§è¡Œæ¨¡æ¿
      * 
-     * @param manageType        ²Ù×÷ÀàĞÍ
-     * @param obj               ²Ù×÷Êı¾İ
-     * @param callback          ²Ù×÷»Øµ÷³éÏóÀàÊµÀı
-     * @return                  ²Ù×÷½á¹û
+     * @param manageType        æ“ä½œç±»å‹
+     * @param obj               æ“ä½œæ•°æ®
+     * @param callback          æ“ä½œå›è°ƒæŠ½è±¡ç±»å®ä¾‹
+     * @return                  æ“ä½œç»“æœ
      */
     public MtOperateResult<String> execute(MtProcessManageTypeEnum manageType, Object obj,
                                            MtManageCallback callback);
 
     /**
-     * ²»´øÊÂÎñ´¦ÀíµÄ²Ù×÷Ä£°å
+     * ä¸å¸¦äº‹åŠ¡å¤„ç†çš„æ“ä½œæ¨¡æ¿
      * 
-     * @param manageType        ²Ù×÷ÀàĞÍ
-     * @param obj               ²Ù×÷Êı¾İ
-     * @param callback          ²Ù×÷»Øµ÷³éÏóÀàÊµÀı
-     * @return                  Ö´ĞĞ½á¹û
+     * @param manageType        æ“ä½œç±»å‹
+     * @param obj               æ“ä½œæ•°æ®
+     * @param callback          æ“ä½œå›è°ƒæŠ½è±¡ç±»å®ä¾‹
+     * @return                  æ‰§è¡Œç»“æœ
      */
     public MtOperateResult<String> executeWithOutTrans(final MtProcessManageTypeEnum manageType,
                                                        final Object obj,

@@ -7,7 +7,7 @@ package com.myteay.common.service.facade.results;
 import java.io.Serializable;
 
 /**
- * ¶ÔÍâ·şÎñ·µ»Ø½á¹û
+ * å¯¹å¤–æœåŠ¡è¿”å›ç»“æœ
  * 
  * @author danlley
  * @version $Id: MtServiceResult.java, v 0.1 Aug 31, 2017 9:43:39 AM danlley Exp $
@@ -17,16 +17,16 @@ public class MtServiceResult<T> implements Serializable {
     /** serialVersionUID */
     private static final long serialVersionUID = -465379895931499387L;
 
-    /** ²Ù×÷½á¹ûÂë */
+    /** æ“ä½œç»“æœç  */
     private String            operateResult;
 
-    /** ²Ù×÷½á¹ûÀ©Õ¹Âë */
+    /** æ“ä½œç»“æœæ‰©å±•ç  */
     private String            operateExResult;
 
-    /** ²Ù×÷Ä¿±ê·µ»Ø¶ÔÏó */
+    /** æ“ä½œç›®æ ‡è¿”å›å¯¹è±¡ */
     private T                 result;
 
-    /** ·µ»ØÂëÎª FAILEDÊ±£¬¶ÔÓ¦µÄ´íÎó²Î¿¼ĞÅÏ¢ */
+    /** è¿”å›ç ä¸º FAILEDæ—¶ï¼Œå¯¹åº”çš„é”™è¯¯å‚è€ƒä¿¡æ¯ */
     private String            errorDetail;
 
     /**
@@ -38,10 +38,10 @@ public class MtServiceResult<T> implements Serializable {
     /**
      * constructor for initial instance
      * 
-     * @param operateResult     ·µ»Ø½á¹ûÀàĞÍ
-     * @param result            Ö´ĞĞ½á¹û
-     * @param errorDetail       ´íÎóÏêÇé
-     * @param operateExResult   À©Õ¹ĞÅÏ¢
+     * @param operateResult     è¿”å›ç»“æœç±»å‹
+     * @param result            æ‰§è¡Œç»“æœ
+     * @param errorDetail       é”™è¯¯è¯¦æƒ…
+     * @param operateExResult   æ‰©å±•ä¿¡æ¯
      */
     public MtServiceResult(String operateResult, T result, String errorDetail,
                            String operateExResult) {

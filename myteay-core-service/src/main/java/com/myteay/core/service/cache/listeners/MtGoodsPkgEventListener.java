@@ -10,14 +10,14 @@ import com.myteay.common.service.facade.exceptions.MtBizException;
 import com.myteay.core.service.cache.components.MtGoodsPkgCacheComponents;
 
 /**
- * Ì×²ÍĞÅÏ¢»º´æ¼àÌıÆ÷
+ * å¥—é¤ä¿¡æ¯ç¼“å­˜ç›‘å¬å™¨
  * 
  * @author Administrator
- * @version $Id: MtGoodsPkgEventListener.java, v 0.1 2016Äê3ÔÂ20ÈÕ ÏÂÎç9:20:17 Administrator Exp $
+ * @version $Id: MtGoodsPkgEventListener.java, v 0.1 2016å¹´3æœˆ20æ—¥ ä¸‹åˆ9:20:17 Administrator Exp $
  */
 public class MtGoodsPkgEventListener extends EventListener<Object> {
 
-    /** Ì×²Í»º´æĞÅÏ¢Ö´ĞĞ×é¼ş */
+    /** å¥—é¤ç¼“å­˜ä¿¡æ¯æ‰§è¡Œç»„ä»¶ */
     private MtGoodsPkgCacheComponents mtGoodsPkgCacheComponents;
 
     /** 
@@ -27,17 +27,17 @@ public class MtGoodsPkgEventListener extends EventListener<Object> {
     public Object handleEvent(MtEvent<?> event) {
 
         if (logger.isInfoEnabled()) {
-            logger.info("ÊÕµ½Ë¢ĞÂÌ×²ÍĞÅÏ¢»º´æ±ä¸üÇëÇó£¬¿ªÊ¼Ë¢ĞÂÌ×²ÍĞÅÏ¢»º´æ event=" + event);
+            logger.info("æ”¶åˆ°åˆ·æ–°å¥—é¤ä¿¡æ¯ç¼“å­˜å˜æ›´è¯·æ±‚ï¼Œå¼€å§‹åˆ·æ–°å¥—é¤ä¿¡æ¯ç¼“å­˜ event=" + event);
         }
 
         try {
             mtGoodsPkgCacheComponents.refreshCache();
         } catch (MtBizException e) {
-            logger.warn("»º´æĞÅÏ¢Ë¢ĞÂÊ§°Ü£¬event=" + event + "\r\n" + e.getMessage(), e);
+            logger.warn("ç¼“å­˜ä¿¡æ¯åˆ·æ–°å¤±è´¥ï¼Œevent=" + event + "\r\n" + e.getMessage(), e);
         }
 
         if (logger.isInfoEnabled()) {
-            logger.info("Ë¢ĞÂÌ×²ÍĞÅÏ¢»º´æ±ä¸üÇëÇó´¦Àí½áÊø");
+            logger.info("åˆ·æ–°å¥—é¤ä¿¡æ¯ç¼“å­˜å˜æ›´è¯·æ±‚å¤„ç†ç»“æŸ");
         }
 
         return null;

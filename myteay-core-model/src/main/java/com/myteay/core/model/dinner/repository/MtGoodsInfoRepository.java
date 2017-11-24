@@ -10,40 +10,40 @@ import com.myteay.common.service.facade.model.MtOperateResult;
 import com.myteay.core.model.dinner.MtGoodsModel;
 
 /**
- * µ¥Æ·ĞÅÏ¢µ¥Æ·¹ÜÀí²Ö´¢²ã
+ * å•å“ä¿¡æ¯å•å“ç®¡ç†ä»“å‚¨å±‚
  * 
  * @author Administrator
- * @version $Id: MtGoodsInfoRepository.java, v 0.1 2016Äê3ÔÂ5ÈÕ ÉÏÎç12:24:56 Administrator Exp $
+ * @version $Id: MtGoodsInfoRepository.java, v 0.1 2016å¹´3æœˆ5æ—¥ ä¸Šåˆ12:24:56 Administrator Exp $
  */
 public interface MtGoodsInfoRepository {
     /**
-     * Í¨¹ıIDÉ¾³ıÖ¸¶¨µ¥Æ·ĞÅÏ¢
+     * é€šè¿‡IDåˆ é™¤æŒ‡å®šå•å“ä¿¡æ¯
      * 
-     * @param id    µ¥Æ·ID
-     * @return      É¾³ı½á¹û
+     * @param id    å•å“ID
+     * @return      åˆ é™¤ç»“æœ
      */
     public MtOperateResult<String> removeGoodsInfoById(String id);
 
     /**
-     * Í¨¹ıID²éÕÒÖ¸¶¨µ¥Æ·ĞÅÏ¢
+     * é€šè¿‡IDæŸ¥æ‰¾æŒ‡å®šå•å“ä¿¡æ¯
      * 
-     * @param id    µ¥Æ·ĞÅÏ¢Á÷Ë®ºÅ
-     * @return      µ¥Æ·ĞÅÏ¢Ä£ĞÍ
+     * @param id    å•å“ä¿¡æ¯æµæ°´å·
+     * @return      å•å“ä¿¡æ¯æ¨¡å‹
      */
     public MtOperateResult<MtGoodsModel> findGoodsInfoById(String id);
 
     /**
-     * ±£´æµ¥Æ·µ¥Æ·ĞÅÏ¢
+     * ä¿å­˜å•å“å•å“ä¿¡æ¯
      * 
-     * @param model µ¥Æ·ĞÅÏ¢Ä£ĞÍ
-     * @return      ´¦Àí½á¹û
+     * @param model å•å“ä¿¡æ¯æ¨¡å‹
+     * @return      å¤„ç†ç»“æœ
      */
     public MtOperateResult<String> saveGoodsInfo(MtGoodsModel model);
 
     /**
-     * ²éÑ¯ËùÓĞµÄµ¥Æ·ĞÅÏ¢
+     * æŸ¥è¯¢æ‰€æœ‰çš„å•å“ä¿¡æ¯
      * 
-     * @return  ·µ»Øµ¥Æ·ĞÅÏ¢ÁĞ±í
+     * @return  è¿”å›å•å“ä¿¡æ¯åˆ—è¡¨
      */
     public MtOperateResult<List<MtGoodsModel>> queryGoodsList();
 }

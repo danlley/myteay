@@ -19,17 +19,17 @@ import com.myteay.core.model.dinner.MtShopModel;
 import com.myteay.core.model.user.convt.MtShopModelConvertor;
 
 /**
- * µêÆÌĞÅÏ¢²Ö´¢²ã
+ * åº—é“ºä¿¡æ¯ä»“å‚¨å±‚
  * 
  * @author Administrator
- * @version $Id: MtShopInfoRepositoryImpl.java, v 0.1 2016Äê3ÔÂ4ÈÕ ÏÂÎç5:15:48 Administrator Exp $
+ * @version $Id: MtShopInfoRepositoryImpl.java, v 0.1 2016å¹´3æœˆ4æ—¥ ä¸‹åˆ5:15:48 Administrator Exp $
  */
 public class MtShopInfoRepositoryImpl implements MtShopInfoRepository {
 
-    /** ÈÕÖ¾ */
+    /** æ—¥å¿— */
     public static final Logger logger = Logger.getLogger(MtShopInfoRepositoryImpl.class);
 
-    /** µêÆÌĞÅÏ¢²Ù×÷DAO */
+    /** åº—é“ºä¿¡æ¯æ“ä½œDAO */
     private ShopInfoDAO        shopInfoDAO;
 
     /** 
@@ -43,7 +43,7 @@ public class MtShopInfoRepositoryImpl implements MtShopInfoRepository {
         try {
             list = shopInfoDAO.findAll();
         } catch (Exception e) {
-            logger.error("²éÑ¯ËùÓĞµêÆÌĞÅÏ¢³ö´í " + e.getMessage(), e);
+            logger.error("æŸ¥è¯¢æ‰€æœ‰åº—é“ºä¿¡æ¯å‡ºé”™ " + e.getMessage(), e);
             result.setOperateExResult(MtOperateExResultEnum.CAMP_SQL_EXE_INVALID);
             result.setOperateResult(MtOperateResultEnum.CAMP_OPERATE_FAILED);
             result.setErrorDetail(e.getMessage());
@@ -51,7 +51,7 @@ public class MtShopInfoRepositoryImpl implements MtShopInfoRepository {
         }
 
         if (CollectionUtils.isEmpty(list)) {
-            logger.warn("ÏµÍ³µ±Ç°Î´ÕÒµ½µêÆÌĞÅÏ¢£¬ÇëºËÊµÏà¹ØÊı¾İ£¡");
+            logger.warn("ç³»ç»Ÿå½“å‰æœªæ‰¾åˆ°åº—é“ºä¿¡æ¯ï¼Œè¯·æ ¸å®ç›¸å…³æ•°æ®ï¼");
             result.setOperateExResult(MtOperateExResultEnum.CAMP_OPERATE_SUCCESS);
             result.setOperateResult(MtOperateResultEnum.CAMP_OPERATE_SUCCESS);
             return result;

@@ -10,18 +10,18 @@ import com.myteay.common.util.constants.MtConstants;
 import com.myteay.core.model.dinner.MtGoodsPkgModel;
 
 /**
- * Ì×²ÍÄ£ĞÍ×ª»»Æ÷
+ * å¥—é¤æ¨¡å‹è½¬æ¢å™¨
  * 
  * @author Administrator
- * @version $Id: MtGoodsPkgModelConvertor.java, v 0.1 2016Äê3ÔÂ5ÈÕ ÏÂÎç9:22:35 Administrator Exp $
+ * @version $Id: MtGoodsPkgModelConvertor.java, v 0.1 2016å¹´3æœˆ5æ—¥ ä¸‹åˆ9:22:35 Administrator Exp $
  */
 public class MtGoodsPkgModelConvertor {
 
     /**
-     * ½«Ì×²ÍÄ£ĞÍ×ª»»ÎªÌ×²ÍĞÅÏ¢Êı¾İÄ£ĞÍ
+     * å°†å¥—é¤æ¨¡å‹è½¬æ¢ä¸ºå¥—é¤ä¿¡æ¯æ•°æ®æ¨¡å‹
      * 
-     * @param model Ì×²ÍÄ£ĞÍ
-     * @return      Ì×²ÍĞÅÏ¢Êı¾İÄ£ĞÍ
+     * @param model å¥—é¤æ¨¡å‹
+     * @return      å¥—é¤ä¿¡æ¯æ•°æ®æ¨¡å‹
      */
     public static GoodsPkgInfoDO convertModel2DO(MtGoodsPkgModel model) {
 
@@ -46,10 +46,10 @@ public class MtGoodsPkgModelConvertor {
     }
 
     /**
-     * ½«Ì×²ÍĞÅÏ¢Êı¾İÄ£ĞÍ×ª»»ÎªÌ×²ÍÄ£ĞÍ
+     * å°†å¥—é¤ä¿¡æ¯æ•°æ®æ¨¡å‹è½¬æ¢ä¸ºå¥—é¤æ¨¡å‹
      * 
-     * @param goodsPkgInfoDO    Ì×²ÍÊı¾İÄ£ĞÍ
-     * @return                  Ì×²ÍÄ£ĞÍ
+     * @param goodsPkgInfoDO    å¥—é¤æ•°æ®æ¨¡å‹
+     * @return                  å¥—é¤æ¨¡å‹
      */
     public static MtGoodsPkgModel convertDO2Model(GoodsPkgInfoDO goodsPkgInfoDO) {
 
@@ -73,10 +73,10 @@ public class MtGoodsPkgModelConvertor {
     }
 
     /**
-     * ½«Ì×²ÍĞÅÏ¢Ä£ĞÍ×ª»»ÎªÌ×²ÍĞÅÏ¢½»»¥µ¥¾İ
+     * å°†å¥—é¤ä¿¡æ¯æ¨¡å‹è½¬æ¢ä¸ºå¥—é¤ä¿¡æ¯äº¤äº’å•æ®
      * 
-     * @param model Ì×²ÍĞÅÏ¢Ä£ĞÍ
-     * @return      Ì×²ÍĞÅÏ¢½»»¥µ¥¾İ
+     * @param model å¥—é¤ä¿¡æ¯æ¨¡å‹
+     * @return      å¥—é¤ä¿¡æ¯äº¤äº’å•æ®
      */
     public static MtGoodsPkgInfoMessage convertModel2Message(MtGoodsPkgModel model) {
 
@@ -101,10 +101,10 @@ public class MtGoodsPkgModelConvertor {
     }
 
     /**
-     * ½«Ì×²ÍĞÅÏ¢½»»¥µ¥¾İ×ª»»ÎªÌ×²ÍĞÅÏ¢Ä£ĞÍ
+     * å°†å¥—é¤ä¿¡æ¯äº¤äº’å•æ®è½¬æ¢ä¸ºå¥—é¤ä¿¡æ¯æ¨¡å‹
      * 
-     * @param message   Ì×²ÍĞÅÏ¢½»»¥µ¥¾İ
-     * @return          Ì×²ÍĞÅÏ¢Ä£ĞÍ
+     * @param message   å¥—é¤ä¿¡æ¯äº¤äº’å•æ®
+     * @return          å¥—é¤ä¿¡æ¯æ¨¡å‹
      */
     public static MtGoodsPkgModel convertMessage2Model(MtGoodsPkgInfoMessage message) {
 

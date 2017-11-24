@@ -7,46 +7,46 @@ package com.myteay.common.service.facade.enums;
 import org.apache.commons.lang.StringUtils;
 
 /**
- * ·µ»Ø½á¹ûÀ©Õ¹Âë
+ * è¿”å›ç»“æœæ‰©å±•ç 
  * 
  * @author Administrator
- * @version $Id: MtOperateExResultEnum.java, v 0.1 2015Äê12ÔÂ1ÈÕ ÏÂÎç4:49:41 Administrator Exp $
+ * @version $Id: MtOperateExResultEnum.java, v 0.1 2015å¹´12æœˆ1æ—¥ ä¸‹åˆ4:49:41 Administrator Exp $
  */
 public enum MtOperateExResultEnum {
 
-                                   //----------------          »ù±¾À©Õ¹½á¹ûĞÅÏ¢ĞÅÏ¢          ----------------
-                                   CAMP_OPERATE_SUCCESS("CAMP_OPERATE_SUCCESS", "00010001", "²Ù×÷³É¹¦"),
+                                   //----------------          åŸºæœ¬æ‰©å±•ç»“æœä¿¡æ¯ä¿¡æ¯          ----------------
+                                   CAMP_OPERATE_SUCCESS("CAMP_OPERATE_SUCCESS", "00010001", "æ“ä½œæˆåŠŸ"),
 
-                                   CAMP_SQL_EXE_INVALID("CAMP_SQL_EXE_INVALID", "00010002", "SQLÖ´ĞĞÒì³£"),
+                                   CAMP_SQL_EXE_INVALID("CAMP_SQL_EXE_INVALID", "00010002", "SQLæ‰§è¡Œå¼‚å¸¸"),
 
-                                   CAMP_ILLEGAL_ARGUMENTS("CAMP_ILLEGAL_ARGUMENTS", "00010003", "²ÎÊıÒì³£"),
+                                   CAMP_ILLEGAL_ARGUMENTS("CAMP_ILLEGAL_ARGUMENTS", "00010003", "å‚æ•°å¼‚å¸¸"),
 
-                                   CAMP_PROCESS_UNKNOW_ERR("CAMP_CONFIG_MNG_UNKNOW_ERR", "00028002", "Êı¾İÖ´ĞĞ¹ı³Ì·¢ÉúÒì³£"),
+                                   CAMP_PROCESS_UNKNOW_ERR("CAMP_CONFIG_MNG_UNKNOW_ERR", "00028002", "æ•°æ®æ‰§è¡Œè¿‡ç¨‹å‘ç”Ÿå¼‚å¸¸"),
 
-                                   CAMP_QRCODE_EXE_FAILED("CAMP_QRCODE_EXE_FAILED", "00028003", "ÓÃ»§×¢²á¶şÎ¬ÂëÉí·İĞÅÏ¢Éú³ÉÊ§°Ü"),
+                                   CAMP_QRCODE_EXE_FAILED("CAMP_QRCODE_EXE_FAILED", "00028003", "ç”¨æˆ·æ³¨å†ŒäºŒç»´ç èº«ä»½ä¿¡æ¯ç”Ÿæˆå¤±è´¥"),
 
-                                   CAMP_USERID_ERR("CAMP_USERID_ERR", "00028004", "userid²»ºÏ·¨"),
+                                   CAMP_USERID_ERR("CAMP_USERID_ERR", "00028004", "useridä¸åˆæ³•"),
 
-                                   CAMP_QRCODE_FILENAME_FAILED("CAMP_QRCODE_FILENAME_FAILED", "00028005", "¶şÎ¬ÂëĞÅÏ¢½»»¥Ä£ĞÍÖĞµÄ¶şÎ¬ÂëÎÄ¼şĞÅÏ¢²»¿ÉÓÃ"),
+                                   CAMP_QRCODE_FILENAME_FAILED("CAMP_QRCODE_FILENAME_FAILED", "00028005", "äºŒç»´ç ä¿¡æ¯äº¤äº’æ¨¡å‹ä¸­çš„äºŒç»´ç æ–‡ä»¶ä¿¡æ¯ä¸å¯ç”¨"),
 
-                                   CAMP_USERID_NO_USER("CAMP_USERID_NO_USER", "00028006", "µ±Ç°ÓÃ»§Î´ÕÒµ½"),
+                                   CAMP_USERID_NO_USER("CAMP_USERID_NO_USER", "00028006", "å½“å‰ç”¨æˆ·æœªæ‰¾åˆ°"),
 
     ;
 
-    /** Ã¶¾ÙÖµ */
+    /** æšä¸¾å€¼ */
     private final String value;
 
-    /** Ã¶¾ÙÃèÊö */
+    /** æšä¸¾æè¿° */
     private final String message;
 
-    /** Ã¶¾ÙÃèÊö */
+    /** æšä¸¾æè¿° */
     private final String code;
 
     /**
-     * Ë½ÓĞ¹¹Ôì·½·¨
+     * ç§æœ‰æ„é€ æ–¹æ³•
      * 
-     * @param value         Ã¶¾ÙÖµ
-     * @param message       Ã¶¾ÙÃèÊö
+     * @param value         æšä¸¾å€¼
+     * @param message       æšä¸¾æè¿°
      */
     private MtOperateExResultEnum(String value, String code, String message) {
         this.value = value;
@@ -82,9 +82,9 @@ public enum MtOperateExResultEnum {
     }
 
     /**
-     * Í¨¹ıÖµ»ñÈ¡Ã¶¾Ù¶ÔÏó
-     * @param value     Ã¶¾ÙÖµ
-     * @return          Ã¶¾Ù¶ÔÏó
+     * é€šè¿‡å€¼è·å–æšä¸¾å¯¹è±¡
+     * @param value     æšä¸¾å€¼
+     * @return          æšä¸¾å¯¹è±¡
      */
     public static MtOperateExResultEnum getByCode(String value) {
         if (StringUtils.isBlank(value)) {
@@ -101,20 +101,20 @@ public enum MtOperateExResultEnum {
     }
 
     /**
-     * Í¨¹ıÃ¶¾Ù<code>value</code>»ñµÃÃ¶¾Ù
+     * é€šè¿‡æšä¸¾<code>value</code>è·å¾—æšä¸¾
      * 
-     * @param value     Ã¶¾ÙÖµ
-     * @return          Ã¶¾Ù¶ÔÏó
+     * @param value     æšä¸¾å€¼
+     * @return          æšä¸¾å¯¹è±¡
      */
     public static MtOperateExResultEnum getByValue(String value) {
         return getByCode(value);
     }
 
     /**
-     * Í¨¹ıÃ¶¾Ù<code>message</code>»ñµÃÃ¶¾Ù
+     * é€šè¿‡æšä¸¾<code>message</code>è·å¾—æšä¸¾
      * 
-     * @param message       Ã¶¾ÙÃèÊö
-     * @return              Ã¶¾Ù¶ÔÏó
+     * @param message       æšä¸¾æè¿°
+     * @return              æšä¸¾å¯¹è±¡
      */
     public static MtOperateExResultEnum getByMessage(String message) {
         if (StringUtils.isBlank(message)) {

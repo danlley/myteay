@@ -10,41 +10,41 @@ import com.myteay.common.dal.dinner.dataobject.GoodsPkgInfoDO;
 import com.myteay.common.util.constants.MtDBKey;
 
 /**
- * Ì×²ÍĞÅÏ¢²Ù×÷DAO
+ * å¥—é¤ä¿¡æ¯æ“ä½œDAO
  * 
  * @author Administrator
- * @version $Id: GoodsPkgInfoDAO.java, v 0.1 2016Äê3ÔÂ5ÈÕ ÉÏÎç9:28:01 Administrator Exp $
+ * @version $Id: GoodsPkgInfoDAO.java, v 0.1 2016å¹´3æœˆ5æ—¥ ä¸Šåˆ9:28:01 Administrator Exp $
  */
 public interface GoodsPkgInfoDAO extends MtDBKey {
 
     /**
-     * É¾³ıÖ¸¶¨µÄÌ×²ÍÊı¾İĞÅÏ¢
+     * åˆ é™¤æŒ‡å®šçš„å¥—é¤æ•°æ®ä¿¡æ¯
      * 
-     * @param id    Ì×²ÍÁ÷Ë®ºÅ
+     * @param id    å¥—é¤æµæ°´å·
      * @return
      */
     public int deleteById(String id);
 
     /**
-     * Í¨¹ıÌ×²ÍĞÅÏ¢Á÷Ë®ºÅ²éÕÒÌ×²ÍĞÅÏ¢Êı¾İÄ£ĞÍ
+     * é€šè¿‡å¥—é¤ä¿¡æ¯æµæ°´å·æŸ¥æ‰¾å¥—é¤ä¿¡æ¯æ•°æ®æ¨¡å‹
      * 
-     * @param id    Ì×²ÍĞÅÏ¢Á÷Ë®ºÅ
-     * @return      Ì×²ÍĞÅÏ¢Êı¾İÄ£ĞÍ
+     * @param id    å¥—é¤ä¿¡æ¯æµæ°´å·
+     * @return      å¥—é¤ä¿¡æ¯æ•°æ®æ¨¡å‹
      */
     public GoodsPkgInfoDO findById(String id);
 
     /**
-     * ±£´æËùÓĞÌ×²ÍĞÅÏ¢
+     * ä¿å­˜æ‰€æœ‰å¥—é¤ä¿¡æ¯
      * 
-     * @param goodsPkgInfoDO    Ì×²ÍĞÅÏ¢Êı¾İÄ£ĞÍ
-     * @return                  Ì×²ÍID
+     * @param goodsPkgInfoDO    å¥—é¤ä¿¡æ¯æ•°æ®æ¨¡å‹
+     * @return                  å¥—é¤ID
      */
     public String insert(GoodsPkgInfoDO goodsPkgInfoDO);
 
     /**
-     * ²éÑ¯ËùÓĞÌ×²ÍĞÅÏ¢ÁĞ±í
+     * æŸ¥è¯¢æ‰€æœ‰å¥—é¤ä¿¡æ¯åˆ—è¡¨
      * 
-     * @return  Ì×²ÍĞÅÏ¢ÁĞ±í
+     * @return  å¥—é¤ä¿¡æ¯åˆ—è¡¨
      */
     public List<GoodsPkgInfoDO> findAll();
 }

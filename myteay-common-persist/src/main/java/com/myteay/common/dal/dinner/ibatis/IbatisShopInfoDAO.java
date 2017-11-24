@@ -11,10 +11,10 @@ import com.myteay.common.dal.dinner.dataobject.ShopInfoDO;
 import com.myteay.common.mybatis.support.tools.MtSqlSessionDaoSupport;
 
 /**
- * µêÆÌĞÅÏ¢²Ù×÷DAO
+ * åº—é“ºä¿¡æ¯æ“ä½œDAO
  * 
  * @author Administrator
- * @version $Id: IbatisShopInfoDAO.java, v 0.1 2016Äê3ÔÂ4ÈÕ ÏÂÎç5:46:19 Administrator Exp $
+ * @version $Id: IbatisShopInfoDAO.java, v 0.1 2016å¹´3æœˆ4æ—¥ ä¸‹åˆ5:46:19 Administrator Exp $
  */
 public class IbatisShopInfoDAO extends MtSqlSessionDaoSupport implements ShopInfoDAO {
 

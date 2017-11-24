@@ -7,32 +7,32 @@ package com.myteay.common.service.facade.enums;
 import org.apache.commons.lang.StringUtils;
 
 /**
- * ²Ù×÷½á¹û·µ»ØÂë
+ * æ“ä½œç»“æœè¿”å›ç 
  * 
  * @author Administrator
- * @version $Id: MtOperateResultEnum.java, v 0.1 2015Äê12ÔÂ1ÈÕ ÏÂÎç4:48:14 Administrator Exp $
+ * @version $Id: MtOperateResultEnum.java, v 0.1 2015å¹´12æœˆ1æ—¥ ä¸‹åˆ4:48:14 Administrator Exp $
  */
 public enum MtOperateResultEnum {
 
-                                 CAMP_OPERATE_SUCCESS("CAMP_OPERATE_SUCCESS", "²Ù×÷³É¹¦"),
+                                 CAMP_OPERATE_SUCCESS("CAMP_OPERATE_SUCCESS", "æ“ä½œæˆåŠŸ"),
 
-                                 CAMP_OPERATE_FAILED("CAMP_OPERATE_FAILED", "²Ù×÷Ê§°Ü"),
+                                 CAMP_OPERATE_FAILED("CAMP_OPERATE_FAILED", "æ“ä½œå¤±è´¥"),
 
-                                 CAMP_OPERATE_UNKONW("CAMP_OPERATE_UNKONW", "²Ù×÷½á¹ûÎ´Öª"),
+                                 CAMP_OPERATE_UNKONW("CAMP_OPERATE_UNKONW", "æ“ä½œç»“æœæœªçŸ¥"),
 
     ;
 
-    /** Ã¶¾ÙÖµ */
+    /** æšä¸¾å€¼ */
     private final String value;
 
-    /** Ã¶¾ÙÃèÊö */
+    /** æšä¸¾æè¿° */
     private final String message;
 
     /**
-     * Ë½ÓĞ¹¹Ôì·½·¨
+     * ç§æœ‰æ„é€ æ–¹æ³•
      * 
-     * @param value         Ã¶¾ÙÖµ
-     * @param message       Ã¶¾ÙÃèÊö
+     * @param value         æšä¸¾å€¼
+     * @param message       æšä¸¾æè¿°
      */
     private MtOperateResultEnum(String value, String message) {
         this.value = value;
@@ -58,9 +58,9 @@ public enum MtOperateResultEnum {
     }
 
     /**
-     * Í¨¹ıÖµ»ñÈ¡Ã¶¾Ù¶ÔÏó
-     * @param value     Ã¶¾ÙÖµ
-     * @return          Ã¶¾Ù¶ÔÏó
+     * é€šè¿‡å€¼è·å–æšä¸¾å¯¹è±¡
+     * @param value     æšä¸¾å€¼
+     * @return          æšä¸¾å¯¹è±¡
      */
     public static MtOperateResultEnum getByCode(String value) {
         if (StringUtils.isBlank(value)) {
@@ -77,20 +77,20 @@ public enum MtOperateResultEnum {
     }
 
     /**
-     * Í¨¹ıÃ¶¾Ù<code>value</code>»ñµÃÃ¶¾Ù
+     * é€šè¿‡æšä¸¾<code>value</code>è·å¾—æšä¸¾
      * 
-     * @param value     Ã¶¾ÙÖµ
-     * @return          Ã¶¾Ù¶ÔÏó
+     * @param value     æšä¸¾å€¼
+     * @return          æšä¸¾å¯¹è±¡
      */
     public static MtOperateResultEnum getByValue(String value) {
         return getByCode(value);
     }
 
     /**
-     * Í¨¹ıÃ¶¾Ù<code>message</code>»ñµÃÃ¶¾Ù
+     * é€šè¿‡æšä¸¾<code>message</code>è·å¾—æšä¸¾
      * 
-     * @param message       Ã¶¾ÙÃèÊö
-     * @return              Ã¶¾Ù¶ÔÏó
+     * @param message       æšä¸¾æè¿°
+     * @return              æšä¸¾å¯¹è±¡
      */
     public static MtOperateResultEnum getByMessage(String message) {
         if (StringUtils.isBlank(message)) {

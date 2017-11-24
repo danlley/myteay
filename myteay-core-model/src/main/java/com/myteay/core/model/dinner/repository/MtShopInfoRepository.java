@@ -10,17 +10,17 @@ import com.myteay.common.service.facade.model.MtOperateResult;
 import com.myteay.core.model.dinner.MtShopModel;
 
 /**
- * µêÆÌĞÅÏ¢²Ö´¢²ã
+ * åº—é“ºä¿¡æ¯ä»“å‚¨å±‚
  * 
  * @author Administrator
- * @version $Id: MtShopInfoRepository.java, v 0.1 2016Äê3ÔÂ4ÈÕ ÏÂÎç5:13:37 Administrator Exp $
+ * @version $Id: MtShopInfoRepository.java, v 0.1 2016å¹´3æœˆ4æ—¥ ä¸‹åˆ5:13:37 Administrator Exp $
  */
 public interface MtShopInfoRepository {
 
     /**
-     * ²éÑ¯ËùÓĞµÄµêÆÌĞÅÏ¢
+     * æŸ¥è¯¢æ‰€æœ‰çš„åº—é“ºä¿¡æ¯
      * 
-     * @return  ·µ»ØµêÆÌĞÅÏ¢ÁĞ±í
+     * @return  è¿”å›åº—é“ºä¿¡æ¯åˆ—è¡¨
      */
     public MtOperateResult<List<MtShopModel>> queryShopList();
 }

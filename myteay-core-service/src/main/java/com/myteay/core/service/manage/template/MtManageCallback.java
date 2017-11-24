@@ -8,52 +8,52 @@ import com.myteay.common.service.facade.enums.MtProcessManageTypeEnum;
 import com.myteay.common.utils.exception.MtBizProcessException;
 
 /**
- * ÓªÏúÍ¨ÖªÅäÖÃ¹ÜÀí×é¼ş
+ * è¥é”€é€šçŸ¥é…ç½®ç®¡ç†ç»„ä»¶
  * 
  * @author Administrator
- * @version $Id: MtManageCallback.java, v 0.1 2016Äê9ÔÂ7ÈÕ ÏÂÎç8:08:08 Administrator Exp $
+ * @version $Id: MtManageCallback.java, v 0.1 2016å¹´9æœˆ7æ—¥ ä¸‹åˆ8:08:08 Administrator Exp $
  */
 public abstract class MtManageCallback {
 
     /**
-     * ĞÂÔöÅäÖÃÊı¾İ
+     * æ–°å¢é…ç½®æ•°æ®
      * 
-     * @return                              Êı¾İ±£´æ½á¹û
-     * @throws MtBizProcessException     ÓªÏúºËĞÄÅäÖÃ²Ù×÷Òì³£
+     * @return                              æ•°æ®ä¿å­˜ç»“æœ
+     * @throws MtBizProcessException     è¥é”€æ ¸å¿ƒé…ç½®æ“ä½œå¼‚å¸¸
      */
     public abstract MtProcessManageTypeEnum process() throws MtBizProcessException;
 
     /**
-     * ×·¼ÓÅäÖÃÊı¾İ
+     * è¿½åŠ é…ç½®æ•°æ®
      * 
-     * @return                              Êı¾İ±£´æ½á¹û
-     * @throws MtBizProcessException     ÓªÏúºËĞÄÅäÖÃ²Ù×÷Òì³£
+     * @return                              æ•°æ®ä¿å­˜ç»“æœ
+     * @throws MtBizProcessException     è¥é”€æ ¸å¿ƒé…ç½®æ“ä½œå¼‚å¸¸
      */
     public MtProcessManageTypeEnum auxiliaryProcess() throws MtBizProcessException {
         return MtProcessManageTypeEnum.CS_MAIN_PROCESS;
     }
 
     /**
-     * ĞŞ¸ÄÅäÖÃÊı¾İ
+     * ä¿®æ”¹é…ç½®æ•°æ®
      * 
-     * @throws MtBizProcessException     ÓªÏúºËĞÄÅäÖÃ²Ù×÷Òì³£
+     * @throws MtBizProcessException     è¥é”€æ ¸å¿ƒé…ç½®æ“ä½œå¼‚å¸¸
      */
     public MtProcessManageTypeEnum afterProcess() throws MtBizProcessException {
         return MtProcessManageTypeEnum.CS_END;
     }
 
     /**
-     * ÅäÖÃ²ÎÊıĞ£Ñé
+     * é…ç½®å‚æ•°æ ¡éªŒ
      * 
-     * @return                              Ğ£Ñé³É¹¦Ôò·µ»Øtrue
-     * @throws MtBizProcessException     ÓªÏúºËĞÄÅäÖÃ²Ù×÷Òì³£
+     * @return                              æ ¡éªŒæˆåŠŸåˆ™è¿”å›true
+     * @throws MtBizProcessException     è¥é”€æ ¸å¿ƒé…ç½®æ“ä½œå¼‚å¸¸
      */
     public MtProcessManageTypeEnum validate() throws MtBizProcessException {
         return MtProcessManageTypeEnum.CS_BEFORE_PROCESS;
     }
 
     /**
-     * »º´æË¢ĞÂ¶¯×÷Ö´ĞĞ
+     * ç¼“å­˜åˆ·æ–°åŠ¨ä½œæ‰§è¡Œ
      */
     public MtProcessManageTypeEnum beforeProcess() throws MtBizProcessException {
         return MtProcessManageTypeEnum.CS_AUXILIARY_PROCESS;

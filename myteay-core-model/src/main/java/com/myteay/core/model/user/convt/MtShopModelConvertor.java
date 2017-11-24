@@ -8,18 +8,18 @@ import com.myteay.common.dal.dinner.dataobject.ShopInfoDO;
 import com.myteay.core.model.dinner.MtShopModel;
 
 /**
- * µêÆÌÄ£ĞÍ×ª»»Æ÷
+ * åº—é“ºæ¨¡å‹è½¬æ¢å™¨
  * 
  * @author Administrator
- * @version $Id: MtShopModelConvertor.java, v 0.1 2016Äê3ÔÂ5ÈÕ ÏÂÎç9:28:46 Administrator Exp $
+ * @version $Id: MtShopModelConvertor.java, v 0.1 2016å¹´3æœˆ5æ—¥ ä¸‹åˆ9:28:46 Administrator Exp $
  */
 public class MtShopModelConvertor {
 
     /**
-     * ½«µêÆÌĞÅÏ¢Êı¾İÄ£ĞÍ×ª»»ÎªÁìÓòÄ£ĞÍ
+     * å°†åº—é“ºä¿¡æ¯æ•°æ®æ¨¡å‹è½¬æ¢ä¸ºé¢†åŸŸæ¨¡å‹
      * 
-     * @param shopInfoDO    µêÆÌĞÅÏ¢Êı¾İÄ£ĞÍ
-     * @return              µêÆÌĞÅÏ¢Ä£ĞÍ
+     * @param shopInfoDO    åº—é“ºä¿¡æ¯æ•°æ®æ¨¡å‹
+     * @return              åº—é“ºä¿¡æ¯æ¨¡å‹
      */
     public static MtShopModel convertDO2Model(ShopInfoDO shopInfoDO) {
 

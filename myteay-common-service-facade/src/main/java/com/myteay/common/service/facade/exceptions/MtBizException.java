@@ -5,26 +5,26 @@
 package com.myteay.common.service.facade.exceptions;
 
 /**
- * ÒµÎñ´¦ÀíÒì³£
+ * ä¸šåŠ¡å¤„ç†å¼‚å¸¸
  * 
  * @author Administrator
- * @version $Id: MtException.java, v 0.1 2015Äê11ÔÂ15ÈÕ ÏÂÎç6:30:08 Administrator Exp $
+ * @version $Id: MtException.java, v 0.1 2015å¹´11æœˆ15æ—¥ ä¸‹åˆ6:30:08 Administrator Exp $
  */
 public class MtBizException extends Throwable {
 
     /** serialVersionUID */
     private static final long     serialVersionUID = -1698555152104131128L;
 
-    /** ÏµÍ³Ä¬ÈÏ´íÎóÂë */
+    /** ç³»ç»Ÿé»˜è®¤é”™è¯¯ç  */
     protected static final String DEFAULT_ERR_CODE = "-999999";
 
-    /** Ä¬ÈÏ´íÎóÏêÇé */
-    protected static final String DEFAULT_ERR_MSG  = "Î´Öª´íÎó";
+    /** é»˜è®¤é”™è¯¯è¯¦æƒ… */
+    protected static final String DEFAULT_ERR_MSG  = "æœªçŸ¥é”™è¯¯";
 
-    /** ´íÎóÂë */
+    /** é”™è¯¯ç  */
     protected String              errorCode;
 
-    /** ´íÎóÏêÇé */
+    /** é”™è¯¯è¯¦æƒ… */
     protected String              message;
 
     /**

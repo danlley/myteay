@@ -19,17 +19,17 @@ import com.myteay.core.model.dinner.MtGoodsModel;
 import com.myteay.core.model.user.convt.MtGoodsModelConvertor;
 
 /**
- * ÉÌÆ·ĞÅÏ¢µ¥Æ·¹ÜÀí²Ö´¢²ã
+ * å•†å“ä¿¡æ¯å•å“ç®¡ç†ä»“å‚¨å±‚
  * 
  * @author Administrator
- * @version $Id: MtGoodsInfoRepositoryImpl.java, v 0.1 2016Äê3ÔÂ5ÈÕ ÉÏÎç12:43:36 Administrator Exp $
+ * @version $Id: MtGoodsInfoRepositoryImpl.java, v 0.1 2016å¹´3æœˆ5æ—¥ ä¸Šåˆ12:43:36 Administrator Exp $
  */
 public class MtGoodsInfoRepositoryImpl implements MtGoodsInfoRepository {
 
-    /** ÈÕÖ¾ */
+    /** æ—¥å¿— */
     public static final Logger logger = Logger.getLogger(MtGoodsInfoRepositoryImpl.class);
 
-    /** ÉÌÆ·ĞÅÏ¢¹ÜÀíDAO */
+    /** å•†å“ä¿¡æ¯ç®¡ç†DAO */
     private GoodsInfoDAO       goodsInfoDAO;
 
     /** 
@@ -38,14 +38,14 @@ public class MtGoodsInfoRepositoryImpl implements MtGoodsInfoRepository {
     @Override
     public MtOperateResult<String> removeGoodsInfoById(String id) {
         if (logger.isInfoEnabled()) {
-            logger.info("É¾³ıÖ¸¶¨µÄµ¥Æ·ĞÅÏ¢ id=" + id);
+            logger.info("åˆ é™¤æŒ‡å®šçš„å•å“ä¿¡æ¯ id=" + id);
         }
 
         MtOperateResult<String> result = new MtOperateResult<String>();
         try {
             goodsInfoDAO.deleteById(id);
         } catch (Exception e) {
-            logger.error("É¾³ıÖ¸¶¨µ¥Æ·ĞÅÏ¢Ê§°Ü id=" + id, e);
+            logger.error("åˆ é™¤æŒ‡å®šå•å“ä¿¡æ¯å¤±è´¥ id=" + id, e);
             result.setOperateExResult(MtOperateExResultEnum.CAMP_SQL_EXE_INVALID);
             result.setOperateResult(MtOperateResultEnum.CAMP_OPERATE_FAILED);
             result.setErrorDetail(e.getMessage());
@@ -53,7 +53,7 @@ public class MtGoodsInfoRepositoryImpl implements MtGoodsInfoRepository {
         }
 
         if (logger.isInfoEnabled()) {
-            logger.info("É¾³ıÖ¸¶¨µÄµ¥Æ·ĞÅÏ¢³É¹¦ id=" + id);
+            logger.info("åˆ é™¤æŒ‡å®šçš„å•å“ä¿¡æ¯æˆåŠŸ id=" + id);
         }
         result.setOperateExResult(MtOperateExResultEnum.CAMP_OPERATE_SUCCESS);
         result.setOperateResult(MtOperateResultEnum.CAMP_OPERATE_SUCCESS);
@@ -72,14 +72,14 @@ public class MtGoodsInfoRepositoryImpl implements MtGoodsInfoRepository {
         try {
             goodsInfoDO = goodsInfoDAO.findById(id);
         } catch (Exception e) {
-            logger.error("²éÑ¯ÉÌÆ·µ¥Æ·ĞÅÏ¢Ê±·¢ÉúÒì³£ id=" + id, e);
+            logger.error("æŸ¥è¯¢å•†å“å•å“ä¿¡æ¯æ—¶å‘ç”Ÿå¼‚å¸¸ id=" + id, e);
             result.setOperateExResult(MtOperateExResultEnum.CAMP_SQL_EXE_INVALID);
             result.setOperateResult(MtOperateResultEnum.CAMP_OPERATE_FAILED);
             return result;
         }
 
         if (goodsInfoDO == null) {
-            logger.warn("ÏµÍ³µ±Ç°Î´ÕÒµ½µ¥Æ·ĞÅÏ¢£¬ÇëºËÊµÏà¹ØÊı¾İ£¡");
+            logger.warn("ç³»ç»Ÿå½“å‰æœªæ‰¾åˆ°å•å“ä¿¡æ¯ï¼Œè¯·æ ¸å®ç›¸å…³æ•°æ®ï¼");
             result.setOperateExResult(MtOperateExResultEnum.CAMP_OPERATE_SUCCESS);
             result.setOperateResult(MtOperateResultEnum.CAMP_OPERATE_SUCCESS);
             return result;
@@ -87,7 +87,7 @@ public class MtGoodsInfoRepositoryImpl implements MtGoodsInfoRepository {
 
         MtGoodsModel model = MtGoodsModelConvertor.convertDO2Model(goodsInfoDO);
         if (model == null) {
-            logger.warn("µ¥Æ·ĞÅÏ¢Êı¾İÄ£ĞÍ×ª»¯µ¥Æ·ĞÅÏ¢Ä£ĞÍÊ§°Ü model is null,goodsInfoDO=" + goodsInfoDO);
+            logger.warn("å•å“ä¿¡æ¯æ•°æ®æ¨¡å‹è½¬åŒ–å•å“ä¿¡æ¯æ¨¡å‹å¤±è´¥ model is null,goodsInfoDO=" + goodsInfoDO);
             result.setOperateExResult(MtOperateExResultEnum.CAMP_ILLEGAL_ARGUMENTS);
             result.setOperateResult(MtOperateResultEnum.CAMP_OPERATE_FAILED);
             return result;
@@ -108,7 +108,7 @@ public class MtGoodsInfoRepositoryImpl implements MtGoodsInfoRepository {
         GoodsInfoDO goodsInfoDO = MtGoodsModelConvertor.convertModel2DO(model);
         MtOperateResult<String> result = new MtOperateResult<String>();
         if (goodsInfoDO == null) {
-            logger.warn("ÉÌÆ·µ¥Æ·ĞÅÏ¢Ä£ĞÍ²»¿ÉÓÃ£¬ÎŞ·¨±£´æ model=" + model);
+            logger.warn("å•†å“å•å“ä¿¡æ¯æ¨¡å‹ä¸å¯ç”¨ï¼Œæ— æ³•ä¿å­˜ model=" + model);
             result.setOperateExResult(MtOperateExResultEnum.CAMP_ILLEGAL_ARGUMENTS);
             result.setOperateResult(MtOperateResultEnum.CAMP_OPERATE_FAILED);
             return result;
@@ -118,7 +118,7 @@ public class MtGoodsInfoRepositoryImpl implements MtGoodsInfoRepository {
         try {
             id = goodsInfoDAO.insert(goodsInfoDO);
         } catch (Exception e) {
-            logger.error("±£´æÉÌÆ·µ¥Æ·ĞÅÏ¢Ê±·¢ÉúÒì³£ model=" + model, e);
+            logger.error("ä¿å­˜å•†å“å•å“ä¿¡æ¯æ—¶å‘ç”Ÿå¼‚å¸¸ model=" + model, e);
             result.setOperateExResult(MtOperateExResultEnum.CAMP_SQL_EXE_INVALID);
             result.setOperateResult(MtOperateResultEnum.CAMP_OPERATE_FAILED);
             return result;
@@ -141,7 +141,7 @@ public class MtGoodsInfoRepositoryImpl implements MtGoodsInfoRepository {
         try {
             list = goodsInfoDAO.findAll();
         } catch (Exception e) {
-            logger.error("²éÑ¯ËùÓĞÉÌÆ·ĞÅÏ¢·¢ÉúÒì³£" + e.getMessage(), e);
+            logger.error("æŸ¥è¯¢æ‰€æœ‰å•†å“ä¿¡æ¯å‘ç”Ÿå¼‚å¸¸" + e.getMessage(), e);
             result.setOperateExResult(MtOperateExResultEnum.CAMP_SQL_EXE_INVALID);
             result.setOperateResult(MtOperateResultEnum.CAMP_OPERATE_FAILED);
             result.setErrorDetail(e.getMessage());
@@ -149,7 +149,7 @@ public class MtGoodsInfoRepositoryImpl implements MtGoodsInfoRepository {
         }
 
         if (CollectionUtils.isEmpty(list)) {
-            logger.warn("ÏµÍ³µ±Ç°Î´ÕÒµ½ÉÌÆ·ĞÅÏ¢£¬ÇëºËÊµÏà¹ØÊı¾İ£¡");
+            logger.warn("ç³»ç»Ÿå½“å‰æœªæ‰¾åˆ°å•†å“ä¿¡æ¯ï¼Œè¯·æ ¸å®ç›¸å…³æ•°æ®ï¼");
             result.setOperateExResult(MtOperateExResultEnum.CAMP_OPERATE_SUCCESS);
             result.setOperateResult(MtOperateResultEnum.CAMP_OPERATE_SUCCESS);
             return result;

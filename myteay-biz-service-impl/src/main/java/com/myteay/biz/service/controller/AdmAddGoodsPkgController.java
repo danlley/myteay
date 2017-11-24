@@ -40,35 +40,35 @@ import com.myteay.core.service.components.MtGoodsInfoComponents;
 import com.myteay.core.service.components.MtGoodsPkgInfoComponents;
 
 /**
- * Ôö¼ÓÌ×²ÍÉÌÆ·ĞÅÏ¢
+ * å¢åŠ å¥—é¤å•†å“ä¿¡æ¯
  * 
  * @author Administrator
- * @version $Id: AdmAddGoodsPkgController.java, v 0.1 2016Äê3ÔÂ5ÈÕ ÏÂÎç9:15:43 Administrator Exp $
+ * @version $Id: AdmAddGoodsPkgController.java, v 0.1 2016å¹´3æœˆ5æ—¥ ä¸‹åˆ9:15:43 Administrator Exp $
  */
 @Controller
 @RequestMapping("/adm/add_single_goods_pkg")
 public class AdmAddGoodsPkgController {
 
-    /** ÈÕÖ¾ */
+    /** æ—¥å¿— */
     public static final Logger       logger = Logger.getLogger(AdmAddGoodsPkgController.class);
 
-    /** Ì×²ÍĞÅÏ¢¹ÜÀí×é¼ş */
+    /** å¥—é¤ä¿¡æ¯ç®¡ç†ç»„ä»¶ */
     @Autowired
     private MtGoodsPkgInfoComponents mtGoodsPkgInfoComponents;
 
-    /** ÉÌÆ·¹ÜÀí×é¼ş */
+    /** å•†å“ç®¡ç†ç»„ä»¶ */
     @Autowired
     private MtGoodsInfoComponents    mtGoodsInfoComponents;
 
     /**
-     * Ìí¼Óµ¥¸öÌ×²ÍĞÅÏ¢
+     * æ·»åŠ å•ä¸ªå¥—é¤ä¿¡æ¯
      * 
-     * @param session       ½»»¥»á»°ĞÅÏ¢
-     * @param response      Ó¦´ğĞÅÏ¢
-     * @param request       ÇëÇóĞÅÏ¢
-     * @return              ·şÎñÂ·¾¶
-     * @throws IOException  Òì³£
-     * @throws MtException  Òì³£
+     * @param session       äº¤äº’ä¼šè¯ä¿¡æ¯
+     * @param response      åº”ç­”ä¿¡æ¯
+     * @param request       è¯·æ±‚ä¿¡æ¯
+     * @return              æœåŠ¡è·¯å¾„
+     * @throws IOException  å¼‚å¸¸
+     * @throws MtException  å¼‚å¸¸
      */
     @RequestMapping(method = RequestMethod.GET)
     public ModelAndView queryGoodsList(HttpSession session, HttpServletResponse response,
@@ -78,19 +78,19 @@ public class AdmAddGoodsPkgController {
         try {
             result = mtGoodsInfoComponents.queryGoodsList();
         } catch (MtBizException e) {
-            logger.warn("²éÑ¯ÉÌÆ·ĞÅÏ¢³öÏÖÒµÎñÒì³£", e);
+            logger.warn("æŸ¥è¯¢å•†å“ä¿¡æ¯å‡ºç°ä¸šåŠ¡å¼‚å¸¸", e);
         } catch (Throwable e) {
-            logger.warn("²éÑ¯ÉÌÆ·ĞÅÏ¢³öÏÖÏµÍ³Òì³£", e);
+            logger.warn("æŸ¥è¯¢å•†å“ä¿¡æ¯å‡ºç°ç³»ç»Ÿå¼‚å¸¸", e);
         }
 
         if (result == null || result.getOperateResult() != MtOperateResultEnum.CAMP_OPERATE_SUCCESS
             || result.getOperateExResult() != MtOperateExResultEnum.CAMP_OPERATE_SUCCESS) {
-            logger.warn("²éÑ¯ÉÌÆ·ĞÅÏ¢Ê§°Üresult=" + result);
+            logger.warn("æŸ¥è¯¢å•†å“ä¿¡æ¯å¤±è´¥result=" + result);
             return view;
         }
 
         if (CollectionUtils.isEmpty(result.getResult())) {
-            logger.warn("²éÑ¯³É¹¦£¡µ±Ç°Ã»ÓĞ¿ÉÓÃµÄÉÌÆ·ĞÅÏ¢result=" + result);
+            logger.warn("æŸ¥è¯¢æˆåŠŸï¼å½“å‰æ²¡æœ‰å¯ç”¨çš„å•†å“ä¿¡æ¯result=" + result);
             return view;
         }
 
@@ -108,7 +108,7 @@ public class AdmAddGoodsPkgController {
         view = new ModelAndView("add_single_goods_pkg");
         if (!CollectionUtils.isEmpty(messageList)) {
             if (logger.isInfoEnabled()) {
-                logger.info("ÉÌÆ·ÁĞ±í×é×°½áÊø");
+                logger.info("å•†å“åˆ—è¡¨ç»„è£…ç»“æŸ");
             }
             Map<String, Object> model = new HashMap<String, Object>();
             model.put("goods_pkg_add_list", messageList);
@@ -118,14 +118,14 @@ public class AdmAddGoodsPkgController {
     }
 
     /**
-     * Éú³ÉÒ³Ãæµ¥¾İ
+     * ç”Ÿæˆé¡µé¢å•æ®
      * 
-     * @param session       ½»»¥»á»°ĞÅÏ¢
-     * @param response      Ó¦´ğĞÅÏ¢
-     * @param request       ÇëÇóĞÅÏ¢
-     * @return              ·şÎñÂ·¾¶
-     * @throws IOException  Òì³£
-     * @throws MtException  Òì³£
+     * @param session       äº¤äº’ä¼šè¯ä¿¡æ¯
+     * @param response      åº”ç­”ä¿¡æ¯
+     * @param request       è¯·æ±‚ä¿¡æ¯
+     * @return              æœåŠ¡è·¯å¾„
+     * @throws IOException  å¼‚å¸¸
+     * @throws MtException  å¼‚å¸¸
      */
     @RequestMapping(method = RequestMethod.POST)
     public ModelAndView querySingleGoodsForm(HttpSession session,
@@ -145,22 +145,22 @@ public class AdmAddGoodsPkgController {
 
         ModelAndView view = new ModelAndView("add_single_goods_pkg");
         if (logger.isInfoEnabled()) {
-            logger.info("¿ªÊ¼Éú³ÉÂ¼ÈëÌ×²ÍĞÅÏ¢±íµ¥ pkgName=" + pkgName + " priceMobile=" + priceMobile
+            logger.info("å¼€å§‹ç”Ÿæˆå½•å…¥å¥—é¤ä¿¡æ¯è¡¨å• pkgName=" + pkgName + " priceMobile=" + priceMobile
                         + " price=" + price + " picAddr=" + picAddr + " picBigAddr=" + picBigAddr
                         + " shopId=" + shopId + " goodsIds=" + getGoodsIds(goodsIds));
         }
-        //¿ªÊ¼ÉÏ´«ÎÄ¼ş
+        //å¼€å§‹ä¸Šä¼ æ–‡ä»¶
         picAddr = MtFileUtils.upload(fileSmall, request, MtConstants.GOODS_PKG_UPLOAD_URI);
         picBigAddr = MtFileUtils.upload(fileBig, request, MtConstants.GOODS_PKG_UPLOAD_URI);
 
         if (logger.isInfoEnabled()) {
-            logger.info("Ì×²ÍÍ¼Æ¬ÉÏ´«½áÊø£¬picAddr=" + picAddr + " picBigAddr=" + picBigAddr);
+            logger.info("å¥—é¤å›¾ç‰‡ä¸Šä¼ ç»“æŸï¼ŒpicAddr=" + picAddr + " picBigAddr=" + picBigAddr);
         }
 
         MtGoodsPkgInfoMessage message = constructMtGoodsPkgInfoMessage(pkgName, priceMobile, price,
             picAddr, picBigAddr, shopId, getGoodsIds(goodsIds));
         if (message == null) {
-            logger.warn("Ì×²Í±ØÌîĞÅÏ¢²»¿ÉÓÃ£¬ÎŞ·¨Éú³ÉÓĞĞ§µÄÌ×²ÍĞÅÏ¢½»»¥µ¥¾İ pkgName=" + pkgName + " priceMobile="
+            logger.warn("å¥—é¤å¿…å¡«ä¿¡æ¯ä¸å¯ç”¨ï¼Œæ— æ³•ç”Ÿæˆæœ‰æ•ˆçš„å¥—é¤ä¿¡æ¯äº¤äº’å•æ® pkgName=" + pkgName + " priceMobile="
                         + priceMobile + " price=" + price + " picAddr=" + picAddr + " picBigAddr="
                         + picBigAddr + " shopId=" + shopId + " goodsIds=" + goodsIds);
             return view;
@@ -170,13 +170,13 @@ public class AdmAddGoodsPkgController {
         try {
             result = mtGoodsPkgInfoComponents.saveGoodsPkgMessage(message);
         } catch (Exception e) {
-            logger.warn("Ì×²ÍĞÅÏ¢½»»¥µ¥¾İ±£´æÊ§°Ü " + e.getMessage(), e);
+            logger.warn("å¥—é¤ä¿¡æ¯äº¤äº’å•æ®ä¿å­˜å¤±è´¥ " + e.getMessage(), e);
         }
 
         if (result == null
             || result.getOperateExResult() != MtOperateExResultEnum.CAMP_OPERATE_SUCCESS
             || result.getOperateResult() != MtOperateResultEnum.CAMP_OPERATE_SUCCESS) {
-            logger.warn("±£´æÌ×²ÍĞÅÏ¢½»»¥µ¥¾İ·¢ÉúÄÚ²¿Òì³££¬message=" + message + " result=" + result);
+            logger.warn("ä¿å­˜å¥—é¤ä¿¡æ¯äº¤äº’å•æ®å‘ç”Ÿå†…éƒ¨å¼‚å¸¸ï¼Œmessage=" + message + " result=" + result);
             return view;
         }
 
@@ -185,16 +185,16 @@ public class AdmAddGoodsPkgController {
     }
 
     /**
-     * ¹¹½¨Ì×²ÍĞÅÏ¢½»»¥µ¥¾İ
+     * æ„å»ºå¥—é¤ä¿¡æ¯äº¤äº’å•æ®
      * 
-     * @param pkgName       Ì×²ÍÃû³Æ
-     * @param priceMobile   ÊÖ»ú¶Ë¼Û¸ñ
-     * @param price         ÃÅµê¼Û¸ñ
-     * @param picAddr       Ğ¡Í¼Æ¬µØÖ·
-     * @param picBigAddr    ´óÍ¼Æ¬µØÖ·
-     * @param shopId        ÃÅµêID
-     * @param goodsIds      Ì×²Í°üº¬µÄÉÌÆ·IDÁĞ±í
-     * @return              Ì×²ÍĞÅÏ¢½»»¥µ¥¾İ
+     * @param pkgName       å¥—é¤åç§°
+     * @param priceMobile   æ‰‹æœºç«¯ä»·æ ¼
+     * @param price         é—¨åº—ä»·æ ¼
+     * @param picAddr       å°å›¾ç‰‡åœ°å€
+     * @param picBigAddr    å¤§å›¾ç‰‡åœ°å€
+     * @param shopId        é—¨åº—ID
+     * @param goodsIds      å¥—é¤åŒ…å«çš„å•†å“IDåˆ—è¡¨
+     * @return              å¥—é¤ä¿¡æ¯äº¤äº’å•æ®
      */
     private MtGoodsPkgInfoMessage constructMtGoodsPkgInfoMessage(String pkgName,
                                                                  String priceMobile, String price,
@@ -222,9 +222,9 @@ public class AdmAddGoodsPkgController {
     }
 
     /**
-     * ºÏ³ÉÉÌÆ·ID
+     * åˆæˆå•†å“ID
      * 
-     * @param goodsIds  ÉÌÆ·µ¥Æ·IDÁĞ±í
+     * @param goodsIds  å•†å“å•å“IDåˆ—è¡¨
      * @return
      */
     private String getGoodsIds(String[] goodsIds) {
@@ -235,7 +235,7 @@ public class AdmAddGoodsPkgController {
         for (String str : goodsIds) {
             goodsId += (str + MtConstants.GOODS_PREFIX_FOR_GOODS_PKG);
         }
-        logger.warn("µ±Ç°Ì×²ÍÅäÖÃµÄÉÌÆ·ĞÅÏ¢Îª£ºgoodsId=" + goodsId);
+        logger.warn("å½“å‰å¥—é¤é…ç½®çš„å•†å“ä¿¡æ¯ä¸ºï¼šgoodsId=" + goodsId);
         return goodsId;
     }
 }

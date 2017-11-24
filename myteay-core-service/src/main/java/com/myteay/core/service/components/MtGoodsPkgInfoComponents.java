@@ -12,41 +12,41 @@ import com.myteay.common.service.facade.model.dinner.MtGoodsPkgInfoMessage;
 import com.myteay.core.model.dinner.MtGoodsPkgModel;
 
 /**
- * Ì×²ÍĞÅÏ¢¹ÜÀí×é¼ş
+ * å¥—é¤ä¿¡æ¯ç®¡ç†ç»„ä»¶
  * 
  * @author Administrator
- * @version $Id: MtGoodsPkgInfoComponents.java, v 0.1 2016Äê3ÔÂ5ÈÕ ÉÏÎç9:41:17 Administrator Exp $
+ * @version $Id: MtGoodsPkgInfoComponents.java, v 0.1 2016å¹´3æœˆ5æ—¥ ä¸Šåˆ9:41:17 Administrator Exp $
  */
 public interface MtGoodsPkgInfoComponents {
 
     /**
-     * Í¨¹ıÌ×²ÍÁ÷Ë®ºÅÉ¾³ıÌ×²ÍĞÅÏ¢
+     * é€šè¿‡å¥—é¤æµæ°´å·åˆ é™¤å¥—é¤ä¿¡æ¯
      * 
-     * @param id    Ì×²ÍÁ÷Ë®ºÅ
-     * @return      ´¦Àí½á¹û
+     * @param id    å¥—é¤æµæ°´å·
+     * @return      å¤„ç†ç»“æœ
      */
     public MtOperateResult<String> deleteGoodsPkgById(String id);
 
     /**
-     * Í¨¹ıÌ×²ÍÁ÷Ë®ºÅ²éÑ¯Ì×²ÍĞÅÏ¢½»»¥µ¥¾İ
+     * é€šè¿‡å¥—é¤æµæ°´å·æŸ¥è¯¢å¥—é¤ä¿¡æ¯äº¤äº’å•æ®
      * 
-     * @param id    Ì×²ÍÁ÷Ë®ºÅ
-     * @return      Ì×²ÍĞÅÏ¢½»»¥µ¥¾İ
+     * @param id    å¥—é¤æµæ°´å·
+     * @return      å¥—é¤ä¿¡æ¯äº¤äº’å•æ®
      */
     public MtOperateResult<MtGoodsPkgInfoMessage> findGoodsPkgById(String id) throws MtBizException;
 
     /**
-     * ±£´æÌ×²ÍĞÅÏ¢½»»¥µ¥¾İ
+     * ä¿å­˜å¥—é¤ä¿¡æ¯äº¤äº’å•æ®
      * 
-     * @param message   Ì×²ÍĞÅÏ¢½»»¥µ¥¾İ
-     * @return          ´¦Àí½á¹û
+     * @param message   å¥—é¤ä¿¡æ¯äº¤äº’å•æ®
+     * @return          å¤„ç†ç»“æœ
      */
     public MtOperateResult<String> saveGoodsPkgMessage(MtGoodsPkgInfoMessage message);
 
     /**
-     * ²éÑ¯ËùÓĞµÄÌ×²ÍĞÅÏ¢
+     * æŸ¥è¯¢æ‰€æœ‰çš„å¥—é¤ä¿¡æ¯
      * 
-     * @return  ·µ»ØÌ×²ÍĞÅÏ¢ÁĞ±í
+     * @return  è¿”å›å¥—é¤ä¿¡æ¯åˆ—è¡¨
      */
     public MtOperateResult<List<MtGoodsPkgModel>> queryGoodsPkgList() throws MtBizException;
 }

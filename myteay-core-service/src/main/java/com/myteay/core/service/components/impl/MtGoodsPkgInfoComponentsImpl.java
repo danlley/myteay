@@ -20,17 +20,17 @@ import com.myteay.core.model.user.convt.MtGoodsPkgModelConvertor;
 import com.myteay.core.service.components.MtGoodsPkgInfoComponents;
 
 /**
- * Ì×²ÍĞÅÏ¢¹ÜÀí×é¼ş
+ * å¥—é¤ä¿¡æ¯ç®¡ç†ç»„ä»¶
  * 
  * @author Administrator
- * @version $Id: MtGoodsPkgInfoComponentsImpl.java, v 0.1 2016Äê3ÔÂ5ÈÕ ÉÏÎç9:42:34 Administrator Exp $
+ * @version $Id: MtGoodsPkgInfoComponentsImpl.java, v 0.1 2016å¹´3æœˆ5æ—¥ ä¸Šåˆ9:42:34 Administrator Exp $
  */
 public class MtGoodsPkgInfoComponentsImpl implements MtGoodsPkgInfoComponents {
 
-    /** ÈÕÖ¾ */
+    /** æ—¥å¿— */
     public static final Logger       logger = Logger.getLogger(MtGoodsPkgInfoComponentsImpl.class);
 
-    /** Ì×²ÍĞÅÏ¢µ¥Æ·¹ÜÀí²Ö´¢²ã */
+    /** å¥—é¤ä¿¡æ¯å•å“ç®¡ç†ä»“å‚¨å±‚ */
     @Autowired
     private MtGoodsPkgInfoRepository mtGoodsPkgInfoRepository;
 
@@ -55,7 +55,7 @@ public class MtGoodsPkgInfoComponentsImpl implements MtGoodsPkgInfoComponents {
         if (resultInner == null
             || resultInner.getOperateExResult() != MtOperateExResultEnum.CAMP_OPERATE_SUCCESS
             || resultInner.getOperateResult() != MtOperateResultEnum.CAMP_OPERATE_SUCCESS) {
-            logger.warn("²éÑ¯Ö¸¶¨Ì×²ÍĞÅÏ¢µ¥Æ·Ê§°Ü id=" + id + " resultInner=" + resultInner);
+            logger.warn("æŸ¥è¯¢æŒ‡å®šå¥—é¤ä¿¡æ¯å•å“å¤±è´¥ id=" + id + " resultInner=" + resultInner);
             result.setOperateExResult(MtOperateExResultEnum.CAMP_ILLEGAL_ARGUMENTS);
             result.setOperateResult(MtOperateResultEnum.CAMP_OPERATE_FAILED);
             return result;
@@ -64,7 +64,7 @@ public class MtGoodsPkgInfoComponentsImpl implements MtGoodsPkgInfoComponents {
         MtGoodsPkgInfoMessage message = MtGoodsPkgModelConvertor.convertModel2Message(resultInner
             .getResult());
         if (message == null) {
-            logger.warn("²éÑ¯Ö¸¶¨Ì×²ÍĞÅÏ¢j½»»¥µ¥¾İÊ§°Ü id=" + id + " resultInner=" + resultInner);
+            logger.warn("æŸ¥è¯¢æŒ‡å®šå¥—é¤ä¿¡æ¯jäº¤äº’å•æ®å¤±è´¥ id=" + id + " resultInner=" + resultInner);
             result.setOperateExResult(MtOperateExResultEnum.CAMP_ILLEGAL_ARGUMENTS);
             result.setOperateResult(MtOperateResultEnum.CAMP_OPERATE_FAILED);
             return result;
@@ -84,7 +84,7 @@ public class MtGoodsPkgInfoComponentsImpl implements MtGoodsPkgInfoComponents {
         MtGoodsPkgModel model = MtGoodsPkgModelConvertor.convertMessage2Model(message);
         MtOperateResult<String> result = new MtOperateResult<String>();
         if (model == null) {
-            logger.warn("Ì×²ÍÊı¾İÄ£ĞÍ²»¿ÉÓÃ£¬ÎŞ·¨±£´æÌ×²ÍÊı¾İÄ£ĞÍ¡£model is null, message=" + message);
+            logger.warn("å¥—é¤æ•°æ®æ¨¡å‹ä¸å¯ç”¨ï¼Œæ— æ³•ä¿å­˜å¥—é¤æ•°æ®æ¨¡å‹ã€‚model is null, message=" + message);
             result.setOperateExResult(MtOperateExResultEnum.CAMP_ILLEGAL_ARGUMENTS);
             result.setOperateResult(MtOperateResultEnum.CAMP_OPERATE_FAILED);
             return result;

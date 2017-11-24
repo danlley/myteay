@@ -34,32 +34,32 @@ import com.myteay.core.model.user.convt.MtGoodsPkgModelConvertor;
 import com.myteay.core.service.components.MtGoodsPkgInfoComponents;
 
 /**
- * Ì×²Í½áËã´¦Àí
+ * å¥—é¤ç»“ç®—å¤„ç†
  * 
  * @author Administrator
- * @version $Id: FrtFoodShopGoodsPkgController.java, v 0.1 2016Äê4ÔÂ2ÈÕ ÏÂÎç9:22:32 Administrator Exp $
+ * @version $Id: FrtFoodShopGoodsPkgController.java, v 0.1 2016å¹´4æœˆ2æ—¥ ä¸‹åˆ9:22:32 Administrator Exp $
  */
 @Controller
 @RequestMapping("/front/food_shop")
 public class FrtFoodShopGoodsPkgController {
 
-    /** ÈÕÖ¾ */
+    /** æ—¥å¿— */
     public static final Logger       logger = Logger.getLogger(FrtFoodShopGoodsPkgController.class);
 
-    /** Ì×²ÍĞÅÏ¢¹ÜÀí×é¼ş */
+    /** å¥—é¤ä¿¡æ¯ç®¡ç†ç»„ä»¶ */
     @Autowired
     private MtGoodsPkgInfoComponents mtGoodsPkgInfoComponents;
 
     /**
-     * ²éÑ¯Ì×²ÍĞÅÏ¢
+     * æŸ¥è¯¢å¥—é¤ä¿¡æ¯
      * 
-     * @param session       ½»»¥»á»°ĞÅÏ¢
-     * @param response      Ó¦´ğĞÅÏ¢
-     * @param request       ÇëÇóĞÅÏ¢
-     * @param goodsPkgName  Ì×²ÍÃû³Æ
-     * @return              ·şÎñÂ·¾¶
-     * @throws IOException  Òì³£
-     * @throws MtException  Òì³£
+     * @param session       äº¤äº’ä¼šè¯ä¿¡æ¯
+     * @param response      åº”ç­”ä¿¡æ¯
+     * @param request       è¯·æ±‚ä¿¡æ¯
+     * @param goodsPkgName  å¥—é¤åç§°
+     * @return              æœåŠ¡è·¯å¾„
+     * @throws IOException  å¼‚å¸¸
+     * @throws MtException  å¼‚å¸¸
      */
     @RequestMapping(method = RequestMethod.GET)
     public ModelAndView queryFrtGoodsPkgList(HttpSession session, HttpServletResponse response,
@@ -76,7 +76,7 @@ public class FrtFoodShopGoodsPkgController {
         ModelAndView view = new ModelAndView("front/food_shop");
         if (!CollectionUtils.isEmpty(list)) {
             if (logger.isInfoEnabled()) {
-                logger.info("Ì×²ÍÁĞ±í×é×°½áÊø");
+                logger.info("å¥—é¤åˆ—è¡¨ç»„è£…ç»“æŸ");
             }
 
             Map<String, Object> model = new HashMap<String, Object>();
@@ -87,21 +87,21 @@ public class FrtFoodShopGoodsPkgController {
     }
 
     /**
-     * Í¨¹ıÌ×²ÍÃû³Æ²éÑ¯Ì×²ÍĞÅÏ¢
+     * é€šè¿‡å¥—é¤åç§°æŸ¥è¯¢å¥—é¤ä¿¡æ¯
      * 
-     * @param goodsPkgName  Ì×²ÍÃû³Æ
-     * @return              Ì×²Í½»»¥ĞÅÏ¢ÁĞ±í
+     * @param goodsPkgName  å¥—é¤åç§°
+     * @return              å¥—é¤äº¤äº’ä¿¡æ¯åˆ—è¡¨
      */
     private List<MtGoodsPkgInfoMessage> searchByGoodsPkgName(String goodsPkgName) {
 
         if (logger.isInfoEnabled()) {
-            logger.info("¿ªÊ¼Í¨¹ıÌ×²ÍÃû³Æ²éÑ¯Ì×²ÍĞÅÏ¢ÁĞ±í£¬goodsPkgName=" + goodsPkgName);
+            logger.info("å¼€å§‹é€šè¿‡å¥—é¤åç§°æŸ¥è¯¢å¥—é¤ä¿¡æ¯åˆ—è¡¨ï¼ŒgoodsPkgName=" + goodsPkgName);
         }
         return null;
     }
 
     /**
-     * ²éÑ¯ËùÓĞÌ×²ÍĞÅÏ¢
+     * æŸ¥è¯¢æ‰€æœ‰å¥—é¤ä¿¡æ¯
      * @return
      */
     private List<MtGoodsPkgInfoMessage> emptySearch() {
@@ -110,19 +110,19 @@ public class FrtFoodShopGoodsPkgController {
         try {
             result = mtGoodsPkgInfoComponents.queryGoodsPkgList();
         } catch (MtBizException e) {
-            logger.warn("²éÑ¯Ì×²ÍĞÅÏ¢³öÏÖÒµÎñÒì³£", e);
+            logger.warn("æŸ¥è¯¢å¥—é¤ä¿¡æ¯å‡ºç°ä¸šåŠ¡å¼‚å¸¸", e);
         } catch (Throwable e) {
-            logger.warn("²éÑ¯Ì×²ÍĞÅÏ¢³öÏÖÏµÍ³Òì³£", e);
+            logger.warn("æŸ¥è¯¢å¥—é¤ä¿¡æ¯å‡ºç°ç³»ç»Ÿå¼‚å¸¸", e);
         }
 
         if (result == null || result.getOperateResult() != MtOperateResultEnum.CAMP_OPERATE_SUCCESS
             || result.getOperateExResult() != MtOperateExResultEnum.CAMP_OPERATE_SUCCESS) {
-            logger.warn("²éÑ¯Ì×²ÍĞÅÏ¢Ê§°Üresult=" + result);
+            logger.warn("æŸ¥è¯¢å¥—é¤ä¿¡æ¯å¤±è´¥result=" + result);
             return null;
         }
 
         if (CollectionUtils.isEmpty(result.getResult())) {
-            logger.warn("²éÑ¯³É¹¦£¡µ±Ç°Ã»ÓĞ¿ÉÓÃµÄÌ×²ÍĞÅÏ¢result=" + result);
+            logger.warn("æŸ¥è¯¢æˆåŠŸï¼å½“å‰æ²¡æœ‰å¯ç”¨çš„å¥—é¤ä¿¡æ¯result=" + result);
             return null;
         }
 

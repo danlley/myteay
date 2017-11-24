@@ -38,14 +38,14 @@ import com.myteay.core.service.components.MtUserServiceComponents;
 @RestController
 public class MtUserMobileServiceController {
 
-    /** ÈÕÖ¾ */
+    /** æ—¥å¿— */
     public static final Logger          logger = Logger.getLogger(MtUserMobileServiceController.class);
 
-    /** ÓÃ»§·şÎñ×é¼ş */
+    /** ç”¨æˆ·æœåŠ¡ç»„ä»¶ */
     @Autowired
     private MtUserServiceComponents     mtUserServiceComponents;
 
-    /** Ì×²ÍĞÅÏ¢¹ÜÀí×é¼ş */
+    /** å¥—é¤ä¿¡æ¯ç®¡ç†ç»„ä»¶ */
     @Autowired
     private EventPublishService<String> eventPublishService;
 
@@ -55,7 +55,7 @@ public class MtUserMobileServiceController {
                                               HttpServletResponse response) {
 
         if (logger.isInfoEnabled()) {
-            logger.info("¿ªÊ¼ÊÕµ½»áÔ±µÇÂ¼ÇëÇó mtLoginInfo=" + mtLoginInfo);
+            logger.info("å¼€å§‹æ”¶åˆ°ä¼šå‘˜ç™»å½•è¯·æ±‚ mtLoginInfo=" + mtLoginInfo);
         }
 
         MtServiceResult<MtLoginInfo> serviceResult = new MtServiceResult<MtLoginInfo>();
@@ -66,7 +66,7 @@ public class MtUserMobileServiceController {
     }
 
     /**
-     * »áÔ±×¢²á
+     * ä¼šå‘˜æ³¨å†Œ
      * 
      * @param registerInfo
      * @param request
@@ -79,13 +79,13 @@ public class MtUserMobileServiceController {
                                                      HttpServletResponse response) {
 
         if (logger.isInfoEnabled()) {
-            logger.info("¿ªÊ¼ÊÕµ½»áÔ±×¢²áÇëÇó registerInfo=" + registerInfo);
+            logger.info("å¼€å§‹æ”¶åˆ°ä¼šå‘˜æ³¨å†Œè¯·æ±‚ registerInfo=" + registerInfo);
         }
 
-        //ÉèÖÃÏêÇéµÄ»ù±¾ĞÅÏ¢
+        //è®¾ç½®è¯¦æƒ…çš„åŸºæœ¬ä¿¡æ¯
         MtServiceResult<MtRegisterInfo> serviceResult = new MtServiceResult<MtRegisterInfo>();
         if (registerInfo == null) {
-            logger.warn("×é×°ÓÃ»§×¢²á½»»¥ĞÅÏ¢Ê§°Ü registerInfo is null");
+            logger.warn("ç»„è£…ç”¨æˆ·æ³¨å†Œäº¤äº’ä¿¡æ¯å¤±è´¥ registerInfo is null");
             serviceResult.setOperateResult(MtOperateResultEnum.CAMP_OPERATE_FAILED.getValue());
             return serviceResult;
         }
@@ -94,19 +94,19 @@ public class MtUserMobileServiceController {
         try {
             result = mtUserServiceComponents.userRegistery(registerInfo);
         } catch (MtBizException e) {
-            logger.warn("ÓÃ»§×¢²áÊ§°Ü£¬ registerInfo=" + registerInfo, e);
+            logger.warn("ç”¨æˆ·æ³¨å†Œå¤±è´¥ï¼Œ registerInfo=" + registerInfo, e);
             serviceResult.setOperateResult(MtOperateResultEnum.CAMP_OPERATE_FAILED.getValue());
             return serviceResult;
         }
 
         if (result == null || StringUtils.isBlank(result.getResult())) {
-            logger.warn("ÓÃ»§×¢²áÊ§°Ü£¬×¢²á×é¼ş·µ»Ø½á¹û²»¿ÉÓÃ£¡result=" + result);
+            logger.warn("ç”¨æˆ·æ³¨å†Œå¤±è´¥ï¼Œæ³¨å†Œç»„ä»¶è¿”å›ç»“æœä¸å¯ç”¨ï¼result=" + result);
             serviceResult.setOperateResult(MtOperateResultEnum.CAMP_OPERATE_FAILED.getValue());
             return serviceResult;
         }
 
         if (logger.isInfoEnabled()) {
-            logger.info("ÓÃ»§×¢²á³É¹¦ registerInfo=" + registerInfo + " result=" + result);
+            logger.info("ç”¨æˆ·æ³¨å†ŒæˆåŠŸ registerInfo=" + registerInfo + " result=" + result);
         }
 
         serviceResult.setOperateResult(MtOperateResultEnum.CAMP_OPERATE_SUCCESS.getValue());
@@ -116,9 +116,9 @@ public class MtUserMobileServiceController {
         serviceResult.setResult(registerInfo);
 
         /*
-         * TODO Éú³ÉÓÃ»§¶şÎ¬Âë
+         * TODO ç”Ÿæˆç”¨æˆ·äºŒç»´ç 
          * 
-         * ĞèÒªÔö¼ÓÈçÓÃ»§ÖØ¸´×¢²á¡¢¶ñÒâ×¢²áÇëÇóµÈ¶¯×÷½øÀ´£¬Òò´Ë´úÂëĞèÒªÏÂ³Áµ½core-service²ã
+         * éœ€è¦å¢åŠ å¦‚ç”¨æˆ·é‡å¤æ³¨å†Œã€æ¶æ„æ³¨å†Œè¯·æ±‚ç­‰åŠ¨ä½œè¿›æ¥ï¼Œå› æ­¤ä»£ç éœ€è¦ä¸‹æ²‰åˆ°core-serviceå±‚
          */
         publishEvent(request, registerInfo);
 
@@ -126,30 +126,30 @@ public class MtUserMobileServiceController {
     }
 
     /**
-     * ·¢²¼Òì²½ÊÂ¼şÉú³ÉÓÃ»§¶şÎ¬Âë£¨ÕâÀï½«³ÔµôËùÓĞÒì³££¬ÈçÉú³É¶şÎ¬ÂëÊ§°Ü£¬ÔòÓĞºóĞøµÄÏà¹Ø¸¨ÖúÁ÷³ÌĞ­Öú½â¾ö£©
+     * å‘å¸ƒå¼‚æ­¥äº‹ä»¶ç”Ÿæˆç”¨æˆ·äºŒç»´ç ï¼ˆè¿™é‡Œå°†åƒæ‰æ‰€æœ‰å¼‚å¸¸ï¼Œå¦‚ç”ŸæˆäºŒç»´ç å¤±è´¥ï¼Œåˆ™æœ‰åç»­çš„ç›¸å…³è¾…åŠ©æµç¨‹ååŠ©è§£å†³ï¼‰
      * 
-     * @param request   ÇëÇó
-     * @param content   ´¦Àí½á¹û
+     * @param request   è¯·æ±‚
+     * @param content   å¤„ç†ç»“æœ
      */
     private void publishEvent(HttpServletRequest request, MtRegisterInfo registerInfo) {
 
         if (logger.isInfoEnabled()) {
-            logger.info("¿ªÊ¼Ö´ĞĞÓÃ»§×¢²á¹ı³ÌÖĞµÄÀ©Õ¹Á÷³Ì registerInfo = " + registerInfo);
+            logger.info("å¼€å§‹æ‰§è¡Œç”¨æˆ·æ³¨å†Œè¿‡ç¨‹ä¸­çš„æ‰©å±•æµç¨‹ registerInfo = " + registerInfo);
         }
 
-        //Òì²½ÊÂ¼ş´¦Àí×é¼ş
+        //å¼‚æ­¥äº‹ä»¶å¤„ç†ç»„ä»¶
         try {
             eventPublishService.publishEvent(new MtEvent<MtUserRegExtModel>(
                 MtEventTopicEnum.MT_USR_REG_EXT_EVENT.getValue(), constructAsynchronizedMessage(request,
                     registerInfo)));
         } catch (MtEventException e) {
-            logger.error("´¦ÀíÓÃ»§ÁªÏµÈËĞÅÏ¢¹ı³ÌÖĞ³öÏÖÒì³£", e);
+            logger.error("å¤„ç†ç”¨æˆ·è”ç³»äººä¿¡æ¯è¿‡ç¨‹ä¸­å‡ºç°å¼‚å¸¸", e);
         }
 
     }
 
     /**
-     * ¹¹½¨Òì²½ÏûÏ¢Ä£ĞÍ
+     * æ„å»ºå¼‚æ­¥æ¶ˆæ¯æ¨¡å‹
      * 
      * @param request
      * @param registerInfo
@@ -158,7 +158,7 @@ public class MtUserMobileServiceController {
     private MtUserRegExtModel constructAsynchronizedMessage(HttpServletRequest request, MtRegisterInfo registerInfo) {
         MtUserRegExtModel model = new MtUserRegExtModel();
 
-        //step 1: ¹¹½¨ÓÃÓÚÉú³ÉÓÃ»§¶şÎ¬ÂëĞÅÏ¢µÄÏûÏ¢Ä£ĞÍ
+        //step 1: æ„å»ºç”¨äºç”Ÿæˆç”¨æˆ·äºŒç»´ç ä¿¡æ¯çš„æ¶ˆæ¯æ¨¡å‹
         String path = request.getSession().getServletContext().getRealPath("/qrcode/usercode/");
         String defpng = request.getSession().getServletContext()
             .getRealPath("/images/page1_image.png");
@@ -167,10 +167,10 @@ public class MtUserMobileServiceController {
             path, defpng, registerInfo.getQrCodeId());
         model.setMtQrCodeModel(qrcodeModel);
 
-        //step 2: ¹¹½¨ÓÃÓÚ´¦ÀíÓÃ»§ÁªÏµÈËĞÅÏ¢µÄÄ£ĞÍ
+        //step 2: æ„å»ºç”¨äºå¤„ç†ç”¨æˆ·è”ç³»äººä¿¡æ¯çš„æ¨¡å‹
         model.setMtUserContactModel(MtUserRegConvertor.convertInfo2Model(registerInfo));
 
-        //step 3: Ğ¯´ø½»»¥µ¥¾İ£¬±ãÓÚºóÃæ×öÎÊÌâÅÅ²éºÍ½øĞĞÒµÎñÀ©Õ¹
+        //step 3: æºå¸¦äº¤äº’å•æ®ï¼Œä¾¿äºåé¢åšé—®é¢˜æ’æŸ¥å’Œè¿›è¡Œä¸šåŠ¡æ‰©å±•
         model.setRegisterInfo(registerInfo);
 
         return model;

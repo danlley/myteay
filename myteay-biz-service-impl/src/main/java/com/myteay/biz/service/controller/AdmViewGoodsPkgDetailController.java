@@ -34,36 +34,36 @@ import com.myteay.core.service.components.MtGoodsInfoComponents;
 import com.myteay.core.service.components.MtGoodsPkgInfoComponents;
 
 /**
- * ºóÌ¨Ò³Ãæ²éÑ¯Ì×²ÍÏêÇé
+ * åå°é¡µé¢æŸ¥è¯¢å¥—é¤è¯¦æƒ…
  * 
  * @author Administrator
- * @version $Id: AdmViewGoodsPkgDetailController.java, v 0.1 2016Äê3ÔÂ5ÈÕ ÏÂÎç11:55:53 Administrator Exp $
+ * @version $Id: AdmViewGoodsPkgDetailController.java, v 0.1 2016å¹´3æœˆ5æ—¥ ä¸‹åˆ11:55:53 Administrator Exp $
  */
 @Controller
 @RequestMapping("/adm/view_single_goods_pkg")
 public class AdmViewGoodsPkgDetailController {
 
-    /** ÈÕÖ¾ */
+    /** æ—¥å¿— */
     public static final Logger       logger = Logger
         .getLogger(AdmViewGoodsPkgDetailController.class);
 
-    /** Ì×²ÍĞÅÏ¢¹ÜÀí×é¼ş */
+    /** å¥—é¤ä¿¡æ¯ç®¡ç†ç»„ä»¶ */
     @Autowired
     private MtGoodsPkgInfoComponents mtGoodsPkgInfoComponents;
 
-    /** ÉÌÆ·¹ÜÀí×é¼ş */
+    /** å•†å“ç®¡ç†ç»„ä»¶ */
     @Autowired
     private MtGoodsInfoComponents    mtGoodsInfoComponents;
 
     /**
-     * Ìí¼Óµ¥¸öÌ×²ÍĞÅÏ¢
+     * æ·»åŠ å•ä¸ªå¥—é¤ä¿¡æ¯
      * 
-     * @param session       ½»»¥»á»°ĞÅÏ¢
-     * @param response      Ó¦´ğĞÅÏ¢
-     * @param request       ÇëÇóĞÅÏ¢
-     * @return              ·şÎñÂ·¾¶
-     * @throws IOException  Òì³£
-     * @throws MtException  Òì³£
+     * @param session       äº¤äº’ä¼šè¯ä¿¡æ¯
+     * @param response      åº”ç­”ä¿¡æ¯
+     * @param request       è¯·æ±‚ä¿¡æ¯
+     * @return              æœåŠ¡è·¯å¾„
+     * @throws IOException  å¼‚å¸¸
+     * @throws MtException  å¼‚å¸¸
      */
     @RequestMapping(method = RequestMethod.GET)
     public ModelAndView queryGoodsList(HttpSession session, HttpServletResponse response,
@@ -75,29 +75,29 @@ public class AdmViewGoodsPkgDetailController {
         try {
             result = mtGoodsPkgInfoComponents.findGoodsPkgById(id);
         } catch (MtBizException e) {
-            logger.warn("²éÑ¯ÉÌÆ·ĞÅÏ¢³öÏÖÒµÎñÒì³£", e);
+            logger.warn("æŸ¥è¯¢å•†å“ä¿¡æ¯å‡ºç°ä¸šåŠ¡å¼‚å¸¸", e);
         } catch (Throwable e) {
-            logger.warn("²éÑ¯ÉÌÆ·ĞÅÏ¢³öÏÖÏµÍ³Òì³£", e);
+            logger.warn("æŸ¥è¯¢å•†å“ä¿¡æ¯å‡ºç°ç³»ç»Ÿå¼‚å¸¸", e);
         }
 
         if (result == null || result.getOperateResult() != MtOperateResultEnum.CAMP_OPERATE_SUCCESS
             || result.getOperateExResult() != MtOperateExResultEnum.CAMP_OPERATE_SUCCESS) {
-            logger.warn("²éÑ¯ÉÌÆ·ĞÅÏ¢Ê§°Üresult=" + result);
+            logger.warn("æŸ¥è¯¢å•†å“ä¿¡æ¯å¤±è´¥result=" + result);
             return view;
         }
         if (result.getResult() == null) {
-            logger.warn("²éÑ¯³É¹¦£¡µ±Ç°Ã»ÓĞ¿ÉÓÃµÄÉÌÆ·ĞÅÏ¢result=" + result);
+            logger.warn("æŸ¥è¯¢æˆåŠŸï¼å½“å‰æ²¡æœ‰å¯ç”¨çš„å•†å“ä¿¡æ¯result=" + result);
             return view;
         }
 
         Map<String, Object> model = new HashMap<String, Object>();
 
-        //ÉèÖÃÏêÇéµÄ»ù±¾ĞÅÏ¢
+        //è®¾ç½®è¯¦æƒ…çš„åŸºæœ¬ä¿¡æ¯
         model.put("goods_pkg_view", result.getResult());
 
         List<MtGoodsInfoMessage> messageList = getGoodsInfoList(result.getResult());
         if (!CollectionUtils.isEmpty(messageList)) {
-            //ÉèÖÃÏêÇéÖĞµÄµ¥Æ·ĞÅÏ¢
+            //è®¾ç½®è¯¦æƒ…ä¸­çš„å•å“ä¿¡æ¯
             model.put("goods_pkg_view_goods_info_list", messageList);
         }
         view.addAllObjects(model);
@@ -105,10 +105,10 @@ public class AdmViewGoodsPkgDetailController {
     }
 
     /**
-     * µÃµ½Ì×²ÍĞÅÏ¢ÖĞµÄµ¥Æ·ĞÅÏ¢½»»¥µ¥¾İÁĞ±í
+     * å¾—åˆ°å¥—é¤ä¿¡æ¯ä¸­çš„å•å“ä¿¡æ¯äº¤äº’å•æ®åˆ—è¡¨
      * 
-     * @param messagePkg    Ì×²ÍĞÅÏ¢½»»¥µ¥¾İ
-     * @return              µ¥Æ·ĞÅÏ¢½»»¥µ¥¾İÁĞ±í
+     * @param messagePkg    å¥—é¤ä¿¡æ¯äº¤äº’å•æ®
+     * @return              å•å“ä¿¡æ¯äº¤äº’å•æ®åˆ—è¡¨
      */
     private List<MtGoodsInfoMessage> getGoodsInfoList(MtGoodsPkgInfoMessage messagePkg) {
         if (messagePkg == null) {
@@ -122,7 +122,7 @@ public class AdmViewGoodsPkgDetailController {
         for (String goodsId : goodsIdArray) {
 
             if (logger.isInfoEnabled()) {
-                logger.info("²ğ·ÖºóµÄµ¥Æ·ĞÅÏ¢£º goodsId=" + goodsId);
+                logger.info("æ‹†åˆ†åçš„å•å“ä¿¡æ¯ï¼š goodsId=" + goodsId);
             }
 
             message = getGoodsInfoMessage(goodsId);
@@ -136,22 +136,22 @@ public class AdmViewGoodsPkgDetailController {
     }
 
     /**
-     * Í¨¹ıµ¥Æ·IDµÃµ½µ¥Æ·ĞÅÏ¢½»»¥µ¥¾İ
+     * é€šè¿‡å•å“IDå¾—åˆ°å•å“ä¿¡æ¯äº¤äº’å•æ®
      * 
-     * @param goodsId   µ¥Æ·ID
-     * @return          µ¥Æ·ĞÅÏ¢½»»¥µ¥¾İ
+     * @param goodsId   å•å“ID
+     * @return          å•å“ä¿¡æ¯äº¤äº’å•æ®
      */
     private MtGoodsInfoMessage getGoodsInfoMessage(String goodsId) {
 
         if (logger.isInfoEnabled()) {
-            logger.info("¿ªÊ¼²éÑ¯Ì×²ÍÖĞµÄµ¥Æ·ĞÅÏ¢½»»¥µ¥¾İ goodsId=" + goodsId);
+            logger.info("å¼€å§‹æŸ¥è¯¢å¥—é¤ä¸­çš„å•å“ä¿¡æ¯äº¤äº’å•æ® goodsId=" + goodsId);
         }
 
         MtOperateResult<MtGoodsInfoMessage> result = mtGoodsInfoComponents
             .findGoodsInfoById(goodsId);
         if (result == null || result.getOperateResult() != MtOperateResultEnum.CAMP_OPERATE_SUCCESS
             || result.getOperateExResult() != MtOperateExResultEnum.CAMP_OPERATE_SUCCESS) {
-            logger.warn("²éÑ¯µ¥Æ·ĞÅÏ¢Ê§°Üresult=" + result);
+            logger.warn("æŸ¥è¯¢å•å“ä¿¡æ¯å¤±è´¥result=" + result);
             return null;
         }
 
@@ -159,10 +159,10 @@ public class AdmViewGoodsPkgDetailController {
     }
 
     /**
-     * µÃµ½Ì×²ÍÖĞ°üº¬µÄµ¥Æ·ĞÅÏ¢
+     * å¾—åˆ°å¥—é¤ä¸­åŒ…å«çš„å•å“ä¿¡æ¯
      * 
-     * @param goodsIds  µ¥Æ·ID¼¯ºÏ
-     * @return          µ¥Æ·IDÁĞ±í
+     * @param goodsIds  å•å“IDé›†åˆ
+     * @return          å•å“IDåˆ—è¡¨
      */
     private String[] getIdArray(String goodsIds) {
         if (StringUtils.isBlank(goodsIds)) {

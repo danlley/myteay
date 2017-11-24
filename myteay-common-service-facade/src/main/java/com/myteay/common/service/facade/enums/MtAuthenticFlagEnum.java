@@ -7,21 +7,21 @@ package com.myteay.common.service.facade.enums;
 import org.apache.commons.lang.StringUtils;
 
 /**
- * ÓÃÓÚ°²È«ÓÊÏä¼°°²È«ÊÖ»úµÄÈÏÖ¤×´Ì¬±êÊ¶
+ * ç”¨äºå®‰å…¨é‚®ç®±åŠå®‰å…¨æ‰‹æœºçš„è®¤è¯çŠ¶æ€æ ‡è¯†
  * 
  * @author Administrator
- * @version $Id: MtAuthenticFlagEnum.java, v 0.1 2016Äê2ÔÂ24ÈÕ ÏÂÎç10:11:20 Administrator Exp $
+ * @version $Id: MtAuthenticFlagEnum.java, v 0.1 2016å¹´2æœˆ24æ—¥ ä¸‹åˆ10:11:20 Administrator Exp $
  */
 public enum MtAuthenticFlagEnum {
 
-                                 /** ÈÏÖ¤ÓÃ»§ */
-                                 CS_CHECKED_FLAG("CS_CHECKED_FLAG", "ÒÑÈÏÖ¤"),
+                                 /** è®¤è¯ç”¨æˆ· */
+                                 CS_CHECKED_FLAG("CS_CHECKED_FLAG", "å·²è®¤è¯"),
 
-                                 /** Î´ÈÏÖ¤ */
-                                 CS_UNCHECKED_FLAG("CS_UNCHECKED_FLAG", "Î´ÈÏÖ¤"),
+                                 /** æœªè®¤è¯ */
+                                 CS_UNCHECKED_FLAG("CS_UNCHECKED_FLAG", "æœªè®¤è¯"),
 
-                                 /** Î´²¹È« */
-                                 CS_UNSUBMIT_FLAG("CS_UNSUBMIT_FLAG", "Î´²¹È«"),
+                                 /** æœªè¡¥å…¨ */
+                                 CS_UNSUBMIT_FLAG("CS_UNSUBMIT_FLAG", "æœªè¡¥å…¨"),
 
     ;
     /** value */
@@ -31,7 +31,7 @@ public enum MtAuthenticFlagEnum {
     private final String message;
 
     /**
-     * Ë½ÓĞ¹¹Ôì·½·¨
+     * ç§æœ‰æ„é€ æ–¹æ³•
      * @param code
      * @param description
      */
@@ -55,7 +55,7 @@ public enum MtAuthenticFlagEnum {
     }
 
     /**
-     * Í¨¹ıÖµ»ñÈ¡Ã¶¾Ù¶ÔÏó
+     * é€šè¿‡å€¼è·å–æšä¸¾å¯¹è±¡
      * @param value
      * @return
      */
@@ -73,7 +73,7 @@ public enum MtAuthenticFlagEnum {
     }
 
     /**
-     * Í¨¹ıÃ¶¾Ù<code>value</code>»ñµÃÃ¶¾Ù
+     * é€šè¿‡æšä¸¾<code>value</code>è·å¾—æšä¸¾
      * 
      * @param value
      * @return
@@ -91,7 +91,7 @@ public enum MtAuthenticFlagEnum {
     }
 
     /**
-     * Í¨¹ıÃ¶¾Ù<code>name</code>»ñµÃÃ¶¾Ù
+     * é€šè¿‡æšä¸¾<code>name</code>è·å¾—æšä¸¾
      * 
      * @param message
      * @return

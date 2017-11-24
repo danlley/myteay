@@ -10,17 +10,17 @@ import com.myteay.common.util.constants.MtConstants;
 import com.myteay.core.model.dinner.MtGoodsModel;
 
 /**
- * µ¥¸öÉÌÆ·Ä£ĞÍ×ª»»Æ÷
+ * å•ä¸ªå•†å“æ¨¡å‹è½¬æ¢å™¨
  * 
  * @author Administrator
- * @version $Id: MtGoodsModelConvertor.java, v 0.1 2016Äê3ÔÂ5ÈÕ ÏÂÎç9:26:33 Administrator Exp $
+ * @version $Id: MtGoodsModelConvertor.java, v 0.1 2016å¹´3æœˆ5æ—¥ ä¸‹åˆ9:26:33 Administrator Exp $
  */
 public class MtGoodsModelConvertor {
     /**
-     * ½«ÉÌÆ·µ¥Æ·ĞÅÏ¢½»»¥µ¥¾İ×ª»»ÎªÉÌÆ·µ¥Æ·ĞÅÏ¢Ä£ĞÍ
+     * å°†å•†å“å•å“ä¿¡æ¯äº¤äº’å•æ®è½¬æ¢ä¸ºå•†å“å•å“ä¿¡æ¯æ¨¡å‹
      * 
-     * @param message   ÉÌÆ·µ¥Æ·ĞÅÏ¢½»»¥µ¥¾İ
-     * @return          ÉÌÆ·µ¥Æ·ĞÅÏ¢Ä£ĞÍ
+     * @param message   å•†å“å•å“ä¿¡æ¯äº¤äº’å•æ®
+     * @return          å•†å“å•å“ä¿¡æ¯æ¨¡å‹
      */
     public static MtGoodsModel convertMessage2Model(MtGoodsInfoMessage message) {
         if (message == null) {
@@ -41,10 +41,10 @@ public class MtGoodsModelConvertor {
     }
 
     /**
-     * ½«ÉÌÆ·ĞÅÏ¢Ä£ĞÍ×ª»»ÎªÉÌÆ·ĞÅÏ¢½»»¥µ¥¾İ
+     * å°†å•†å“ä¿¡æ¯æ¨¡å‹è½¬æ¢ä¸ºå•†å“ä¿¡æ¯äº¤äº’å•æ®
      * 
-     * @param model ÉÌÆ·ĞÅÏ¢Ä£ĞÍ
-     * @return      ÉÌÆ·ĞÅÏ¢½»»¥µ¥¾İ
+     * @param model å•†å“ä¿¡æ¯æ¨¡å‹
+     * @return      å•†å“ä¿¡æ¯äº¤äº’å•æ®
      */
     public static MtGoodsInfoMessage convertModel2Message(MtGoodsModel model) {
         if (model == null) {
@@ -66,10 +66,10 @@ public class MtGoodsModelConvertor {
     }
 
     /**
-     * ½«ÉÌÆ·Êı¾İÄ£ĞÍ×ª»»ÎªÉÌÆ·Ä£ĞÍ
+     * å°†å•†å“æ•°æ®æ¨¡å‹è½¬æ¢ä¸ºå•†å“æ¨¡å‹
      * 
-     * @param goodsInfoDO   ÉÌÆ·Êı¾İÄ£ĞÍ
-     * @return              ÉÌÆ·Ä£ĞÍ
+     * @param goodsInfoDO   å•†å“æ•°æ®æ¨¡å‹
+     * @return              å•†å“æ¨¡å‹
      */
     public static MtGoodsModel convertDO2Model(GoodsInfoDO goodsInfoDO) {
 
@@ -92,10 +92,10 @@ public class MtGoodsModelConvertor {
     }
 
     /**
-     * ½«ÉÌÆ·µ¥Æ·ĞÅÏ¢Ä£ĞÍ×ª»»ÎªÉÌÆ·µ¥Æ·ĞÅÏ¢Êı¾İÄ£ĞÍ
+     * å°†å•†å“å•å“ä¿¡æ¯æ¨¡å‹è½¬æ¢ä¸ºå•†å“å•å“ä¿¡æ¯æ•°æ®æ¨¡å‹
      * 
-     * @param model ÉÌÆ·µ¥Æ·ĞÅÏ¢Ä£ĞÍ
-     * @return      ÉÌÆ·µ¥Æ·ĞÅÏ¢Êı¾İÄ£ĞÍ
+     * @param model å•†å“å•å“ä¿¡æ¯æ¨¡å‹
+     * @return      å•†å“å•å“ä¿¡æ¯æ•°æ®æ¨¡å‹
      */
     public static GoodsInfoDO convertModel2DO(MtGoodsModel model) {
         if (model == null) {

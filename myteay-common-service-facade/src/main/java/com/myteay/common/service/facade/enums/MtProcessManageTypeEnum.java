@@ -7,30 +7,30 @@ package com.myteay.common.service.facade.enums;
 import org.apache.commons.lang.StringUtils;
 
 /**
- * Á÷³Ì´¦Àí¹ÜÀí²Ù×÷ÀàĞÍÃ¶¾Ù
+ * æµç¨‹å¤„ç†ç®¡ç†æ“ä½œç±»å‹æšä¸¾
  * 
  * @author Administrator
- * @version $Id: MtManageTypeEnum.java, v 0.1 2016Äê9ÔÂ7ÈÕ ÏÂÎç10:52:39 Administrator Exp $
+ * @version $Id: MtManageTypeEnum.java, v 0.1 2016å¹´9æœˆ7æ—¥ ä¸‹åˆ10:52:39 Administrator Exp $
  */
 public enum MtProcessManageTypeEnum {
 
-                                     /** ¸¨ÖúÁ÷³ÌÖ´ĞĞ±ê¼Ç */
-                                     CS_AUXILIARY_PROCESS("CS_AUXILIARY_PROCESS", "¸¨ÖúÁ÷³ÌÖ´ĞĞ"),
+                                     /** è¾…åŠ©æµç¨‹æ‰§è¡Œæ ‡è®° */
+                                     CS_AUXILIARY_PROCESS("CS_AUXILIARY_PROCESS", "è¾…åŠ©æµç¨‹æ‰§è¡Œ"),
 
-                                     /** Ö÷Á÷³ÌÖ´ĞĞ±ê¼Ç */
-                                     CS_MAIN_PROCESS("CS_MAIN_PROCESS", "Ö÷Á÷³ÌÖ´ĞĞ"),
+                                     /** ä¸»æµç¨‹æ‰§è¡Œæ ‡è®° */
+                                     CS_MAIN_PROCESS("CS_MAIN_PROCESS", "ä¸»æµç¨‹æ‰§è¡Œ"),
 
-                                     /** Á÷³Ì½áÊøºóµÄÉ¨Î²¹¤×÷±ê¼Ç */
-                                     CS_AFTER_PROCESS("CS_AFTER_PROCESS", "Á÷³Ì½áÊøºóµÄÉ¨Î²¹¤×÷"),
+                                     /** æµç¨‹ç»“æŸåçš„æ‰«å°¾å·¥ä½œæ ‡è®° */
+                                     CS_AFTER_PROCESS("CS_AFTER_PROCESS", "æµç¨‹ç»“æŸåçš„æ‰«å°¾å·¥ä½œ"),
 
-                                     /** Á÷³Ì¿ªÊ¼Ç°µÄ×¼±¸¹¤×÷±ê¼Ç */
-                                     CS_BEFORE_PROCESS("CS_BEFORE_PROCESS", "Á÷³Ì¿ªÊ¼Ç°µÄ×¼±¸¹¤×÷"),
+                                     /** æµç¨‹å¼€å§‹å‰çš„å‡†å¤‡å·¥ä½œæ ‡è®° */
+                                     CS_BEFORE_PROCESS("CS_BEFORE_PROCESS", "æµç¨‹å¼€å§‹å‰çš„å‡†å¤‡å·¥ä½œ"),
 
-                                     /** ÑéÖ¤Á÷³ÌÊı¾İ±ê¼Ç */
-                                     CS_VALIDATE_PROCESS("CS_VALIDATE_PROCESS", "ÑéÖ¤Á÷³ÌÊı¾İ"),
+                                     /** éªŒè¯æµç¨‹æ•°æ®æ ‡è®° */
+                                     CS_VALIDATE_PROCESS("CS_VALIDATE_PROCESS", "éªŒè¯æµç¨‹æ•°æ®"),
 
-                                     /**½áÊø±ê¼Ç */
-                                     CS_END("CS_END", "½áÊø±ê¼Ç"),
+                                     /**ç»“æŸæ ‡è®° */
+                                     CS_END("CS_END", "ç»“æŸæ ‡è®°"),
 
     ;
     /** value */
@@ -40,7 +40,7 @@ public enum MtProcessManageTypeEnum {
     private final String message;
 
     /**
-     * Ë½ÓĞ¹¹Ôì·½·¨
+     * ç§æœ‰æ„é€ æ–¹æ³•
      * @param code
      * @param description
      */
@@ -64,7 +64,7 @@ public enum MtProcessManageTypeEnum {
     }
 
     /**
-     * Í¨¹ıÖµ»ñÈ¡Ã¶¾Ù¶ÔÏó
+     * é€šè¿‡å€¼è·å–æšä¸¾å¯¹è±¡
      * @param value
      * @return
      */
@@ -82,7 +82,7 @@ public enum MtProcessManageTypeEnum {
     }
 
     /**
-     * Í¨¹ıÃ¶¾Ù<code>value</code>»ñµÃÃ¶¾Ù
+     * é€šè¿‡æšä¸¾<code>value</code>è·å¾—æšä¸¾
      * 
      * @param value
      * @return
@@ -100,7 +100,7 @@ public enum MtProcessManageTypeEnum {
     }
 
     /**
-     * Í¨¹ıÃ¶¾Ù<code>name</code>»ñµÃÃ¶¾Ù
+     * é€šè¿‡æšä¸¾<code>name</code>è·å¾—æšä¸¾
      * 
      * @param message
      * @return

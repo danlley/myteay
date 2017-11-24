@@ -10,44 +10,44 @@ import java.util.Date;
 import com.myteay.common.util.tools.ToStringUtil;
 
 /**
- * Ì×²ÍĞÅÏ¢Êı¾İÄ£ĞÍ
+ * å¥—é¤ä¿¡æ¯æ•°æ®æ¨¡å‹
  * 
  * @author Administrator
- * @version $Id: GoodsPkgInfoDO.java, v 0.1 2016Äê3ÔÂ5ÈÕ ÉÏÎç9:17:56 Administrator Exp $
+ * @version $Id: GoodsPkgInfoDO.java, v 0.1 2016å¹´3æœˆ5æ—¥ ä¸Šåˆ9:17:56 Administrator Exp $
  */
 public class GoodsPkgInfoDO implements Serializable {
 
     /** serialVersionUID */
     private static final long serialVersionUID = -1600665896716378788L;
 
-    /** Ì×²ÍÅäÖÃĞÅÏ¢Á÷Ë®ºÅ */
+    /** å¥—é¤é…ç½®ä¿¡æ¯æµæ°´å· */
     private String            id;
 
-    /** Ì×²ÍÃû³Æ */
+    /** å¥—é¤åç§° */
     private String            pkgName;
 
-    /** ÉÌÆ·ÁĞ±í */
+    /** å•†å“åˆ—è¡¨ */
     private String            goodsId;
 
-    /** ÊÖ»ú¼Û¸ñ */
+    /** æ‰‹æœºä»·æ ¼ */
     private String            priceMobile;
 
-    /** µêÆÌ¼Û¸ñ */
+    /** åº—é“ºä»·æ ¼ */
     private String            price;
 
-    /** Ğ¡Í¼Æ¬µØÖ· */
+    /** å°å›¾ç‰‡åœ°å€ */
     private String            picAddr;
 
-    /** ´óÍ¼Æ¬µØÖ· */
+    /** å¤§å›¾ç‰‡åœ°å€ */
     private String            picBigAddr;
 
-    /** µêÆÌÁ÷Ë®ºÅ */
+    /** åº—é“ºæµæ°´å· */
     private String            shopId;
 
-    /** Ì×²Í´´½¨Ê±¼ä */
+    /** å¥—é¤åˆ›å»ºæ—¶é—´ */
     private Date              gmtCreated;
 
-    /** Ì×²Í×îºó±ä¸üÊ±¼ä */
+    /** å¥—é¤æœ€åå˜æ›´æ—¶é—´ */
     private Date              gmtModified;
 
     /**

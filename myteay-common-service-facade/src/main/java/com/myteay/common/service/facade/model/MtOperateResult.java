@@ -13,26 +13,26 @@ import com.myteay.common.service.facade.enums.MtOperateExResultEnum;
 import com.myteay.common.service.facade.enums.MtOperateResultEnum;
 
 /**
- * ·µ»Ø½á¹û
+ * è¿”å›ç»“æœ
  * 
  * @author Administrator
- * @version $Id: MtOperateResult.java, v 0.1 2015Äê12ÔÂ1ÈÕ ÏÂÎç4:46:13 Administrator Exp $
+ * @version $Id: MtOperateResult.java, v 0.1 2015å¹´12æœˆ1æ—¥ ä¸‹åˆ4:46:13 Administrator Exp $
  */
 public class MtOperateResult<T> implements Serializable {
 
     /** serialVersionUID */
     private static final long     serialVersionUID = -1112148186814322176L;
 
-    /** ²Ù×÷½á¹ûÂë */
+    /** æ“ä½œç»“æœç  */
     private MtOperateResultEnum   operateResult;
 
-    /** ²Ù×÷½á¹ûÀ©Õ¹Âë */
+    /** æ“ä½œç»“æœæ‰©å±•ç  */
     private MtOperateExResultEnum operateExResult;
 
-    /** ²Ù×÷Ä¿±ê·µ»Ø¶ÔÏó */
+    /** æ“ä½œç›®æ ‡è¿”å›å¯¹è±¡ */
     private T                     result;
 
-    /** ·µ»ØÂëÎª FAILEDÊ±£¬¶ÔÓ¦µÄ´íÎó²Î¿¼ĞÅÏ¢ */
+    /** è¿”å›ç ä¸º FAILEDæ—¶ï¼Œå¯¹åº”çš„é”™è¯¯å‚è€ƒä¿¡æ¯ */
     private String                errorDetail;
 
     /**
@@ -44,10 +44,10 @@ public class MtOperateResult<T> implements Serializable {
     /**
      * constructor for initial instance
      * 
-     * @param operateResult     ·µ»Ø½á¹ûÀàĞÍ
-     * @param result            Ö´ĞĞ½á¹û
-     * @param errorDetail       ´íÎóÏêÇé
-     * @param operateExResult   À©Õ¹ĞÅÏ¢
+     * @param operateResult     è¿”å›ç»“æœç±»å‹
+     * @param result            æ‰§è¡Œç»“æœ
+     * @param errorDetail       é”™è¯¯è¯¦æƒ…
+     * @param operateExResult   æ‰©å±•ä¿¡æ¯
      */
     public MtOperateResult(MtOperateResultEnum operateResult, T result, String errorDetail,
                            MtOperateExResultEnum operateExResult) {

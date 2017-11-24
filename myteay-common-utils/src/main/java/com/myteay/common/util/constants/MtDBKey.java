@@ -5,16 +5,16 @@
 package com.myteay.common.util.constants;
 
 /**
- * ¸÷¸öDAOÀà¼Ì³Ğ´ËÀà£¬ÒÔ±ãÄÜ¹»µÃµ½Ö¸¶¨µÄÊı¾İ¿â
+ * å„ä¸ªDAOç±»ç»§æ‰¿æ­¤ç±»ï¼Œä»¥ä¾¿èƒ½å¤Ÿå¾—åˆ°æŒ‡å®šçš„æ•°æ®åº“
  * 
  * @author danlley(danlley@126.com)
- * @version $Id: MtDBKey.java, v 0.1 2017Äê5ÔÂ7ÈÕ ÉÏÎç2:08:07 danlley(danlley@126.com) Exp $
+ * @version $Id: MtDBKey.java, v 0.1 2017å¹´5æœˆ7æ—¥ ä¸Šåˆ2:08:07 danlley(danlley@126.com) Exp $
  */
 public interface MtDBKey {
 
-    /** dinner¿â±êÊ¶ */
+    /** dinneråº“æ ‡è¯† */
     public final static String dinner   = "dinnerSqlSessionFactory";
 
-    /** customer¿â±êÊ¶ */
+    /** customeråº“æ ‡è¯† */
     public final static String customer = "customerSqlSessionFactory";
 }

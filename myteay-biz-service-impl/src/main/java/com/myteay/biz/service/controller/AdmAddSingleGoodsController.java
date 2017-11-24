@@ -30,31 +30,31 @@ import com.myteay.common.utils.MtFileUtils;
 import com.myteay.core.service.components.MtGoodsInfoComponents;
 
 /**
- * µ¥¸öÉÌÆ·ĞÅÏ¢Â¼Èë¿ØÖÆÆ÷
+ * å•ä¸ªå•†å“ä¿¡æ¯å½•å…¥æ§åˆ¶å™¨
  * 
  * @author Administrator
- * @version $Id: AdmAddSingleGoodsController.java, v 0.1 2016Äê3ÔÂ3ÈÕ ÏÂÎç9:21:51 Administrator Exp $
+ * @version $Id: AdmAddSingleGoodsController.java, v 0.1 2016å¹´3æœˆ3æ—¥ ä¸‹åˆ9:21:51 Administrator Exp $
  */
 @Controller
 @RequestMapping("/adm/upload_single_goods")
 public class AdmAddSingleGoodsController {
 
-    /** ÈÕÖ¾ */
+    /** æ—¥å¿— */
     public static final Logger    logger = Logger.getLogger(AdmAddSingleGoodsController.class);
 
-    /** ÉÌÆ·¹ÜÀí×é¼ş */
+    /** å•†å“ç®¡ç†ç»„ä»¶ */
     @Autowired
     private MtGoodsInfoComponents mtGoodsInfoComponents;
 
     /**
-     * Ìí¼Óµ¥¸öÉÌÆ·ĞÅÏ¢
+     * æ·»åŠ å•ä¸ªå•†å“ä¿¡æ¯
      * 
-     * @param session       ½»»¥»á»°ĞÅÏ¢
-     * @param response      Ó¦´ğĞÅÏ¢
-     * @param request       ÇëÇóĞÅÏ¢
-     * @return              ·şÎñÂ·¾¶
-     * @throws IOException  Òì³£
-     * @throws MtException  Òì³£
+     * @param session       äº¤äº’ä¼šè¯ä¿¡æ¯
+     * @param response      åº”ç­”ä¿¡æ¯
+     * @param request       è¯·æ±‚ä¿¡æ¯
+     * @return              æœåŠ¡è·¯å¾„
+     * @throws IOException  å¼‚å¸¸
+     * @throws MtException  å¼‚å¸¸
      */
     @RequestMapping(method = RequestMethod.POST)
     public ModelAndView addSingleGoods(HttpSession session,
@@ -70,16 +70,16 @@ public class AdmAddSingleGoodsController {
                                                                                                            MtException {
         ModelAndView view = new ModelAndView("upload_single_goods");
         if (logger.isInfoEnabled()) {
-            logger.info("¿ªÊ¼Â¼Èëµ¥¸öÉÌÆ·ĞÅÏ¢shop_id=" + shop_id + " pic_addr=" + pic_addr + " goods_title="
+            logger.info("å¼€å§‹å½•å…¥å•ä¸ªå•†å“ä¿¡æ¯shop_id=" + shop_id + " pic_addr=" + pic_addr + " goods_title="
                         + goods_title + " price=" + price + " summary=" + summary);
         }
         pic_addr = MtFileUtils.upload(file, request, MtConstants.GOODS_INFO_UPLOAD_URI);
 
-        logger.warn("´ıÉÏ´«ÎÄ¼şµØÖ·£º" + pic_addr);
+        logger.warn("å¾…ä¸Šä¼ æ–‡ä»¶åœ°å€ï¼š" + pic_addr);
 
         if (StringUtils.isBlank(pic_addr)) {
             logger
-                .warn("²úÆ·Í¼Æ¬±£´æÊ§°Ü£¬ÎŞ·¨¼ÌĞø±£´æÆäËûĞÅÏ¢shop_id=" + shop_id + " pic_addr=" + pic_addr
+                .warn("äº§å“å›¾ç‰‡ä¿å­˜å¤±è´¥ï¼Œæ— æ³•ç»§ç»­ä¿å­˜å…¶ä»–ä¿¡æ¯shop_id=" + shop_id + " pic_addr=" + pic_addr
                       + " goods_title=" + goods_title + " price=" + price + " summary=" + summary);
             return view;
         }
@@ -89,7 +89,7 @@ public class AdmAddSingleGoodsController {
         String mt_msg = null;
         if (message == null) {
             logger
-                .warn("¹¹½¨ÉÌÆ·µ¥Æ·ĞÅÏ¢½»»¥µ¥¾İÊ§°Ü£¬ÎŞ·¨±£´æÉÌÆ·ĞÅÏ¢shop_id=" + shop_id + " pic_addr=" + pic_addr
+                .warn("æ„å»ºå•†å“å•å“ä¿¡æ¯äº¤äº’å•æ®å¤±è´¥ï¼Œæ— æ³•ä¿å­˜å•†å“ä¿¡æ¯shop_id=" + shop_id + " pic_addr=" + pic_addr
                       + " goods_title=" + goods_title + " price=" + price + " summary=" + summary);
             return view;
         }
@@ -98,7 +98,7 @@ public class AdmAddSingleGoodsController {
         try {
             result = mtGoodsInfoComponents.saveGoodsInfo(message);
         } catch (Exception e) {
-            mt_msg = "±£´æÉÌÆ·µ¥Æ·ĞÅÏ¢½»»¥µ¥¾İÊ±·¢ÉúÒì³£ message=" + message;
+            mt_msg = "ä¿å­˜å•†å“å•å“ä¿¡æ¯äº¤äº’å•æ®æ—¶å‘ç”Ÿå¼‚å¸¸ message=" + message;
             logger.warn(mt_msg, e);
             return view;
         }
@@ -106,12 +106,12 @@ public class AdmAddSingleGoodsController {
         if (result == null
             || result.getOperateExResult() != MtOperateExResultEnum.CAMP_OPERATE_SUCCESS
             || result.getOperateResult() != MtOperateResultEnum.CAMP_OPERATE_SUCCESS) {
-            logger.warn("±£´æÉÌÆ·ĞÅÏ¢·¢ÉúÄÚ²¿Òì³££¬message=" + message + " result=" + result);
+            logger.warn("ä¿å­˜å•†å“ä¿¡æ¯å‘ç”Ÿå†…éƒ¨å¼‚å¸¸ï¼Œmessage=" + message + " result=" + result);
             return view;
         }
 
         if (logger.isInfoEnabled()) {
-            logger.info("±£´æÉÌÆ·µ¥Æ·ĞÅÏ¢³É¹¦ message=" + message + " result=" + result);
+            logger.info("ä¿å­˜å•†å“å•å“ä¿¡æ¯æˆåŠŸ message=" + message + " result=" + result);
         }
 
         response.sendRedirect("/myteay-web/adm/query_goods_list");
@@ -119,21 +119,21 @@ public class AdmAddSingleGoodsController {
     }
 
     /**
-     * ¹¹½¨ÉÌÆ·µ¥Æ·ĞÅÏ¢½»»¥µ¥¾İ
+     * æ„å»ºå•†å“å•å“ä¿¡æ¯äº¤äº’å•æ®
      * 
-     * @param shop_id       µêÆÌÁ÷Ë®ºÅ
-     * @param pic_addr      Í¼Æ¬µØÖ·
-     * @param goods_title   ÉÌÆ·Ãû³Æ
-     * @param price         ÉÌÆ·¼Û¸ñ
-     * @param summary       ±¸×¢
-     * @return              ÉÌÆ·µ¥Æ·ĞÅÏ¢½»»¥µ¥¾İ
+     * @param shop_id       åº—é“ºæµæ°´å·
+     * @param pic_addr      å›¾ç‰‡åœ°å€
+     * @param goods_title   å•†å“åç§°
+     * @param price         å•†å“ä»·æ ¼
+     * @param summary       å¤‡æ³¨
+     * @return              å•†å“å•å“ä¿¡æ¯äº¤äº’å•æ®
      */
     private MtGoodsInfoMessage constructMessage(String shop_id, String pic_addr,
                                                 String goods_title, String price, String summary) {
 
         if (StringUtils.isBlank(price) || StringUtils.isBlank(goods_title)
             || StringUtils.isBlank(pic_addr) || StringUtils.isBlank(shop_id)) {
-            logger.warn("ÉÌÆ·µ¥Æ·±ØÌîĞÅÏ¢²»¿ÉÓÃshop_id=" + shop_id + " pic_addr=" + pic_addr + " goods_title="
+            logger.warn("å•†å“å•å“å¿…å¡«ä¿¡æ¯ä¸å¯ç”¨shop_id=" + shop_id + " pic_addr=" + pic_addr + " goods_title="
                         + goods_title + " price=" + price);
             return null;
         }
@@ -149,14 +149,14 @@ public class AdmAddSingleGoodsController {
     }
 
     /**
-     * Éú³ÉÒ³Ãæµ¥¾İ
+     * ç”Ÿæˆé¡µé¢å•æ®
      * 
-     * @param session       ½»»¥»á»°ĞÅÏ¢
-     * @param response      Ó¦´ğĞÅÏ¢
-     * @param request       ÇëÇóĞÅÏ¢
-     * @return              ·şÎñÂ·¾¶
-     * @throws IOException  Òì³£
-     * @throws MtException  Òì³£
+     * @param session       äº¤äº’ä¼šè¯ä¿¡æ¯
+     * @param response      åº”ç­”ä¿¡æ¯
+     * @param request       è¯·æ±‚ä¿¡æ¯
+     * @return              æœåŠ¡è·¯å¾„
+     * @throws IOException  å¼‚å¸¸
+     * @throws MtException  å¼‚å¸¸
      */
     @RequestMapping(method = RequestMethod.GET)
     public ModelAndView querySingleGoodsForm(HttpSession session, HttpServletResponse response,
@@ -164,7 +164,7 @@ public class AdmAddSingleGoodsController {
                                                                          MtException {
 
         if (logger.isInfoEnabled()) {
-            logger.info("¿ªÊ¼Éú³ÉÂ¼Èëµ¥¸öÉÌÆ·ĞÅÏ¢±íµ¥");
+            logger.info("å¼€å§‹ç”Ÿæˆå½•å…¥å•ä¸ªå•†å“ä¿¡æ¯è¡¨å•");
         }
 
         return new ModelAndView("upload_single_goods");

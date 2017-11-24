@@ -15,14 +15,14 @@ import com.myteay.core.model.dinner.repository.MtShopInfoRepository;
 import com.myteay.core.service.components.MtShopInfoComponents;
 
 /**
- * µêÆÌ¹ÜÀí×é¼ş
+ * åº—é“ºç®¡ç†ç»„ä»¶
  * 
  * @author Administrator
- * @version $Id: MtShopInfoComponentsImpl.java, v 0.1 2016Äê3ÔÂ4ÈÕ ÏÂÎç5:19:56 Administrator Exp $
+ * @version $Id: MtShopInfoComponentsImpl.java, v 0.1 2016å¹´3æœˆ4æ—¥ ä¸‹åˆ5:19:56 Administrator Exp $
  */
 public class MtShopInfoComponentsImpl implements MtShopInfoComponents {
 
-    /** µêÆÌĞÅÏ¢²Ö´¢²ã */
+    /** åº—é“ºä¿¡æ¯ä»“å‚¨å±‚ */
     @Autowired
     private MtShopInfoRepository mtShopInfoRepository;
 

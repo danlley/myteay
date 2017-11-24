@@ -10,41 +10,41 @@ import com.myteay.common.dal.dinner.dataobject.GoodsInfoDO;
 import com.myteay.common.util.constants.MtDBKey;
 
 /**
- * µ¥Æ·ĞÅÏ¢¹ÜÀíDAO
+ * å•å“ä¿¡æ¯ç®¡ç†DAO
  * 
  * @author Administrator
- * @version $Id: GoodsInfoDAO.java, v 0.1 2016Äê3ÔÂ5ÈÕ ÉÏÎç12:39:22 Administrator Exp $
+ * @version $Id: GoodsInfoDAO.java, v 0.1 2016å¹´3æœˆ5æ—¥ ä¸Šåˆ12:39:22 Administrator Exp $
  */
 public interface GoodsInfoDAO extends MtDBKey {
 
     /**
-     * Í¨¹ıIDÉ¾³ıÖ¸¶¨µ¥Æ·ĞÅÏ¢
+     * é€šè¿‡IDåˆ é™¤æŒ‡å®šå•å“ä¿¡æ¯
      * 
-     * @param id    µ¥Æ·ID
-     * @return      É¾³ı½á¹û
+     * @param id    å•å“ID
+     * @return      åˆ é™¤ç»“æœ
      */
     int deleteById(String id);
 
     /**
-     * Í¨¹ıID²éÕÒµ¥Æ·ĞÅÏ¢Êı¾İÄ£ĞÍ
+     * é€šè¿‡IDæŸ¥æ‰¾å•å“ä¿¡æ¯æ•°æ®æ¨¡å‹
      * 
-     * @param id    µ¥Æ·Á÷Ë®ºÅ
+     * @param id    å•å“æµæ°´å·
      * @return
      */
     GoodsInfoDO findById(String id);
 
     /**
-     * ²åÈëµ¥Æ·»ù±¾ĞÅÏ¢
+     * æ’å…¥å•å“åŸºæœ¬ä¿¡æ¯
      * 
-     * @param goodsInfoDO   µ¥Æ·»ù±¾ĞÅÏ¢Êı¾İÄ£ĞÍ
+     * @param goodsInfoDO   å•å“åŸºæœ¬ä¿¡æ¯æ•°æ®æ¨¡å‹
      * @return
      */
     String insert(GoodsInfoDO goodsInfoDO);
 
     /**
-     * ²éÑ¯ËùÓĞµ¥Æ·ĞÅÏ¢ÁĞ±í
+     * æŸ¥è¯¢æ‰€æœ‰å•å“ä¿¡æ¯åˆ—è¡¨
      * 
-     * @return  µ¥Æ·ĞÅÏ¢ÁĞ±í
+     * @return  å•å“ä¿¡æ¯åˆ—è¡¨
      */
     public List<GoodsInfoDO> findAll();
 }

@@ -16,17 +16,17 @@ import com.myteay.common.service.facade.model.MtOperateResult;
 import com.myteay.common.utils.exception.MtBizProcessException;
 
 /**
- * ²Ù×÷Ö´ĞĞÄ£°å
+ * æ“ä½œæ‰§è¡Œæ¨¡æ¿
  * 
  * @author Administrator
- * @version $Id: MtOperateManageTemplateImpl.java, v 0.1 2016Äê9ÔÂ7ÈÕ ÏÂÎç8:42:24 Administrator Exp $
+ * @version $Id: MtOperateManageTemplateImpl.java, v 0.1 2016å¹´9æœˆ7æ—¥ ä¸‹åˆ8:42:24 Administrator Exp $
  */
 public class MtOperateManageTemplateImpl implements MtOperateManageTemplate {
 
-    /** ÈÕÖ¾ */
+    /** æ—¥å¿— */
     public static final Logger  logger = Logger.getLogger(MtOperateManageTemplateImpl.class);
 
-    /** »áÔ±Êı¾İ¿âÊÂÎñÄ£°å */
+    /** ä¼šå‘˜æ•°æ®åº“äº‹åŠ¡æ¨¡æ¿ */
     private TransactionTemplate myteayCustomerTransactionTemplate;
 
     /** 
@@ -36,12 +36,12 @@ public class MtOperateManageTemplateImpl implements MtOperateManageTemplate {
     public MtOperateResult<String> execute(final MtProcessManageTypeEnum manageType,
                                            final Object obj, final MtManageCallback callback) {
 
-        //»ù´¡ÒµÎñ´¦Àí
+        //åŸºç¡€ä¸šåŠ¡å¤„ç†
         if (manageType == null || obj == null || callback == null) {
-            logger.warn("[ÒµÎñ´¦ÀíÄ£°å]´¦ÀíÒµÎñÇ°µÄ³£¹æ²ÎÊı¼ì²é¹ı³ÌÊ§°Ü manageType=" + manageType + " obj=" + obj
+            logger.warn("[ä¸šåŠ¡å¤„ç†æ¨¡æ¿]å¤„ç†ä¸šåŠ¡å‰çš„å¸¸è§„å‚æ•°æ£€æŸ¥è¿‡ç¨‹å¤±è´¥ manageType=" + manageType + " obj=" + obj
                         + " callback=" + callback);
             return new MtOperateResult<String>(MtOperateResultEnum.CAMP_OPERATE_FAILED,
-                obj.toString(), "[ÒµÎñ´¦ÀíÄ£°å]´¦ÀíÒµÎñÇ°µÄ³£¹æ²ÎÊı¼ì²é¹ı³ÌÊ§°Ü manageType=" + manageType + " obj=" + obj
+                obj.toString(), "[ä¸šåŠ¡å¤„ç†æ¨¡æ¿]å¤„ç†ä¸šåŠ¡å‰çš„å¸¸è§„å‚æ•°æ£€æŸ¥è¿‡ç¨‹å¤±è´¥ manageType=" + manageType + " obj=" + obj
                                 + " callback=" + callback,
                 MtOperateExResultEnum.CAMP_ILLEGAL_ARGUMENTS);
         }
@@ -52,26 +52,26 @@ public class MtOperateManageTemplateImpl implements MtOperateManageTemplate {
                  * @see org.springframework.transaction.support.TransactionCallback#doInTransaction(org.springframework.transaction.TransactionStatus)
                  */
                 public MtOperateResult<String> doInTransaction(TransactionStatus status) {
-                    //±äÁ¿³õÊ¼»¯
+                    //å˜é‡åˆå§‹åŒ–
                     MtOperateResult<String> returnValue = null;
                     String errorDetail = null;
                     String returnObject = null;
                     MtOperateResultEnum operateResult = null;
                     MtOperateExResultEnum operateExResult = null;
-                    //ÒµÎñ´¦ÀíÖ÷Âß¼­
+                    //ä¸šåŠ¡å¤„ç†ä¸»é€»è¾‘
                     try {
-                        //step 1: Ğ£ÑéÎ´Í¨¹ıÊ±Í¨¹ıPromoCoreConfigExceptionÒì³£½áÊøÖ´ĞĞºóĞø¶¯×÷
+                        //step 1: æ ¡éªŒæœªé€šè¿‡æ—¶é€šè¿‡PromoCoreConfigExceptionå¼‚å¸¸ç»“æŸæ‰§è¡Œåç»­åŠ¨ä½œ
                         MtProcessManageTypeEnum manageTypeInner = null;
 
                         if (logger.isInfoEnabled()) {
-                            logger.info("[ÒµÎñ´¦ÀíÄ£°å]¿ªÊ¼½øÈëÊı¾İºÏ·¨ĞÔÑéÖ¤½×¶ÎmanageType=" + manageType + " obj="
+                            logger.info("[ä¸šåŠ¡å¤„ç†æ¨¡æ¿]å¼€å§‹è¿›å…¥æ•°æ®åˆæ³•æ€§éªŒè¯é˜¶æ®µmanageType=" + manageType + " obj="
                                         + obj);
                         }
                         manageTypeInner = callback.validate();
 
-                        //step 2: Á÷³ÌÇ°ÒµÎñ´¦Àí
+                        //step 2: æµç¨‹å‰ä¸šåŠ¡å¤„ç†
                         if (logger.isInfoEnabled()) {
-                            logger.info("[ÒµÎñ´¦ÀíÄ£°å]¿ªÊ¼½øÈëÒµÎñ´¦ÀíÇ°ÖÃÒµÎñ½×¶ÎmanageType=" + manageType + " obj="
+                            logger.info("[ä¸šåŠ¡å¤„ç†æ¨¡æ¿]å¼€å§‹è¿›å…¥ä¸šåŠ¡å¤„ç†å‰ç½®ä¸šåŠ¡é˜¶æ®µmanageType=" + manageType + " obj="
                                         + obj);
                         }
                         validateMtProcessManageType(manageType, obj);
@@ -79,9 +79,9 @@ public class MtOperateManageTemplateImpl implements MtOperateManageTemplate {
                             manageTypeInner = callback.beforeProcess();
                         }
 
-                        //step 3: Á÷³Ì¸¨ÖúÒµÎñ´¦Àí
+                        //step 3: æµç¨‹è¾…åŠ©ä¸šåŠ¡å¤„ç†
                         if (logger.isInfoEnabled()) {
-                            logger.info("[ÒµÎñ´¦ÀíÄ£°å]¿ªÊ¼½øÈëÒµÎñ´¦Àí¸¨ÖúÁ÷³Ì½×¶ÎmanageType=" + manageType + " obj="
+                            logger.info("[ä¸šåŠ¡å¤„ç†æ¨¡æ¿]å¼€å§‹è¿›å…¥ä¸šåŠ¡å¤„ç†è¾…åŠ©æµç¨‹é˜¶æ®µmanageType=" + manageType + " obj="
                                         + obj);
                         }
                         validateMtProcessManageType(manageType, obj);
@@ -89,9 +89,9 @@ public class MtOperateManageTemplateImpl implements MtOperateManageTemplate {
                             manageTypeInner = callback.auxiliaryProcess();
                         }
 
-                        //step 4: Á÷³ÌÖ÷ÒµÎñ´¦Àí
+                        //step 4: æµç¨‹ä¸»ä¸šåŠ¡å¤„ç†
                         if (logger.isInfoEnabled()) {
-                            logger.info("[ÒµÎñ´¦ÀíÄ£°å]¿ªÊ¼½øÈëÒµÎñ´¦ÀíÖ÷Á÷³Ì½×¶ÎmanageType=" + manageType + " obj="
+                            logger.info("[ä¸šåŠ¡å¤„ç†æ¨¡æ¿]å¼€å§‹è¿›å…¥ä¸šåŠ¡å¤„ç†ä¸»æµç¨‹é˜¶æ®µmanageType=" + manageType + " obj="
                                         + obj);
                         }
                         validateMtProcessManageType(manageType, obj);
@@ -99,9 +99,9 @@ public class MtOperateManageTemplateImpl implements MtOperateManageTemplate {
                             manageTypeInner = callback.process();
                         }
 
-                        //step 5: Á÷³Ì½áÊøÇ°ÒµÎñ´¦Àí
+                        //step 5: æµç¨‹ç»“æŸå‰ä¸šåŠ¡å¤„ç†
                         if (logger.isInfoEnabled()) {
-                            logger.info("[ÒµÎñ´¦ÀíÄ£°å]¿ªÊ¼½øÈëÁ÷³Ì½áÊøÇ°ÒµÎñ½×¶ÎmanageType=" + manageType + " obj="
+                            logger.info("[ä¸šåŠ¡å¤„ç†æ¨¡æ¿]å¼€å§‹è¿›å…¥æµç¨‹ç»“æŸå‰ä¸šåŠ¡é˜¶æ®µmanageType=" + manageType + " obj="
                                         + obj);
                         }
                         validateMtProcessManageType(manageType, obj);
@@ -109,31 +109,31 @@ public class MtOperateManageTemplateImpl implements MtOperateManageTemplate {
                             manageTypeInner = callback.process();
                         }
 
-                        //step 6: Á÷³ÌÖ´ĞĞ½áÊøÇ°µÄÉ¨Î²¹¤×÷
+                        //step 6: æµç¨‹æ‰§è¡Œç»“æŸå‰çš„æ‰«å°¾å·¥ä½œ
                         if (logger.isInfoEnabled()) {
-                            logger.info("[ÒµÎñ´¦ÀíÄ£°å]µ±Ç°ÒµÎñ´¦ÀíÇëÇó³É¹¦Ö´ĞĞ£¬manageType=" + manageType + " obj="
+                            logger.info("[ä¸šåŠ¡å¤„ç†æ¨¡æ¿]å½“å‰ä¸šåŠ¡å¤„ç†è¯·æ±‚æˆåŠŸæ‰§è¡Œï¼ŒmanageType=" + manageType + " obj="
                                         + obj);
                         }
                         operateResult = MtOperateResultEnum.CAMP_OPERATE_SUCCESS;
                         operateExResult = MtOperateExResultEnum.CAMP_OPERATE_SUCCESS;
                     }
-                    //ÏµÍ³×Ô¶¨ÒåÒì³£´¦Àí
+                    //ç³»ç»Ÿè‡ªå®šä¹‰å¼‚å¸¸å¤„ç†
                     catch (MtBizProcessException e) {
                         status.setRollbackOnly();
                         operateResult = MtOperateResultEnum.CAMP_OPERATE_FAILED;
                         operateExResult = MtOperateExResultEnum.getByValue(e.getOperateExResult());
-                        errorDetail = "ÒµÎñ´¦ÀíÒì³££¨PromoCoreConfigException£©£º" + e.getMessage();
+                        errorDetail = "ä¸šåŠ¡å¤„ç†å¼‚å¸¸ï¼ˆPromoCoreConfigExceptionï¼‰ï¼š" + e.getMessage();
                         logger.warn(errorDetail, e);
                     }
-                    //Î´ÖªÒì³£´¦Àí
+                    //æœªçŸ¥å¼‚å¸¸å¤„ç†
                     catch (Exception e) {
                         status.setRollbackOnly();
-                        errorDetail = "ÒµÎñ´¦ÀíÒì³££¨Exception£©£º" + e.getMessage();
+                        errorDetail = "ä¸šåŠ¡å¤„ç†å¼‚å¸¸ï¼ˆExceptionï¼‰ï¼š" + e.getMessage();
                         operateResult = MtOperateResultEnum.CAMP_OPERATE_FAILED;
                         operateExResult = MtOperateExResultEnum.CAMP_PROCESS_UNKNOW_ERR;
                         logger.warn(errorDetail, e);
                     }
-                    //×îºó¹¹Ôì·µ»ØÖµ
+                    //æœ€åæ„é€ è¿”å›å€¼
                     finally {
                         returnValue = new MtOperateResult<String>(operateResult, returnObject,
                             errorDetail, operateExResult);
@@ -146,16 +146,16 @@ public class MtOperateManageTemplateImpl implements MtOperateManageTemplate {
     }
 
     /**
-     * Ö´ĞĞÕæÕıµÄÒµÎñ´¦ÀíÂß¼­
+     * æ‰§è¡ŒçœŸæ­£çš„ä¸šåŠ¡å¤„ç†é€»è¾‘
      * 
-     * @param manageType                ²Ù×÷ÀàĞÍ
-     * @param obj                       ²Ù×÷ÊµÌå
-     * @throws MtBizProcessException    ÒµÎñ´¦ÀíÒì³£
+     * @param manageType                æ“ä½œç±»å‹
+     * @param obj                       æ“ä½œå®ä½“
+     * @throws MtBizProcessException    ä¸šåŠ¡å¤„ç†å¼‚å¸¸
      */
     private void validateMtProcessManageType(MtProcessManageTypeEnum manageType, Object obj)
                                                                                              throws MtBizProcessException {
         if (manageType == null) {
-            logger.warn("ÒµÎñĞ£Ñé´¦ÀíÒì³£ obj=" + obj);
+            logger.warn("ä¸šåŠ¡æ ¡éªŒå¤„ç†å¼‚å¸¸ obj=" + obj);
 
             throw new MtBizProcessException(MtOperateExResultEnum.CAMP_ILLEGAL_ARGUMENTS.getCode(),
                 MtOperateExResultEnum.CAMP_ILLEGAL_ARGUMENTS.getMessage());
@@ -168,90 +168,90 @@ public class MtOperateManageTemplateImpl implements MtOperateManageTemplate {
     @Override
     public MtOperateResult<String> executeWithOutTrans(MtProcessManageTypeEnum manageType,
                                                        Object obj, MtManageCallback callback) {
-        //»ù´¡ÒµÎñ´¦Àí
+        //åŸºç¡€ä¸šåŠ¡å¤„ç†
         if (manageType == null || obj == null || callback == null) {
-            logger.warn("[ÒµÎñ´¦ÀíÄ£°å]´¦ÀíÒµÎñÇ°µÄ³£¹æ²ÎÊı¼ì²é¹ı³ÌÊ§°Ü manageType=" + manageType + " obj=" + obj
+            logger.warn("[ä¸šåŠ¡å¤„ç†æ¨¡æ¿]å¤„ç†ä¸šåŠ¡å‰çš„å¸¸è§„å‚æ•°æ£€æŸ¥è¿‡ç¨‹å¤±è´¥ manageType=" + manageType + " obj=" + obj
                         + " callback=" + callback);
             return new MtOperateResult<String>(MtOperateResultEnum.CAMP_OPERATE_FAILED,
-                obj.toString(), "[ÒµÎñ´¦ÀíÄ£°å]´¦ÀíÒµÎñÇ°µÄ³£¹æ²ÎÊı¼ì²é¹ı³ÌÊ§°Ü manageType=" + manageType + " obj=" + obj
+                obj.toString(), "[ä¸šåŠ¡å¤„ç†æ¨¡æ¿]å¤„ç†ä¸šåŠ¡å‰çš„å¸¸è§„å‚æ•°æ£€æŸ¥è¿‡ç¨‹å¤±è´¥ manageType=" + manageType + " obj=" + obj
                                 + " callback=" + callback,
                 MtOperateExResultEnum.CAMP_ILLEGAL_ARGUMENTS);
         }
 
-        //±äÁ¿³õÊ¼»¯
+        //å˜é‡åˆå§‹åŒ–
         MtOperateResult<String> returnValue = null;
         String errorDetail = null;
         String returnObject = null;
         MtOperateResultEnum operateResult = null;
         MtOperateExResultEnum operateExResult = null;
-        //ÒµÎñ´¦ÀíÖ÷Âß¼­
+        //ä¸šåŠ¡å¤„ç†ä¸»é€»è¾‘
         try {
-            //step 1: Ğ£ÑéÎ´Í¨¹ıÊ±Í¨¹ıPromoCoreConfigExceptionÒì³£½áÊøÖ´ĞĞºóĞø¶¯×÷
+            //step 1: æ ¡éªŒæœªé€šè¿‡æ—¶é€šè¿‡PromoCoreConfigExceptionå¼‚å¸¸ç»“æŸæ‰§è¡Œåç»­åŠ¨ä½œ
             MtProcessManageTypeEnum manageTypeInner = null;
 
             if (logger.isInfoEnabled()) {
-                logger.info("[ÒµÎñ´¦ÀíÄ£°å]¿ªÊ¼½øÈëÊı¾İºÏ·¨ĞÔÑéÖ¤½×¶ÎmanageType=" + manageType + " obj=" + obj);
+                logger.info("[ä¸šåŠ¡å¤„ç†æ¨¡æ¿]å¼€å§‹è¿›å…¥æ•°æ®åˆæ³•æ€§éªŒè¯é˜¶æ®µmanageType=" + manageType + " obj=" + obj);
             }
             manageTypeInner = callback.validate();
 
-            //step 2: Á÷³ÌÇ°ÒµÎñ´¦Àí
+            //step 2: æµç¨‹å‰ä¸šåŠ¡å¤„ç†
             if (logger.isInfoEnabled()) {
-                logger.info("[ÒµÎñ´¦ÀíÄ£°å]¿ªÊ¼½øÈëÒµÎñ´¦ÀíÇ°ÖÃÒµÎñ½×¶ÎmanageType=" + manageType + " obj=" + obj);
+                logger.info("[ä¸šåŠ¡å¤„ç†æ¨¡æ¿]å¼€å§‹è¿›å…¥ä¸šåŠ¡å¤„ç†å‰ç½®ä¸šåŠ¡é˜¶æ®µmanageType=" + manageType + " obj=" + obj);
             }
             validateMtProcessManageType(manageType, obj);
             if (MtProcessManageTypeEnum.CS_BEFORE_PROCESS == manageTypeInner) {
                 manageTypeInner = callback.beforeProcess();
             }
 
-            //step 3: Á÷³Ì¸¨ÖúÒµÎñ´¦Àí
+            //step 3: æµç¨‹è¾…åŠ©ä¸šåŠ¡å¤„ç†
             if (logger.isInfoEnabled()) {
-                logger.info("[ÒµÎñ´¦ÀíÄ£°å]¿ªÊ¼½øÈëÒµÎñ´¦Àí¸¨ÖúÁ÷³Ì½×¶ÎmanageType=" + manageType + " obj=" + obj);
+                logger.info("[ä¸šåŠ¡å¤„ç†æ¨¡æ¿]å¼€å§‹è¿›å…¥ä¸šåŠ¡å¤„ç†è¾…åŠ©æµç¨‹é˜¶æ®µmanageType=" + manageType + " obj=" + obj);
             }
             validateMtProcessManageType(manageType, obj);
             if (MtProcessManageTypeEnum.CS_AUXILIARY_PROCESS == manageTypeInner) {
                 manageTypeInner = callback.auxiliaryProcess();
             }
 
-            //step 4: Á÷³ÌÖ÷ÒµÎñ´¦Àí
+            //step 4: æµç¨‹ä¸»ä¸šåŠ¡å¤„ç†
             if (logger.isInfoEnabled()) {
-                logger.info("[ÒµÎñ´¦ÀíÄ£°å]¿ªÊ¼½øÈëÒµÎñ´¦ÀíÖ÷Á÷³Ì½×¶ÎmanageType=" + manageType + " obj=" + obj);
+                logger.info("[ä¸šåŠ¡å¤„ç†æ¨¡æ¿]å¼€å§‹è¿›å…¥ä¸šåŠ¡å¤„ç†ä¸»æµç¨‹é˜¶æ®µmanageType=" + manageType + " obj=" + obj);
             }
             validateMtProcessManageType(manageType, obj);
             if (MtProcessManageTypeEnum.CS_MAIN_PROCESS == manageTypeInner) {
                 manageTypeInner = callback.process();
             }
 
-            //step 5: Á÷³Ì½áÊøÇ°ÒµÎñ´¦Àí
+            //step 5: æµç¨‹ç»“æŸå‰ä¸šåŠ¡å¤„ç†
             if (logger.isInfoEnabled()) {
-                logger.info("[ÒµÎñ´¦ÀíÄ£°å]¿ªÊ¼½øÈëÁ÷³Ì½áÊøÇ°ÒµÎñ½×¶ÎmanageType=" + manageType + " obj=" + obj);
+                logger.info("[ä¸šåŠ¡å¤„ç†æ¨¡æ¿]å¼€å§‹è¿›å…¥æµç¨‹ç»“æŸå‰ä¸šåŠ¡é˜¶æ®µmanageType=" + manageType + " obj=" + obj);
             }
             validateMtProcessManageType(manageType, obj);
             if (MtProcessManageTypeEnum.CS_AFTER_PROCESS == manageTypeInner) {
                 manageTypeInner = callback.process();
             }
 
-            //step 6: Á÷³ÌÖ´ĞĞ½áÊøÇ°µÄÉ¨Î²¹¤×÷
+            //step 6: æµç¨‹æ‰§è¡Œç»“æŸå‰çš„æ‰«å°¾å·¥ä½œ
             if (logger.isInfoEnabled()) {
-                logger.info("[ÒµÎñ´¦ÀíÄ£°å]µ±Ç°ÒµÎñ´¦ÀíÇëÇó³É¹¦Ö´ĞĞ£¬manageType=" + manageType + " obj=" + obj);
+                logger.info("[ä¸šåŠ¡å¤„ç†æ¨¡æ¿]å½“å‰ä¸šåŠ¡å¤„ç†è¯·æ±‚æˆåŠŸæ‰§è¡Œï¼ŒmanageType=" + manageType + " obj=" + obj);
             }
             operateResult = MtOperateResultEnum.CAMP_OPERATE_SUCCESS;
             operateExResult = MtOperateExResultEnum.CAMP_OPERATE_SUCCESS;
         }
-        //ÏµÍ³×Ô¶¨ÒåÒì³£´¦Àí
+        //ç³»ç»Ÿè‡ªå®šä¹‰å¼‚å¸¸å¤„ç†
         catch (MtBizProcessException e) {
             operateResult = MtOperateResultEnum.CAMP_OPERATE_FAILED;
             operateExResult = MtOperateExResultEnum.getByValue(e.getOperateExResult());
-            errorDetail = "ÒµÎñ´¦ÀíÒì³££¨PromoCoreConfigException£©£º" + e.getMessage();
+            errorDetail = "ä¸šåŠ¡å¤„ç†å¼‚å¸¸ï¼ˆPromoCoreConfigExceptionï¼‰ï¼š" + e.getMessage();
             logger.warn(errorDetail, e);
         }
-        //Î´ÖªÒì³£´¦Àí
+        //æœªçŸ¥å¼‚å¸¸å¤„ç†
         catch (Exception e) {
-            errorDetail = "ÒµÎñ´¦ÀíÒì³££¨Exception£©£º" + e.getMessage();
+            errorDetail = "ä¸šåŠ¡å¤„ç†å¼‚å¸¸ï¼ˆExceptionï¼‰ï¼š" + e.getMessage();
             operateResult = MtOperateResultEnum.CAMP_OPERATE_FAILED;
             operateExResult = MtOperateExResultEnum.CAMP_PROCESS_UNKNOW_ERR;
             logger.warn(errorDetail, e);
         }
-        //×îºó¹¹Ôì·µ»ØÖµ
+        //æœ€åæ„é€ è¿”å›å€¼
         finally {
             returnValue = new MtOperateResult<String>(operateResult, returnObject, errorDetail,
                 operateExResult);

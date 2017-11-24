@@ -11,17 +11,17 @@ import com.myteay.common.service.facade.model.MtOperateResult;
 import com.myteay.core.model.dinner.MtShopModel;
 
 /**
- * µêÆÌ¹ÜÀí×é¼ş
+ * åº—é“ºç®¡ç†ç»„ä»¶
  * 
  * @author Administrator
- * @version $Id: MtShopInfoComponents.java, v 0.1 2016Äê3ÔÂ4ÈÕ ÏÂÎç5:19:21 Administrator Exp $
+ * @version $Id: MtShopInfoComponents.java, v 0.1 2016å¹´3æœˆ4æ—¥ ä¸‹åˆ5:19:21 Administrator Exp $
  */
 public interface MtShopInfoComponents {
 
     /**
-     * ²éÑ¯ËùÓĞµÄµêÆÌĞÅÏ¢
+     * æŸ¥è¯¢æ‰€æœ‰çš„åº—é“ºä¿¡æ¯
      * 
-     * @return  ·µ»ØµêÆÌĞÅÏ¢ÁĞ±í
+     * @return  è¿”å›åº—é“ºä¿¡æ¯åˆ—è¡¨
      */
     public MtOperateResult<List<MtShopModel>> queryShopList() throws MtBizException;
 }

@@ -10,41 +10,41 @@ import java.util.Date;
 import com.myteay.common.util.tools.ToStringUtil;
 
 /**
- * ÉÌÆ·ĞÅÏ¢½»»¥µ¥¾İ
+ * å•†å“ä¿¡æ¯äº¤äº’å•æ®
  * 
  * @author Administrator
- * @version $Id: MtGoodsInfoMessage.java, v 0.1 2016Äê3ÔÂ5ÈÕ ÉÏÎç12:37:16 Administrator Exp $
+ * @version $Id: MtGoodsInfoMessage.java, v 0.1 2016å¹´3æœˆ5æ—¥ ä¸Šåˆ12:37:16 Administrator Exp $
  */
 public class MtGoodsInfoMessage implements Serializable {
 
     /** serialVersionUID */
     private static final long serialVersionUID = -97163779848137712L;
 
-    /** IDÁ÷Ë®ºÅ */
+    /** IDæµæ°´å· */
     private String            id;
 
-    /** µêÆÌÁ÷Ë®ºÅ */
+    /** åº—é“ºæµæ°´å· */
     private String            shopId;
 
-    /** Í¼Æ¬µØÖ· */
+    /** å›¾ç‰‡åœ°å€ */
     private String            picAddr;
 
-    /** ÉÌÆ·±êÌâ */
+    /** å•†å“æ ‡é¢˜ */
     private String            goodsTitle;
 
-    /** ¼Û¸ñ */
+    /** ä»·æ ¼ */
     private String            price;
 
-    /** ±¸×¢ */
+    /** å¤‡æ³¨ */
     private String            summary;
 
-    /** ÉÏ¼ÜÊ±¼ä */
+    /** ä¸Šæ¶æ—¶é—´ */
     private Date              gmtCreated;
 
-    /** ×îºóĞŞ¸ÄÊ±¼ä */
+    /** æœ€åä¿®æ”¹æ—¶é—´ */
     private Date              gmtModified;
 
-    /** Í¼Æ¬ÉÏ²ãÂ·¾¶ */
+    /** å›¾ç‰‡ä¸Šå±‚è·¯å¾„ */
     private String            imgParentPath;
 
     /**

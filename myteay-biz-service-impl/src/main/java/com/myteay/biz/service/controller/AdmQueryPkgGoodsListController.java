@@ -37,36 +37,36 @@ import com.myteay.core.model.user.convt.MtGoodsPkgModelConvertor;
 import com.myteay.core.service.components.MtGoodsPkgInfoComponents;
 
 /**
- * ²éÑ¯ËùÓĞÌ×²ÍĞÅÏ¢
+ * æŸ¥è¯¢æ‰€æœ‰å¥—é¤ä¿¡æ¯
  * 
  * @author Administrator
- * @version $Id: QueryPkgGoodsListController.java, v 0.1 2016Äê3ÔÂ5ÈÕ ÉÏÎç9:10:39 Administrator Exp $
+ * @version $Id: QueryPkgGoodsListController.java, v 0.1 2016å¹´3æœˆ5æ—¥ ä¸Šåˆ9:10:39 Administrator Exp $
  */
 @Controller
 @RequestMapping("/adm/query_pkg_goods_list")
 public class AdmQueryPkgGoodsListController {
 
-    /** ÈÕÖ¾ */
+    /** æ—¥å¿— */
     public static final Logger          logger = Logger
         .getLogger(AdmQueryPkgGoodsListController.class);
 
-    /** Ì×²ÍĞÅÏ¢¹ÜÀí×é¼ş */
+    /** å¥—é¤ä¿¡æ¯ç®¡ç†ç»„ä»¶ */
     @Autowired
     private MtGoodsPkgInfoComponents    mtGoodsPkgInfoComponents;
 
-    /** Ì×²ÍĞÅÏ¢¹ÜÀí×é¼ş */
+    /** å¥—é¤ä¿¡æ¯ç®¡ç†ç»„ä»¶ */
     @Autowired
     private EventPublishService<String> eventPublishService;
 
     /**
-     * Ìí¼Óµ¥¸öÌ×²ÍĞÅÏ¢
+     * æ·»åŠ å•ä¸ªå¥—é¤ä¿¡æ¯
      * 
-     * @param session       ½»»¥»á»°ĞÅÏ¢
-     * @param response      Ó¦´ğĞÅÏ¢
-     * @param request       ÇëÇóĞÅÏ¢
-     * @return              ·şÎñÂ·¾¶
-     * @throws IOException  Òì³£
-     * @throws MtException  Òì³£
+     * @param session       äº¤äº’ä¼šè¯ä¿¡æ¯
+     * @param response      åº”ç­”ä¿¡æ¯
+     * @param request       è¯·æ±‚ä¿¡æ¯
+     * @return              æœåŠ¡è·¯å¾„
+     * @throws IOException  å¼‚å¸¸
+     * @throws MtException  å¼‚å¸¸
      */
     @RequestMapping(method = RequestMethod.GET)
     public ModelAndView queryGoodsList(HttpSession session, HttpServletResponse response,
@@ -76,23 +76,23 @@ public class AdmQueryPkgGoodsListController {
         try {
             result = mtGoodsPkgInfoComponents.queryGoodsPkgList();
         } catch (MtBizException e) {
-            logger.warn("²éÑ¯Ì×²ÍĞÅÏ¢³öÏÖÒµÎñÒì³£", e);
+            logger.warn("æŸ¥è¯¢å¥—é¤ä¿¡æ¯å‡ºç°ä¸šåŠ¡å¼‚å¸¸", e);
         } catch (Throwable e) {
-            logger.warn("²éÑ¯Ì×²ÍĞÅÏ¢³öÏÖÏµÍ³Òì³£", e);
+            logger.warn("æŸ¥è¯¢å¥—é¤ä¿¡æ¯å‡ºç°ç³»ç»Ÿå¼‚å¸¸", e);
         }
 
-        //TODO ²âÊÔÒì²½ÊÂ¼ş´¦Àí×é¼ş
+        //TODO æµ‹è¯•å¼‚æ­¥äº‹ä»¶å¤„ç†ç»„ä»¶
         eventPublishService.publishEvent(new MtEvent<String>(
             MtEventTopicEnum.MT_CACHE_GOODS_PKG_FRESH.getValue(), null));
 
         if (result == null || result.getOperateResult() != MtOperateResultEnum.CAMP_OPERATE_SUCCESS
             || result.getOperateExResult() != MtOperateExResultEnum.CAMP_OPERATE_SUCCESS) {
-            logger.warn("²éÑ¯Ì×²ÍĞÅÏ¢Ê§°Üresult=" + result);
+            logger.warn("æŸ¥è¯¢å¥—é¤ä¿¡æ¯å¤±è´¥result=" + result);
             return view;
         }
 
         if (CollectionUtils.isEmpty(result.getResult())) {
-            logger.warn("²éÑ¯³É¹¦£¡µ±Ç°Ã»ÓĞ¿ÉÓÃµÄÌ×²ÍĞÅÏ¢result=" + result);
+            logger.warn("æŸ¥è¯¢æˆåŠŸï¼å½“å‰æ²¡æœ‰å¯ç”¨çš„å¥—é¤ä¿¡æ¯result=" + result);
             return view;
         }
 
@@ -109,7 +109,7 @@ public class AdmQueryPkgGoodsListController {
 
         if (!CollectionUtils.isEmpty(messageList)) {
             if (logger.isInfoEnabled()) {
-                logger.info("Ì×²ÍÁĞ±í×é×°½áÊø");
+                logger.info("å¥—é¤åˆ—è¡¨ç»„è£…ç»“æŸ");
             }
 
             Map<String, Object> model = new HashMap<String, Object>();

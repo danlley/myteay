@@ -20,17 +20,17 @@ import com.myteay.core.model.user.convt.MtGoodsModelConvertor;
 import com.myteay.core.service.components.MtGoodsInfoComponents;
 
 /**
- * ÉÌÆ·ĞÅÏ¢¹ÜÀí×é¼ş
+ * å•†å“ä¿¡æ¯ç®¡ç†ç»„ä»¶
  * 
  * @author Administrator
- * @version $Id: MtGoodsInfoComponentsImpl.java, v 0.1 2016Äê3ÔÂ5ÈÕ ÉÏÎç12:55:24 Administrator Exp $
+ * @version $Id: MtGoodsInfoComponentsImpl.java, v 0.1 2016å¹´3æœˆ5æ—¥ ä¸Šåˆ12:55:24 Administrator Exp $
  */
 public class MtGoodsInfoComponentsImpl implements MtGoodsInfoComponents {
 
-    /** ÈÕÖ¾ */
+    /** æ—¥å¿— */
     public static final Logger    logger = Logger.getLogger(MtGoodsInfoComponentsImpl.class);
 
-    /** ÉÌÆ·ĞÅÏ¢²Ö´¢²ã */
+    /** å•†å“ä¿¡æ¯ä»“å‚¨å±‚ */
     @Autowired
     private MtGoodsInfoRepository mtGoodsInfoRepository;
 
@@ -53,7 +53,7 @@ public class MtGoodsInfoComponentsImpl implements MtGoodsInfoComponents {
         try {
             resultInner = mtGoodsInfoRepository.findGoodsInfoById(id);
         } catch (Exception e) {
-            logger.warn("²éÑ¯µ¥Æ·ĞÅÏ¢·¢ÉúÒì³£ id=" + id, e);
+            logger.warn("æŸ¥è¯¢å•å“ä¿¡æ¯å‘ç”Ÿå¼‚å¸¸ id=" + id, e);
             result.setOperateExResult(MtOperateExResultEnum.CAMP_ILLEGAL_ARGUMENTS);
             result.setOperateResult(MtOperateResultEnum.CAMP_OPERATE_FAILED);
             return result;
@@ -62,7 +62,7 @@ public class MtGoodsInfoComponentsImpl implements MtGoodsInfoComponents {
         if (resultInner == null
             || resultInner.getOperateResult() != MtOperateResultEnum.CAMP_OPERATE_SUCCESS
             || resultInner.getOperateExResult() != MtOperateExResultEnum.CAMP_OPERATE_SUCCESS) {
-            logger.warn("²éÑ¯ÉÌÆ·ĞÅÏ¢Ê§°Üresult=" + resultInner);
+            logger.warn("æŸ¥è¯¢å•†å“ä¿¡æ¯å¤±è´¥result=" + resultInner);
             result.setOperateExResult(MtOperateExResultEnum.CAMP_ILLEGAL_ARGUMENTS);
             result.setOperateResult(MtOperateResultEnum.CAMP_OPERATE_FAILED);
             return result;
@@ -71,7 +71,7 @@ public class MtGoodsInfoComponentsImpl implements MtGoodsInfoComponents {
         MtGoodsInfoMessage message = MtGoodsModelConvertor.convertModel2Message(resultInner
             .getResult());
         if (message == null) {
-            logger.warn("¹¹½¨µ¥Æ·ĞÅÏ¢½»»¥µ¥¾İÊ§°Ü resultInner=" + resultInner);
+            logger.warn("æ„å»ºå•å“ä¿¡æ¯äº¤äº’å•æ®å¤±è´¥ resultInner=" + resultInner);
             result.setOperateExResult(MtOperateExResultEnum.CAMP_ILLEGAL_ARGUMENTS);
             result.setOperateResult(MtOperateResultEnum.CAMP_OPERATE_FAILED);
             return result;
@@ -92,7 +92,7 @@ public class MtGoodsInfoComponentsImpl implements MtGoodsInfoComponents {
 
         MtOperateResult<String> result = new MtOperateResult<String>();
         if (model == null) {
-            logger.warn("ÎŞ·¨±£´æÉÌÆ·µ¥Æ·ĞÅÏ¢£¬model is null, message=" + message);
+            logger.warn("æ— æ³•ä¿å­˜å•†å“å•å“ä¿¡æ¯ï¼Œmodel is null, message=" + message);
             result.setOperateExResult(MtOperateExResultEnum.CAMP_ILLEGAL_ARGUMENTS);
             result.setOperateResult(MtOperateResultEnum.CAMP_OPERATE_FAILED);
             return result;

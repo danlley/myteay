@@ -20,19 +20,19 @@ import com.myteay.common.util.exception.MtException;
 import com.myteay.core.service.components.MtGoodsPkgInfoComponents;
 
 /**
- * É¾³ıÌ×²ÍĞÅÏ¢
+ * åˆ é™¤å¥—é¤ä¿¡æ¯
  * 
  * @author Administrator
- * @version $Id: AdmDelGoodsPkgController.java, v 0.1 2016Äê3ÔÂ6ÈÕ ÏÂÎç12:36:03 Administrator Exp $
+ * @version $Id: AdmDelGoodsPkgController.java, v 0.1 2016å¹´3æœˆ6æ—¥ ä¸‹åˆ12:36:03 Administrator Exp $
  */
 @Controller
 @RequestMapping("/adm/del_goods_pkg_by_id")
 public class AdmDelGoodsPkgController {
 
-    /** ÈÕÖ¾ */
+    /** æ—¥å¿— */
     public static final Logger       logger = Logger.getLogger(AdmDelGoodsPkgController.class);
 
-    /** Ì×²ÍĞÅÏ¢¹ÜÀí×é¼ş */
+    /** å¥—é¤ä¿¡æ¯ç®¡ç†ç»„ä»¶ */
     @Autowired
     private MtGoodsPkgInfoComponents mtGoodsPkgInfoComponents;
 
@@ -42,7 +42,7 @@ public class AdmDelGoodsPkgController {
                                                                         MtException {
 
         if (logger.isInfoEnabled()) {
-            logger.warn("¿ªÊ¼É¾³ıÌ×²ÍĞÅÏ¢ id=" + id);
+            logger.warn("å¼€å§‹åˆ é™¤å¥—é¤ä¿¡æ¯ id=" + id);
         }
         mtGoodsPkgInfoComponents.deleteGoodsPkgById(id);
         response.sendRedirect("/myteay-web/adm/query_pkg_goods_list");

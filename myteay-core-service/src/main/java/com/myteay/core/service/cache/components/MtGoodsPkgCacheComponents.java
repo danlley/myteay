@@ -7,15 +7,15 @@ package com.myteay.core.service.cache.components;
 import com.myteay.common.service.facade.exceptions.MtBizException;
 
 /**
- * Ì×²Í»º´æĞÅÏ¢Ö´ĞĞ×é¼ş
+ * å¥—é¤ç¼“å­˜ä¿¡æ¯æ‰§è¡Œç»„ä»¶
  * 
  * @author Administrator
- * @version $Id: MtGoodsPkgCacheComponents.java, v 0.1 2016Äê3ÔÂ20ÈÕ ÏÂÎç9:17:36 Administrator Exp $
+ * @version $Id: MtGoodsPkgCacheComponents.java, v 0.1 2016å¹´3æœˆ20æ—¥ ä¸‹åˆ9:17:36 Administrator Exp $
  */
 public interface MtGoodsPkgCacheComponents {
 
     /**
-     * »º´æË¢ĞÂ
+     * ç¼“å­˜åˆ·æ–°
      * 
      * @throws MtBizException
      */

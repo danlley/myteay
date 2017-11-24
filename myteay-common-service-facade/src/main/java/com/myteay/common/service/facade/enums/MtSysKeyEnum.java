@@ -7,21 +7,21 @@ package com.myteay.common.service.facade.enums;
 import org.apache.commons.lang.StringUtils;
 
 /**
- * ÏµÍ³×Öµä¹Ø¼ü×Ö
+ * ç³»ç»Ÿå­—å…¸å…³é”®å­—
  * 
  * @author Administrator
- * @version $Id: MtSysKeyEnum.java, v 0.1 2016Äê9ÔÂ6ÈÕ ÏÂÎç11:52:41 Administrator Exp $
+ * @version $Id: MtSysKeyEnum.java, v 0.1 2016å¹´9æœˆ6æ—¥ ä¸‹åˆ11:52:41 Administrator Exp $
  */
 public enum MtSysKeyEnum {
 
-                          /** ¶şÎ¬ÂëÉú³ÉºóµÄ´æ·ÅÂ·¾¶ */
-                          CS_CURR_QRCODE_PATH("CS_CURR_QRCODE_PATH", "¶şÎ¬ÂëÉú³ÉºóµÄ´æ·ÅÂ·¾¶"),
+                          /** äºŒç»´ç ç”Ÿæˆåçš„å­˜æ”¾è·¯å¾„ */
+                          CS_CURR_QRCODE_PATH("CS_CURR_QRCODE_PATH", "äºŒç»´ç ç”Ÿæˆåçš„å­˜æ”¾è·¯å¾„"),
 
-                          /** ¶şÎ¬ÂëÖĞĞÄÄ¬ÈÏÍ¼Æ¬´æ·ÅÂ·¾¶ */
-                          CS_QRCODE_DEFIMG_PATH("CS_QRCODE_DEFIMG_PATH", "¶şÎ¬ÂëÖĞĞÄÄ¬ÈÏÍ¼Æ¬´æ·ÅÂ·¾¶"),
+                          /** äºŒç»´ç ä¸­å¿ƒé»˜è®¤å›¾ç‰‡å­˜æ”¾è·¯å¾„ */
+                          CS_QRCODE_DEFIMG_PATH("CS_QRCODE_DEFIMG_PATH", "äºŒç»´ç ä¸­å¿ƒé»˜è®¤å›¾ç‰‡å­˜æ”¾è·¯å¾„"),
 
-                          /** ÏµÍ³¹¤×÷¸ùÂ·¾¶ */
-                          CS_SYS_ROOT_PATH("CS_SYS_ROOT_PATH", "ÏµÍ³¹¤×÷¸ùÂ·¾¶"),
+                          /** ç³»ç»Ÿå·¥ä½œæ ¹è·¯å¾„ */
+                          CS_SYS_ROOT_PATH("CS_SYS_ROOT_PATH", "ç³»ç»Ÿå·¥ä½œæ ¹è·¯å¾„"),
 
     ;
     /** value */
@@ -31,7 +31,7 @@ public enum MtSysKeyEnum {
     private final String message;
 
     /**
-     * Ë½ÓĞ¹¹Ôì·½·¨
+     * ç§æœ‰æ„é€ æ–¹æ³•
      * @param code
      * @param description
      */
@@ -55,7 +55,7 @@ public enum MtSysKeyEnum {
     }
 
     /**
-     * Í¨¹ıÖµ»ñÈ¡Ã¶¾Ù¶ÔÏó
+     * é€šè¿‡å€¼è·å–æšä¸¾å¯¹è±¡
      * @param value
      * @return
      */
@@ -73,7 +73,7 @@ public enum MtSysKeyEnum {
     }
 
     /**
-     * Í¨¹ıÃ¶¾Ù<code>value</code>»ñµÃÃ¶¾Ù
+     * é€šè¿‡æšä¸¾<code>value</code>è·å¾—æšä¸¾
      * 
      * @param value
      * @return
@@ -91,7 +91,7 @@ public enum MtSysKeyEnum {
     }
 
     /**
-     * Í¨¹ıÃ¶¾Ù<code>name</code>»ñµÃÃ¶¾Ù
+     * é€šè¿‡æšä¸¾<code>name</code>è·å¾—æšä¸¾
      * 
      * @param message
      * @return

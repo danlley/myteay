@@ -10,41 +10,41 @@ import com.myteay.common.service.facade.model.MtOperateResult;
 import com.myteay.core.model.dinner.MtGoodsPkgModel;
 
 /**
- * Ì×²ÍĞÅÏ¢¹ÜÀí²Ö´¢²ã
+ * å¥—é¤ä¿¡æ¯ç®¡ç†ä»“å‚¨å±‚
  * 
  * @author Administrator
- * @version $Id: MtGoodsPkgInfoRepository.java, v 0.1 2016Äê3ÔÂ5ÈÕ ÉÏÎç9:31:33 Administrator Exp $
+ * @version $Id: MtGoodsPkgInfoRepository.java, v 0.1 2016å¹´3æœˆ5æ—¥ ä¸Šåˆ9:31:33 Administrator Exp $
  */
 public interface MtGoodsPkgInfoRepository {
 
     /**
-     * Í¨¹ıÌ×²ÍÁ÷Ë®ºÅÉ¾³ıÌ×²ÍĞÅÏ¢
+     * é€šè¿‡å¥—é¤æµæ°´å·åˆ é™¤å¥—é¤ä¿¡æ¯
      * 
-     * @param id    Ì×²ÍÁ÷Ë®ºÅ
-     * @return      ´¦Àí½á¹û
+     * @param id    å¥—é¤æµæ°´å·
+     * @return      å¤„ç†ç»“æœ
      */
     public MtOperateResult<String> deleteGoodsPkgById(String id);
 
     /**
-     * Í¨¹ıÌ×²ÍID²éÕÒÌ×²ÍÄ£ĞÍ
+     * é€šè¿‡å¥—é¤IDæŸ¥æ‰¾å¥—é¤æ¨¡å‹
      * 
-     * @param id    Ì×²ÍID
-     * @return      Ì×²ÍÄ£ĞÍ
+     * @param id    å¥—é¤ID
+     * @return      å¥—é¤æ¨¡å‹
      */
     public MtOperateResult<MtGoodsPkgModel> findGoodsInfoById(String id);
 
     /**
-     * ´æ´¢Ì×²ÍĞÅÏ¢Ä£ĞÍ
+     * å­˜å‚¨å¥—é¤ä¿¡æ¯æ¨¡å‹
      * 
-     * @param model ´æ´¢Ì×²ÍĞÅÏ¢Ä£ĞÍ
-     * @return      ±£´æºó´æ´¢Ì×²ÍĞÅÏ¢Á÷Ë®ºÅ¼°ÏêÏ¸·µ»Ø½á¹û
+     * @param model å­˜å‚¨å¥—é¤ä¿¡æ¯æ¨¡å‹
+     * @return      ä¿å­˜åå­˜å‚¨å¥—é¤ä¿¡æ¯æµæ°´å·åŠè¯¦ç»†è¿”å›ç»“æœ
      */
     public MtOperateResult<String> saveGoodsPkgModel(MtGoodsPkgModel model);
 
     /**
-     * ²éÑ¯ËùÓĞµÄÌ×²ÍĞÅÏ¢
+     * æŸ¥è¯¢æ‰€æœ‰çš„å¥—é¤ä¿¡æ¯
      * 
-     * @return  ·µ»ØÌ×²ÍĞÅÏ¢ÁĞ±í
+     * @return  è¿”å›å¥—é¤ä¿¡æ¯åˆ—è¡¨
      */
     public MtOperateResult<List<MtGoodsPkgModel>> queryGoodsPkgList();
 }

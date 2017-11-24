@@ -5,10 +5,10 @@
 package com.myteay.common.util.constants;
 
 /**
- * ¶¨ÒåÈÕÖ¾·ÃÎÊÎ»ÖÃ
+ * å®šä¹‰æ—¥å¿—è®¿é—®ä½ç½®
  * 
  * @author Administrator
- * @version $Id: LoggerNames.java, v 0.1 2016Äê9ÔÂ12ÈÕ ÏÂÎç10:08:17 Administrator Exp $
+ * @version $Id: LoggerNames.java, v 0.1 2016å¹´9æœˆ12æ—¥ ä¸‹åˆ10:08:17 Administrator Exp $
  */
 public class LoggerNames {
 

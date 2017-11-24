@@ -11,10 +11,10 @@ import com.myteay.common.dal.dinner.dataobject.GoodsInfoDO;
 import com.myteay.common.mybatis.support.tools.MtSqlSessionDaoSupport;
 
 /**
- * ÉÌÆ·ĞÅÏ¢¹ÜÀíDAO
+ * å•†å“ä¿¡æ¯ç®¡ç†DAO
  * 
  * @author Administrator
- * @version $Id: IbatisGoodsInfoDAO.java, v 0.1 2016Äê3ÔÂ5ÈÕ ÉÏÎç12:40:24 Administrator Exp $
+ * @version $Id: IbatisGoodsInfoDAO.java, v 0.1 2016å¹´3æœˆ5æ—¥ ä¸Šåˆ12:40:24 Administrator Exp $
  */
 public class IbatisGoodsInfoDAO extends MtSqlSessionDaoSupport implements GoodsInfoDAO {
 

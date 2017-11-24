@@ -13,10 +13,10 @@ import com.myteay.common.dal.dinner.dataobject.GoodsPkgInfoDO;
 import com.myteay.common.mybatis.support.tools.MtSqlSessionDaoSupport;
 
 /**
- * Ì×²ÍĞÅÏ¢²Ù×÷DAO
+ * å¥—é¤ä¿¡æ¯æ“ä½œDAO
  * 
  * @author Administrator
- * @version $Id: IbatisGoodsPkgInfoDAO.java, v 0.1 2016Äê3ÔÂ5ÈÕ ÉÏÎç9:29:06 Administrator Exp $
+ * @version $Id: IbatisGoodsPkgInfoDAO.java, v 0.1 2016å¹´3æœˆ5æ—¥ ä¸Šåˆ9:29:06 Administrator Exp $
  */
 public class IbatisGoodsPkgInfoDAO extends MtSqlSessionDaoSupport implements GoodsPkgInfoDAO {
 

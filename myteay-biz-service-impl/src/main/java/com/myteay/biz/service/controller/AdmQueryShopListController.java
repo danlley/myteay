@@ -32,31 +32,31 @@ import com.myteay.core.model.dinner.MtShopModel;
 import com.myteay.core.service.components.MtShopInfoComponents;
 
 /**
- * ²éÑ¯µêÆÌĞÅÏ¢ÁĞ±í
+ * æŸ¥è¯¢åº—é“ºä¿¡æ¯åˆ—è¡¨
  * 
  * @author Administrator
- * @version $Id: QueryShopListController.java, v 0.1 2016Äê3ÔÂ4ÈÕ ÏÂÎç5:07:13 Administrator Exp $
+ * @version $Id: QueryShopListController.java, v 0.1 2016å¹´3æœˆ4æ—¥ ä¸‹åˆ5:07:13 Administrator Exp $
  */
 @Controller
 @RequestMapping("/adm/quey_shop_list")
 public class AdmQueryShopListController {
 
-    /** ÈÕÖ¾ */
+    /** æ—¥å¿— */
     public static final Logger   logger = Logger.getLogger(AdmQueryShopListController.class);
 
-    /** µêÆÌ¹ÜÀí×é¼ş */
+    /** åº—é“ºç®¡ç†ç»„ä»¶ */
     @Autowired
     private MtShopInfoComponents mtShopInfoComponents;
 
     /**
-     * Ìí¼Óµ¥¸öÉÌÆ·ĞÅÏ¢
+     * æ·»åŠ å•ä¸ªå•†å“ä¿¡æ¯
      * 
-     * @param session       ½»»¥»á»°ĞÅÏ¢
-     * @param response      Ó¦´ğĞÅÏ¢
-     * @param request       ÇëÇóĞÅÏ¢
-     * @return              ·şÎñÂ·¾¶
-     * @throws IOException  Òì³£
-     * @throws MtException  Òì³£
+     * @param session       äº¤äº’ä¼šè¯ä¿¡æ¯
+     * @param response      åº”ç­”ä¿¡æ¯
+     * @param request       è¯·æ±‚ä¿¡æ¯
+     * @return              æœåŠ¡è·¯å¾„
+     * @throws IOException  å¼‚å¸¸
+     * @throws MtException  å¼‚å¸¸
      */
     @RequestMapping(method = RequestMethod.GET)
     public ModelAndView queryShopList(HttpSession session, HttpServletResponse response,
@@ -67,19 +67,19 @@ public class AdmQueryShopListController {
         try {
             result = mtShopInfoComponents.queryShopList();
         } catch (MtBizException e) {
-            logger.warn("²éÑ¯µêÆÌĞÅÏ¢³öÏÖÒµÎñÒì³£", e);
+            logger.warn("æŸ¥è¯¢åº—é“ºä¿¡æ¯å‡ºç°ä¸šåŠ¡å¼‚å¸¸", e);
         } catch (Throwable e) {
-            logger.warn("²éÑ¯µêÆÌĞÅÏ¢³öÏÖÏµÍ³Òì³£", e);
+            logger.warn("æŸ¥è¯¢åº—é“ºä¿¡æ¯å‡ºç°ç³»ç»Ÿå¼‚å¸¸", e);
         }
 
         if (result == null || result.getOperateResult() != MtOperateResultEnum.CAMP_OPERATE_SUCCESS
             || result.getOperateExResult() != MtOperateExResultEnum.CAMP_OPERATE_SUCCESS) {
-            logger.warn("²éÑ¯µêÆÌĞÅÏ¢Ê§°Üresult=" + result);
+            logger.warn("æŸ¥è¯¢åº—é“ºä¿¡æ¯å¤±è´¥result=" + result);
             return view;
         }
 
         if (CollectionUtils.isEmpty(result.getResult())) {
-            logger.warn("²éÑ¯³É¹¦£¡µ±Ç°Ã»ÓĞ¿ÉÓÃµÄµêÆÌĞÅÏ¢result=" + result);
+            logger.warn("æŸ¥è¯¢æˆåŠŸï¼å½“å‰æ²¡æœ‰å¯ç”¨çš„åº—é“ºä¿¡æ¯result=" + result);
             return view;
         }
 
@@ -96,7 +96,7 @@ public class AdmQueryShopListController {
 
         if (!CollectionUtils.isEmpty(messageList)) {
             if (logger.isInfoEnabled()) {
-                logger.info("µêÆÌÁĞ±í×é×°½áÊø");
+                logger.info("åº—é“ºåˆ—è¡¨ç»„è£…ç»“æŸ");
             }
             Map<String, Object> model = new HashMap<String, Object>();
             model.put("shop_list", messageList);
@@ -108,15 +108,15 @@ public class AdmQueryShopListController {
     }
 
     /**
-     * ½«µêÆÌÄ£ĞÍ×ª»»ÎªµêÆÌ½»»¥ĞÅÏ¢
+     * å°†åº—é“ºæ¨¡å‹è½¬æ¢ä¸ºåº—é“ºäº¤äº’ä¿¡æ¯
      * 
-     * @param model µêÆÌÄ£ĞÍ
-     * @return      µêÆÌ½»»¥ĞÅÏ¢
+     * @param model åº—é“ºæ¨¡å‹
+     * @return      åº—é“ºäº¤äº’ä¿¡æ¯
      */
     private MtShopInfoMessage convertModel2Message(MtShopModel model) {
 
         if (model == null) {
-            logger.warn("µ±Ç°µêÆÌÄ£ĞÍÎŞ·¨×ª»»³É¿ÉÓÃµÄµêÆÌ½»»¥ĞÅÏ¢ model is null");
+            logger.warn("å½“å‰åº—é“ºæ¨¡å‹æ— æ³•è½¬æ¢æˆå¯ç”¨çš„åº—é“ºäº¤äº’ä¿¡æ¯ model is null");
             return null;
         }
 

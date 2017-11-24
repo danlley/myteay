@@ -5,23 +5,23 @@
 package com.myteay.common.util.constants;
 
 /**
- * ÏµÍ³³£Á¿¹¤¾ßÀà
+ * ç³»ç»Ÿå¸¸é‡å·¥å…·ç±»
  * 
  * @author Administrator
- * @version $Id: MtConstants.java, v 0.1 2016Äê3ÔÂ6ÈÕ ÏÂÎç6:41:24 Administrator Exp $
+ * @version $Id: MtConstants.java, v 0.1 2016å¹´3æœˆ6æ—¥ ä¸‹åˆ6:41:24 Administrator Exp $
  */
 public class MtConstants {
 
-    /** ÍøÂç·ÃÎÊ¸ùÂ·¾¶ */
+    /** ç½‘ç»œè®¿é—®æ ¹è·¯å¾„ */
     public static final String ROOT_URI                   = "http://192.168.1.106/myteay-web";
 
-    /** µ¥Æ·Í¼Æ¬ĞÅÏ¢·ÃÎÊ¸ùÂ·¾¶ */
+    /** å•å“å›¾ç‰‡ä¿¡æ¯è®¿é—®æ ¹è·¯å¾„ */
     public static final String GOODS_INFO_UPLOAD_URI      = "/upload/img/goods/";
 
-    /** Ì×²ÍÍ¼Æ¬ĞÅÏ¢·ÃÎÊ¸ùÂ·¾¶ */
+    /** å¥—é¤å›¾ç‰‡ä¿¡æ¯è®¿é—®æ ¹è·¯å¾„ */
     public static final String GOODS_PKG_UPLOAD_URI       = "/upload/img/goods_pkg/";
 
-    /** Ì×²ÍĞÅÏ¢ÖĞµ¥Æ·¼¯ºÏ¼ä¸ô·û */
+    /** å¥—é¤ä¿¡æ¯ä¸­å•å“é›†åˆé—´éš”ç¬¦ */
     public static final String GOODS_PREFIX_FOR_GOODS_PKG = "|";
 
 }

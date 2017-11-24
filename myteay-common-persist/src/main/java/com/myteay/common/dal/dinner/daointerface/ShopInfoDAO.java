@@ -10,17 +10,17 @@ import com.myteay.common.dal.dinner.dataobject.ShopInfoDO;
 import com.myteay.common.util.constants.MtDBKey;
 
 /**
- * µêÆÌĞÅÏ¢²Ù×÷DAO
+ * åº—é“ºä¿¡æ¯æ“ä½œDAO
  * 
  * @author Administrator
- * @version $Id: ShopInfoDAO.java, v 0.1 2016Äê3ÔÂ4ÈÕ ÏÂÎç5:44:53 Administrator Exp $
+ * @version $Id: ShopInfoDAO.java, v 0.1 2016å¹´3æœˆ4æ—¥ ä¸‹åˆ5:44:53 Administrator Exp $
  */
 public interface ShopInfoDAO extends MtDBKey {
 
     /**
-     * ²éÑ¯ËùÓĞµêÆÌĞÅÏ¢ÁĞ±í
+     * æŸ¥è¯¢æ‰€æœ‰åº—é“ºä¿¡æ¯åˆ—è¡¨
      * 
-     * @return  µêÆÌĞÅÏ¢ÁĞ±í
+     * @return  åº—é“ºä¿¡æ¯åˆ—è¡¨
      */
     public List<ShopInfoDO> findAll();
 }
